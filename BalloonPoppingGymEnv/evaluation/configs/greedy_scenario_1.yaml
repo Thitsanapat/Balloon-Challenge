@@ -1,0 +1,13 @@
+# Local development configuration. Do not put the team secret in Git.
+scenario_number: 1
+render_mode: null
+agent_module_path: "./BalloonPoppingGymEnv/agents/greedy_launch_agent.py"
+agent_class_name: "GreedyLaunchAgent"
+agent_name: "Greedy launch baseline"
+agent_kwargs:
+  min_launch_time: 0.5
+  launch_inclination: 73.0
+  target_lead_time: 6.0
+  rate_kp: 100.0
+  roll_kp: 20.0
+leaderboard_submission: false

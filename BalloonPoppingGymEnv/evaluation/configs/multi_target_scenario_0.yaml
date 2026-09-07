@@ -1,0 +1,20 @@
+scenario_number: 0
+render_mode: null
+agent_module_path: "./BalloonPoppingGymEnv/agents/multi_target_agent.py"
+agent_class_name: "MultiTargetGuidanceAgent"
+agent_name: "Multi-target guidance"
+agent_kwargs:
+  min_launch_time: 0.1
+  launch_inclination: 88.0
+  cruise_speed: 28.0
+  velocity_gain: 0.8
+  attitude_gain: 1.6
+  rate_gain: 80.0
+  max_body_rate: 0.55
+  max_tilt: 42.0
+  target_timeout: 8.0
+  failed_target_cooldown: 4.0
+  initial_coast_time: 0.0
+  approach_speed: 5.0
+  launch_lead_time: 6.0
+leaderboard_submission: false
