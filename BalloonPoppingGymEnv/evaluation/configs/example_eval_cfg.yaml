@@ -1,0 +1,11 @@
+scenario_number: 0
+render_mode: "matplotlib" # "matplotlib", "vpython", or null
+agent_module_path: "./BalloonPoppingGymEnv/agents/example_agents.py" # Path to python module defining agent.
+agent_class_name: "AttitudeRateControlAgent" # Name of agent class defined in agent_module_path.
+agent_name: "Attitude Rate Control" # Identifier name for logging purposes. The same agent class with different inputs can lead to different behaviors, so you should give each instantiation their own name
+agent_kwargs:
+  rate_targets: [0.0, 0.0, 0.0]
+  launch_time: 1
+team_name: example
+team_secret: 3b4b84252bc53eb1f4d8ea008a9243040088e71a1f1fd7a9ccfe203f9c9cb164
+leaderboard_submission: true

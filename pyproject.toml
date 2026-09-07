@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "BalloonPoppingGymEnv"
+version = "0.1.1"
+description = "6-DoF rocket GNC simulation Gymnasium environment based on RocketPy"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+	"activerocketpy[all]",
+	"gymnasium>=1.2.3",
+	"pymap3d>=3.2.0",
+	"pyyaml>=6.0",
+	"setuptools<82.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+	# Exact, not a floor. CI pins 0.15.20 and a different release disagrees about
+	# formatting, so a floating dev dependency means `make format` and CI can
+	# reach opposite conclusions on the same file.
+	"ruff==0.15.20",
+	"pytest>=8.0",
+	"pytest-cov>=5.0",
+	# Reads this file's own requirement strings in test_optional_dependencies.
+	# It arrives transitively today, and a test that only works by accident is
+	# one release away from disappearing.
+	"packaging>=23.0",
+]
+vpython = [
+	"vpython>=7.6.5",
+]
+
+[tool.uv.sources]
+activerocketpy = { path = "ActiveRocketPy", editable = true }
+
+[tool.hatch.build.targets.wheel]
+packages = ["BalloonPoppingGymEnv"]
+
+[tool.ruff]
+# Ruff's own guard for this: it exits with an error rather than silently applying a
+# different release's rules. Keep it in step with the CI pin and the dev extra.
+required-version = "==0.15.20"
