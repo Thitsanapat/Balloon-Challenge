@@ -59,9 +59,14 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("config", type=Path)
     parser.add_argument("--seeds", type=int, nargs="+", default=[0])
+    parser.add_argument("--set", action="append", default=[], metavar="KEY=VALUE",
+                        help="Override an agent argument, recorded in the report")
     parser.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()
     config = yaml.safe_load(args.config.read_text(encoding="utf-8-sig"))
+    for assignment in args.set:
+        key, value = assignment.split("=", 1)
+        config.setdefault("agent_kwargs", {})[key] = yaml.safe_load(value)
     results = []
     for seed in args.seeds:
         print(f"Starting fresh evaluation: {config['agent_name']}, seed={seed}", flush=True)

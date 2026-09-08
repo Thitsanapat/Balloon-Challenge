@@ -35,29 +35,53 @@ def main():
         key, value = assignment.split("=", 1)
         config.setdefault("agent_kwargs", {})[key] = yaml.safe_load(value)
     scenario, given = load_scenario_parameters(config["scenario_number"])
-    records = json.loads(args.trajectory.read_text(encoding="utf-8"))
-    if args.end_time is not None:
-        records = [record for record in records if record["time"] <= args.end_time]
-    recorded = np.asarray([record["balloon_states"] for record in records])
-    if not records:
-        raise ValueError("The requested cached-field interval contains no samples")
-    times = np.asarray([record["time"] for record in records])
     dt = float(scenario["simulation"]["time_step"])
-    if not np.allclose(times, dt*np.arange(1, len(records)+1), atol=1e-8, rtol=0):
-        raise ValueError("Cached field must contain consecutive timesteps starting at dt")
-    if recorded.shape[1:] != (scenario["balloon"]["num"], 6):
-        raise ValueError("Cached balloon count/state dimension does not match the scenario")
-    cached_flights = np.transpose(
-        np.concatenate((recorded[:1], recorded), axis=0), (1, 2, 0)
-    )
+    cached_release_steps = None
+    if args.trajectory.suffix.lower() == ".npz":
+        with np.load(args.trajectory) as cache:
+            cached_flights = np.asarray(cache["balloon_flights"])
+            cached_release_steps = np.asarray(cache["release_steps"], dtype=int)
+            if int(cache["scenario"]) != config["scenario_number"]:
+                raise ValueError("Cached field scenario does not match configuration")
+            if int(cache["seed"]) != scenario["scenario"]["random_seed"]:
+                raise ValueError("Cached field seed does not match configured seed")
+            if not np.isclose(float(cache["time_step"]), dt):
+                raise ValueError("Cached field time step does not match scenario")
+        if args.end_time is not None:
+            samples = min(cached_flights.shape[2], int(args.end_time / dt) + 1)
+            cached_flights = cached_flights[:, :, :samples]
+        field_end_time = (cached_flights.shape[2] - 1) * dt
+    else:
+        records = json.loads(args.trajectory.read_text(encoding="utf-8"))
+        if args.end_time is not None:
+            records = [record for record in records if record["time"] <= args.end_time]
+        recorded = np.asarray([record["balloon_states"] for record in records])
+        if not records:
+            raise ValueError("The requested cached-field interval contains no samples")
+        times = np.asarray([record["time"] for record in records])
+        if not np.allclose(times, dt*np.arange(1, len(records)+1), atol=1e-8, rtol=0):
+            raise ValueError("Cached field must contain consecutive timesteps starting at dt")
+        if recorded.shape[1:] != (scenario["balloon"]["num"], 6):
+            raise ValueError("Cached balloon count/state dimension does not match the scenario")
+        cached_flights = np.transpose(
+            np.concatenate((recorded[:1], recorded), axis=0), (1, 2, 0)
+        )
+        field_end_time = records[-1]["time"]
+
+    if cached_flights.shape[:2] != (scenario["balloon"]["num"], 6):
+        raise ValueError("Cached balloon count/state dimension does not match scenario")
 
     env = BalloonPoppingEnv(render_mode=None, parameters=scenario)
     env._BalloonPoppingEnv__generate_balloon_flights = lambda: setattr(
         env, "_balloon_flights", cached_flights
     )
     observation, info = env.reset(seed=scenario["scenario"]["random_seed"])
+    if cached_release_steps is not None and not np.array_equal(
+        cached_release_steps, env._balloon_release_at_step
+    ):
+        raise ValueError("Cached release schedule does not match configured seed")
     # Harness validation only: never pass the cache or release schedule to agent.
-    if config["scenario_number"] != 0:
+    if args.trajectory.suffix.lower() != ".npz" and config["scenario_number"] != 0:
         statuses = np.asarray([record["balloon_status"] for record in records])
         released = np.arange(1, len(records)+1)[:, None] >= env._balloon_release_at_step
         if not np.array_equal(statuses > 0, released):
@@ -133,7 +157,7 @@ def main():
             "agent_sha256": hashlib.sha256(Path(config["agent_module_path"]).read_bytes()).hexdigest(),
             "seed": scenario["scenario"]["random_seed"],
             "field_source": str(args.trajectory),
-            "field_end_time": records[-1]["time"],
+            "field_end_time": field_end_time,
             "score": int(info["popped_count"]),
             "final_time": float(observation["simulation_time"]),
             "terminated": bool(terminated), "truncated": bool(truncated),

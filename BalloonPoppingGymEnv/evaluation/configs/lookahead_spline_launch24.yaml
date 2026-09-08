@@ -1,0 +1,16 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: "./BalloonPoppingGymEnv/agents/lookahead_spline_agent.py"
+agent_class_name: "LookaheadSplineAgent"
+agent_name: "Route-lookahead spline, launch 24 seconds"
+agent_kwargs:
+  launch_time: 24.0
+  replan_interval: 0.8
+  first_candidates: 8
+  next_candidates: 4
+  second_horizon: 8.0
+  duration_step: 1.0
+  lookahead_targets: 4
+  lookahead_speed: 25.0
+  lookahead_weight: 1.0
+leaderboard_submission: false

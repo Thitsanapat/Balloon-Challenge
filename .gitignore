@@ -5,6 +5,7 @@ BalloonPoppingGymEnv/envs/data/*
 
 BalloonPoppingGymEnv/evaluation/results/**.json
 BalloonPoppingGymEnv/evaluation/results/**.pkl
+BalloonPoppingGymEnv/evaluation/results/**.npz
 
 # VSCode specific
 .vscode/

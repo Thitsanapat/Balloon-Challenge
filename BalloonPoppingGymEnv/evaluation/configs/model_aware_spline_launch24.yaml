@@ -1,0 +1,17 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: "./BalloonPoppingGymEnv/agents/model_aware_spline_agent.py"
+agent_class_name: "ModelAwareSplineAgent"
+agent_name: "Online ActiveRocketPy reduced-force spline"
+agent_kwargs:
+  launch_time: 24.0
+  replan_interval: 0.8
+  first_candidates: 8
+  next_candidates: 3
+  second_horizon: 8.0
+  duration_step: 1.0
+  force_filter: 0.08
+  drag_filter: 2.0
+  bias_filter: 1.0
+  max_drag_gain: 0.005
+leaderboard_submission: false

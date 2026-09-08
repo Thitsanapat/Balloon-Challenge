@@ -1,0 +1,18 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: "./BalloonPoppingGymEnv/agents/cloud_corridor_agent.py"
+agent_class_name: "CloudCorridorAgent"
+agent_name: "Dense inclined cloud corridor, launch 45 seconds"
+agent_kwargs:
+  launch_time: 45.0
+  replan_interval: 0.8
+  first_candidates: 8
+  next_candidates: 3
+  second_horizon: 8.0
+  duration_step: 1.0
+  core_fraction: 0.5
+  density_scale: 30.0
+  radial_weight: 2.0
+  density_weight: 4.0
+  descent_weight: 2.0
+leaderboard_submission: false

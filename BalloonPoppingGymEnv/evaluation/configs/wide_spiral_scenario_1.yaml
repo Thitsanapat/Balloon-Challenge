@@ -1,0 +1,12 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: "./BalloonPoppingGymEnv/agents/wind_spiral_agent.py"
+agent_class_name: "WindSpiralAgent"
+agent_name: "Wide drift-relative spiral from launch"
+agent_kwargs:
+  launch_time: 4.0
+  initial_radius: 25.0
+  radius_growth: 0.35
+  spiral_axis_tilt: 45.0
+  start_after_first_pop: false
+leaderboard_submission: false

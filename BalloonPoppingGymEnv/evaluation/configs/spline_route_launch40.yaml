@@ -1,0 +1,13 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: "./BalloonPoppingGymEnv/agents/spline_route_agent.py"
+agent_class_name: "SplineRouteAgent"
+agent_name: "Two-intercept route, launch 40 seconds"
+agent_kwargs:
+  launch_time: 40.0
+  replan_interval: 0.8
+  first_candidates: 8
+  next_candidates: 3
+  second_horizon: 8.0
+  duration_step: 1.0
+leaderboard_submission: false

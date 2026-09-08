@@ -1,0 +1,18 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: "./BalloonPoppingGymEnv/agents/wind_spiral_agent.py"
+agent_class_name: "WindSpiralAgent"
+agent_name: "Observed-drift tilted expanding spiral experiment"
+agent_kwargs:
+  launch_time: 4.0
+  replan_interval: 0.4
+  max_tilt: 55.0
+  max_axis_rate: 0.7
+  attitude_frequency: 4.0
+  tracking_frequency: 1.0
+  horizon: 12.0
+  spiral_axis_tilt: 45.0
+  initial_radius: 2.0
+  radius_growth: 0.35
+  angular_speed: 0.4
+leaderboard_submission: false
