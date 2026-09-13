@@ -98,3 +98,40 @@ fly-through together, including terminal velocity at burnout.  Until that is
 implemented and verified over several fresh random seeds, the 24-second
 two-intercept controller remains the best evidence-backed configuration at
 7 points on seed 0 and 6 on seed 1; 14 points has not been demonstrated.
+
+## GNC follow-up (2026-09-11)
+
+Instrumentation recorded the rocket state at each seed-0 impact.  The final
+three reference impacts were:
+
+| Balloon | Time (s) | Altitude (m) | Vertical speed (m/s) |
+|---:|---:|---:|---:|
+| 56 | 47.33 | 102.70 | -0.75 |
+| 8 | 49.18 | 99.87 | -2.67 |
+| 12 | 52.38 | 94.76 | +3.06 |
+
+The last impact is still climbing, so the immediate problem is not an already
+descending terminal state.  A constant-gravity coast from that state misses
+the closest unpopped balloon (#80) by 25.77 m; it therefore needs a powered
+course change before the approximately 54.01 s cutoff.
+
+A diagnostic forced the observed seed-0 route order without exposing future
+states to the agent.  The exact seven-target order reproduced score 7.  Inserting
+#80 before #8 hit #80 at 51.62 s but lost #8 and #12, scoring 6.  Putting #80
+after #8 also scored 6.  This falsifies the simple “insert one missed target at
+the end” hypothesis under the current spline/attitude controller.
+
+The GNC priority is consequently:
+
+1. **Guidance:** mixed discrete/continuous receding-horizon optimization over
+   target order, intercept time, and burnout state.  Reward must count targets,
+   not merely minimize the next two arrival times.
+2. **Control:** retain the current differential-flatness attitude loop first;
+   measured axes at successful impacts closely match requested axes.  Add
+   constraint tightening only when the new planner requests harder turns.
+3. **Navigation:** do not add an EKF to Scenario 1 yet.  GNSS/IMU noise and bias
+   are zero in the shipped scenario, and the accelerometer observer ablation
+   already reduced score.  Revisit filtering for randomized/noisy finals only.
+
+`scripted_spline_agent.py` is explicitly a seed-specific feasibility diagnostic,
+not a leaderboard policy.

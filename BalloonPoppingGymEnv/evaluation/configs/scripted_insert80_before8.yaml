@@ -1,0 +1,14 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: "./BalloonPoppingGymEnv/agents/scripted_spline_agent.py"
+agent_class_name: "ScriptedSplineAgent"
+agent_name: "Baseline route with balloon 80 before 8"
+agent_kwargs:
+  launch_time: 24.0
+  replan_interval: 0.8
+  first_candidates: 8
+  next_candidates: 3
+  second_horizon: 8.0
+  duration_step: 1.0
+  scripted_targets: [58, 27, 37, 35, 56, 80, 8, 12]
+leaderboard_submission: false

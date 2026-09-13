@@ -1,6 +1,7 @@
 """Run an agent against balloon paths cached in an earlier deterministic run."""
 
 import argparse
+import copy
 import hashlib
 import importlib.util
 import json
@@ -26,6 +27,7 @@ def main():
     parser.add_argument("config", type=Path)
     parser.add_argument("trajectory", type=Path)
     parser.add_argument("--end-time", type=float)
+    parser.add_argument("--seed", type=int, help="Expected cache seed and environment release schedule")
     parser.add_argument("--set", action="append", default=[], metavar="KEY=VALUE")
     parser.add_argument("--report", type=Path, help="Save reproducible metrics, not a submission")
     args = parser.parse_args()
@@ -35,6 +37,9 @@ def main():
         key, value = assignment.split("=", 1)
         config.setdefault("agent_kwargs", {})[key] = yaml.safe_load(value)
     scenario, given = load_scenario_parameters(config["scenario_number"])
+    scenario = copy.deepcopy(scenario)
+    if args.seed is not None:
+        scenario["scenario"]["random_seed"] = args.seed
     dt = float(scenario["simulation"]["time_step"])
     cached_release_steps = None
     if args.trajectory.suffix.lower() == ".npz":
@@ -90,6 +95,10 @@ def main():
     agent = agent_class(given, **config.get("agent_kwargs", {}))
 
     popped = []
+    pop_states = []
+    checkpoint_states = []
+    checkpoint_times = list(np.asarray(getattr(agent, "deadlines", []), dtype=float))
+    checkpoint_index = 0
     closest = np.full(scenario["balloon"]["num"], np.inf)
     closest_time = np.zeros(scenario["balloon"]["num"])
     closest_offset = np.zeros((scenario["balloon"]["num"], 3))
@@ -100,6 +109,21 @@ def main():
         action = agent.get_action(observation)
         observation, reward, terminated, truncated, info = env.step(action)
         rocket_position = np.asarray(info["rocket_states"][:3], dtype=float)
+        now = float(observation["simulation_time"])
+        while checkpoint_index < len(checkpoint_times) and now >= checkpoint_times[checkpoint_index]:
+            target_index = (int(agent.sequence[checkpoint_index])
+                            if hasattr(agent, "sequence") else None)
+            target_position = (np.asarray(observation["balloon_states"][target_index][:3], dtype=float)
+                               if target_index is not None else np.full(3, np.nan))
+            checkpoint_states.append({
+                "time": now,
+                "target_index": target_index,
+                "rocket_position": rocket_position.tolist(),
+                "rocket_velocity": np.asarray(info["rocket_states"][3:6], dtype=float).tolist(),
+                "target_position": target_position.tolist(),
+                "miss_distance": float(np.linalg.norm(target_position-rocket_position)),
+            })
+            checkpoint_index += 1
         if np.all(np.isfinite(rocket_position)):
             balloon_positions = np.asarray(observation["balloon_states"])[:, :3]
             released = np.asarray(observation["balloon_status"]).reshape(-1) == 1
@@ -124,6 +148,15 @@ def main():
             for index in np.flatnonzero(status == 2):
                 if int(index) not in known:
                     popped.append((int(index), float(observation["simulation_time"])))
+                    pop_states.append({
+                        "index": int(index),
+                        "time": float(observation["simulation_time"]),
+                        "rocket_position": np.asarray(info["rocket_states"][:3], dtype=float).tolist(),
+                        "rocket_velocity": np.asarray(info["rocket_states"][3:6], dtype=float).tolist(),
+                        "balloon_position": np.asarray(
+                            observation["balloon_states"][index][:3], dtype=float
+                        ).tolist(),
+                    })
 
     rocket = np.asarray(info["rocket_states"], dtype=float)
     print(
@@ -162,6 +195,17 @@ def main():
             "final_time": float(observation["simulation_time"]),
             "terminated": bool(terminated), "truncated": bool(truncated),
             "pop_events": popped,
+            "pop_states": pop_states,
+            "checkpoint_states": checkpoint_states,
+            "closest_approaches": [
+                {
+                    "index": int(index),
+                    "distance": float(closest[index]),
+                    "time": float(closest_time[index]),
+                    "offset": closest_offset[index].tolist(),
+                }
+                for index in range(len(closest)) if np.isfinite(closest[index])
+            ],
             "target_events": getattr(agent, "target_events", []),
             "diagnostics": diagnostics,
         }

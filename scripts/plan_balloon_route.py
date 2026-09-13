@@ -18,7 +18,8 @@ def main():
     parser.add_argument("--exclude", nargs="*", type=int, default=[])
     args = parser.parse_args()
 
-    records = json.loads(args.trajectory.read_text(encoding="utf-8"))
+    payload = json.loads(args.trajectory.read_text(encoding="utf-8"))
+    records = payload["trajectories"] if isinstance(payload, dict) else payload
     times = np.asarray([record["time"] for record in records])
     balloons = np.asarray([record["balloon_states"] for record in records])[:, :, :3]
     statuses = np.asarray([record["balloon_status"] for record in records])

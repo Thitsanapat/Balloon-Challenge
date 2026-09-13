@@ -1,0 +1,35 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/scheduled_ascent_agent.py'
+agent_class_name: 'ScheduledAscentAgent'
+agent_name: 'Trained smooth ascent schedule diagnostic'
+agent_kwargs:
+  launch_time: 38.9
+  replan_interval: 0.2
+  tracking_frequency: 1.0
+  minimum_vertical_acceleration: 0.6
+  route_horizon: 2
+  missed_grace: 1.2
+  braking_fraction: 0.0
+  guidance_mode: zem
+  target_sequence: [50, 87, 56, 92, 77, 33, 18, 2, 21, 83, 95, 64, 96, 89, 28, 6]
+  target_times: [45.63, 46.95, 49.27, 51.05, 53.31, 54.60, 56.80, 58.21, 59.73, 61.99, 63.74, 64.85, 67.05, 68.07, 68.95, 70.89]
+  release_times: [40.0, 38.0, 34.0, 29.5, 23.0, 19.5, 13.5, 10.0, 11.5, 15.5, 20.5, 22.5, 28.0, 31.5, 35.5, 47.0]
+  endpoint_velocities:
+    - [12.35, -10.30, 12.23]
+    - [15.74, -5.87, 14.89]
+    - [24.04, 2.80, 19.18]
+    - [21.50, 10.95, 22.43]
+    - [22.54, 8.07, 25.12]
+    - [31.60, -2.74, 22.05]
+    - [21.31, 6.33, 20.45]
+    - [7.40, 18.99, 10.93]
+    - [-11.05, 26.42, 0.00]
+    - [-10.05, 6.27, -7.47]
+    - [-4.41, -9.87, -8.63]
+    - [-10.71, -7.61, -7.17]
+    - [-27.67, 6.96, -14.81]
+    - [-32.43, -5.65, -20.38]
+    - [-37.97, -14.32, -21.62]
+    - [-34.17, -12.86, -37.86]
+leaderboard_submission: false

@@ -1,0 +1,8 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/inferred_control_diagnostic_agent.py'
+agent_class_name: 'InferredControlDiagnosticAgent'
+agent_name: 'Inverse-dynamics control reconstruction diagnostic'
+agent_kwargs:
+  control_path: './BalloonPoppingGymEnv/evaluation/results/top17_inferred_controls.npz'
+leaderboard_submission: false

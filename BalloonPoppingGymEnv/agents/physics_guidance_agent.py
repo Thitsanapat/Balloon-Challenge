@@ -73,7 +73,8 @@ class PhysicsGuidanceAgent(BaseAgent):
     def __init__(self, given_parameters, launch_time=4.0, replan_interval=0.4,
                  max_tilt=55.0, max_axis_rate=0.7, attitude_frequency=4.0,
                  tracking_frequency=1.0, horizon=12.0, arrival_speed=0.0,
-                 lookahead_velocity=False):
+                 lookahead_velocity=False, minimum_vertical_acceleration=None,
+                 direct_rate_gain=None, force_full_throttle=False):
         super().__init__(given_parameters)
         self.dt = float(given_parameters["simulation"]["time_step"])
         self.elevation = float(given_parameters["environment"]["elevation"])
@@ -105,6 +106,11 @@ class PhysicsGuidanceAgent(BaseAgent):
         self.horizon = float(horizon)
         self.arrival_speed = float(arrival_speed)
         self.lookahead_velocity = bool(lookahead_velocity)
+        self.minimum_vertical_acceleration = (None if minimum_vertical_acceleration is None
+                                              else float(minimum_vertical_acceleration))
+        self.direct_rate_gain = (None if direct_rate_gain is None
+                                 else float(direct_rate_gain))
+        self.force_full_throttle = bool(force_full_throttle)
         self.launched = False
         self.launch_attitude = np.array([90.0, 0.0])
         self.quaternion = np.asarray(get_initial_attitude(90.0, 0.0))
@@ -221,15 +227,25 @@ class PhysicsGuidanceAgent(BaseAgent):
         omega_ref = _rotate_world_to_body(self.quaternion, omega_world)
         omega_ref = np.clip(omega_ref, -self.max_axis_rate, self.max_axis_rate)
         wn = self.attitude_frequency
-        angular_accel = wn**2*error + 2*wn*(omega_ref-gyro)
-        effective_force = self.thrust*max(self.previous_throttle, 0.05)
-        torque = self.inertia*angular_accel
-        tvc = np.degrees(np.arcsin(np.clip(torque[:2]/(effective_force*self.lever), -1.0, 1.0)))
+        if self.direct_rate_gain is None:
+            angular_accel = wn**2*error + 2*wn*(omega_ref-gyro)
+            effective_force = self.thrust*max(self.previous_throttle, 0.05)
+            torque = self.inertia*angular_accel
+            tvc = np.degrees(np.arcsin(np.clip(
+                torque[:2]/(effective_force*self.lever), -1.0, 1.0,
+            )))
+        else:
+            desired_rate = np.clip(
+                omega_ref[:2]+wn*error[:2],
+                -self.max_axis_rate,
+                self.max_axis_rate,
+            )
+            tvc = self.direct_rate_gain*(desired_rate-gyro[:2])
         tvc = np.clip(tvc, -self.control["max_gimbal_angle"], self.control["max_gimbal_angle"])
         change = self.control["gimbal_rate_limit"]*self.dt
         tvc = self.previous_tvc + np.clip(tvc-self.previous_tvc, -change, change)
         # Magnitude allocation is based on the feasible reference force.
-        throttle = magnitude/max(available, 1e-9)
+        throttle = 1.0 if self.force_full_throttle else magnitude/max(available, 1e-9)
         throttle = np.clip(throttle, *self.control["throttle_range"])
         change = self.control["throttle_rate_limit"]*self.dt
         throttle = self.previous_throttle + np.clip(throttle-self.previous_throttle, -change, change)
@@ -264,7 +280,12 @@ class PhysicsGuidanceAgent(BaseAgent):
                 # Bounded disturbance model includes drag and mass/pressure error.
                 self.disturbance += self.dt/(0.8+self.dt)*(np.clip(residual, -3, 3)-self.disturbance)
             else:
-                self.acceleration = np.array([0.0, 0.0, available+G[2]])
+                # The first post-launch sample has no velocity difference yet.
+                # Seed the translational model from the actual launch attitude;
+                # assuming vertical here makes an inclined launch immediately
+                # command a contradictory pitch transient.
+                body_axis = _rotate_body_to_world(self.quaternion, [0, 0, 1])
+                self.acceleration = G + available*body_axis
             self.previous_velocity = velocity.copy()
             status = np.asarray(observation["balloon_status"]).reshape(-1)
             if self.target_index is not None and status[self.target_index] != 1:
@@ -286,6 +307,11 @@ class PhysicsGuidanceAgent(BaseAgent):
                 acceleration = np.array([0.0, 0.0, max(0.0, -velocity[2])])
                 jerk = np.zeros(3)
             requested = acceleration-G-self.disturbance
+            if self.minimum_vertical_acceleration is not None and available > 0:
+                # Energy-management mode: keep building vertical kinetic and
+                # potential energy throughout powered flight. Horizontal
+                # tracking receives only the thrust left after this support.
+                requested[2] = max(requested[2], -G[2]+self.minimum_vertical_acceleration)
             allocated = allocate_acceleration(requested, available, self.max_tilt)
             if np.linalg.norm(allocated-requested) > 0.1:
                 self.diagnostics["saturated_steps"] += 1

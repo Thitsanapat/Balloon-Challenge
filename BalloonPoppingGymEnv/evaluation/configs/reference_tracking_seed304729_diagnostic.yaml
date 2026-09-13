@@ -1,0 +1,15 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/reference_tracking_diagnostic_agent.py'
+agent_class_name: 'ReferenceTrackingDiagnosticAgent'
+agent_name: 'Public replay GNC system-identification diagnostic'
+agent_kwargs:
+  reference_path: './.codex_top17_replay.json'
+  launch_time: 36.3
+  launch_attitude: [67.33, 29.58]
+  max_axis_rate: 1.35
+  position_gain: 0.12
+  velocity_gain: 0.7
+  attitude_gain: 3.0
+  rate_gain: 10.0
+leaderboard_submission: false

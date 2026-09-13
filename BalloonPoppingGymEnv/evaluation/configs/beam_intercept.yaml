@@ -1,0 +1,14 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/beam_intercept_agent.py'
+agent_class_name: 'BeamInterceptAgent'
+agent_name: 'Continuous fly-through beam search'
+agent_kwargs:
+  launch_time: 24.0
+  replan_interval: 0.8
+  beam_width: 16
+  search_depth: 5
+  branch_targets: 10
+  time_grid: 0.5
+  leg_horizon: 10.0
+leaderboard_submission: false
