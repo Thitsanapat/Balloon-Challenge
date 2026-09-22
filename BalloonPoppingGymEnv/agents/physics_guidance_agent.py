@@ -67,14 +67,41 @@ def allocate_acceleration(requested, available, max_tilt):
     return command
 
 
+def compensated_actuator_command(desired, previous_output, time_constant, rate_limit,
+                                 timestep, lower, upper):
+    """Invert the published first-order lag while tracking the actuator output."""
+    desired = float(np.clip(desired, lower, upper))
+    previous_output = float(previous_output)
+    max_change = float(rate_limit) * float(timestep)
+    desired_output = previous_output + np.clip(
+        desired - previous_output, -max_change, max_change
+    )
+    alpha = (
+        1.0
+        if time_constant is None or float(time_constant) == 0
+        else float(timestep) / (float(time_constant) + float(timestep))
+    )
+    command = (
+        desired_output - (1.0 - alpha) * previous_output
+    ) / alpha
+    command = float(np.clip(command, lower, upper))
+    filtered = alpha * command + (1.0 - alpha) * previous_output
+    output = previous_output + np.clip(
+        filtered - previous_output, -max_change, max_change
+    )
+    return command, float(np.clip(output, lower, upper))
+
+
 class PhysicsGuidanceAgent(BaseAgent):
     """Replan smooth intercepts; infer all feedback from permitted sensors."""
 
     def __init__(self, given_parameters, launch_time=4.0, replan_interval=0.4,
-                 max_tilt=55.0, max_axis_rate=0.7, attitude_frequency=4.0,
-                 tracking_frequency=1.0, horizon=12.0, arrival_speed=0.0,
+                 max_tilt=55.0, max_axis_rate=0.7, attitude_frequency=None,
+                 tracking_frequency=None, horizon=12.0, arrival_speed=0.0,
                  lookahead_velocity=False, minimum_vertical_acceleration=None,
-                 direct_rate_gain=None, force_full_throttle=False):
+                 direct_rate_gain=None, force_full_throttle=False,
+                 position_filter_tau=None, velocity_filter_tau=None,
+                 gyro_filter_tau=None):
         super().__init__(given_parameters)
         self.dt = float(given_parameters["simulation"]["time_step"])
         self.elevation = float(given_parameters["environment"]["elevation"])
@@ -101,8 +128,15 @@ class PhysicsGuidanceAgent(BaseAgent):
         self.replan_interval = float(replan_interval)
         self.max_tilt = np.radians(max_tilt)
         self.max_axis_rate = float(max_axis_rate)
-        self.attitude_frequency = float(attitude_frequency)
-        self.tracking_frequency = float(tracking_frequency)
+        actuator_lag = self.control["gimbal_time_constant"] not in (None, 0)
+        self.attitude_frequency = float(
+            3.0 if attitude_frequency is None and actuator_lag
+            else 4.0 if attitude_frequency is None else attitude_frequency
+        )
+        self.tracking_frequency = float(
+            1.3 if tracking_frequency is None and actuator_lag
+            else 1.0 if tracking_frequency is None else tracking_frequency
+        )
         self.horizon = float(horizon)
         self.arrival_speed = float(arrival_speed)
         self.lookahead_velocity = bool(lookahead_velocity)
@@ -111,14 +145,46 @@ class PhysicsGuidanceAgent(BaseAgent):
         self.direct_rate_gain = (None if direct_rate_gain is None
                                  else float(direct_rate_gain))
         self.force_full_throttle = bool(force_full_throttle)
+        sensors = rocket["sensors"]
+        noisy_position = max(
+            float(sensors["gnss_position_accuracy"]),
+            float(sensors["gnss_altitude_accuracy"]),
+        ) > 0
+        noisy_velocity = float(sensors["gnss_velocity_accuracy"]) > 0
+        noisy_gyro = (
+            float(sensors["gyro_noise_density"]) > 0
+            or float(sensors["gyro_random_walk_density"]) > 0
+        )
+        self.position_filter_tau = float(
+            0.5 if position_filter_tau is None and noisy_position
+            else 0.0 if position_filter_tau is None else position_filter_tau
+        )
+        self.velocity_filter_tau = float(
+            0.04 if velocity_filter_tau is None and noisy_velocity
+            else 0.0 if velocity_filter_tau is None else velocity_filter_tau
+        )
+        self.gyro_filter_tau = float(
+            0.02 if gyro_filter_tau is None and noisy_gyro
+            else 0.0 if gyro_filter_tau is None else gyro_filter_tau
+        )
+        if min(
+            self.position_filter_tau,
+            self.velocity_filter_tau,
+            self.gyro_filter_tau,
+        ) < 0:
+            raise ValueError("Sensor filter time constants cannot be negative")
         self.launched = False
         self.launch_attitude = np.array([90.0, 0.0])
         self.quaternion = np.asarray(get_initial_attitude(90.0, 0.0))
         self.previous_gyro = np.zeros(3)
+        self.filtered_gyro = None
+        self.filtered_position = None
+        self.filtered_velocity = None
         self.previous_velocity = None
         self.acceleration = np.zeros(3)
         self.disturbance = np.zeros(3)
         self.previous_tvc = np.zeros(2)
+        self.previous_roll = 0.0
         self.previous_throttle = 1.0
         self.target_index = None
         self.target_events = []
@@ -129,7 +195,54 @@ class PhysicsGuidanceAgent(BaseAgent):
         self.last_desired_axis = np.array([0.0, 0.0, 1.0])
         self.failed_until = {}
         self.diagnostics = {"plans": 0, "no_feasible_plan": 0, "saturated_steps": 0,
-                            "position_error_sum": 0.0, "tracking_steps": 0}
+                            "position_error_sum": 0.0, "tracking_steps": 0,
+                            "position_innovation_sum": 0.0,
+                            "navigation_updates": 0}
+
+    def _filter_sensors(self, gyro, position, velocity):
+        """Filter only observations, using known launch position for initialization."""
+        gyro = np.asarray(gyro, dtype=float)
+        position = np.asarray(position, dtype=float)
+        velocity = np.asarray(velocity, dtype=float)
+        gyro_gain = (
+            1.0 if self.gyro_filter_tau == 0
+            else -np.expm1(-self.dt / self.gyro_filter_tau)
+        )
+        position_gain = (
+            1.0 if self.position_filter_tau == 0
+            else -np.expm1(-self.dt / self.position_filter_tau)
+        )
+        velocity_gain = (
+            1.0 if self.velocity_filter_tau == 0
+            else -np.expm1(-self.dt / self.velocity_filter_tau)
+        )
+        if self.filtered_gyro is None:
+            self.filtered_gyro = gyro.copy() if gyro_gain == 1 else np.zeros(3)
+        else:
+            self.filtered_gyro += gyro_gain * (gyro - self.filtered_gyro)
+        if self.filtered_position is None:
+            self.filtered_position = (
+                position.copy()
+                if position_gain == 1
+                else np.array([0.0, 0.0, self.elevation])
+            )
+            self.filtered_velocity = velocity.copy()
+        else:
+            predicted_position = self.filtered_position + self.filtered_velocity * self.dt
+            innovation = position - predicted_position
+            self.diagnostics["position_innovation_sum"] += float(
+                np.linalg.norm(innovation)
+            )
+            self.diagnostics["navigation_updates"] += 1
+            self.filtered_position = predicted_position + position_gain * innovation
+            self.filtered_velocity += velocity_gain * (
+                velocity - self.filtered_velocity
+            )
+        return (
+            self.filtered_gyro.copy(),
+            self.filtered_position.copy(),
+            self.filtered_velocity.copy(),
+        )
 
     def available_acceleration(self, now):
         elapsed = max(0.0, now - self.launch_time)
@@ -241,18 +354,55 @@ class PhysicsGuidanceAgent(BaseAgent):
                 self.max_axis_rate,
             )
             tvc = self.direct_rate_gain*(desired_rate-gyro[:2])
-        tvc = np.clip(tvc, -self.control["max_gimbal_angle"], self.control["max_gimbal_angle"])
-        change = self.control["gimbal_rate_limit"]*self.dt
-        tvc = self.previous_tvc + np.clip(tvc-self.previous_tvc, -change, change)
+        tvc = np.clip(
+            tvc,
+            -self.control["max_gimbal_angle"],
+            self.control["max_gimbal_angle"],
+        )
+        tvc_commands = np.zeros(2)
+        tvc_outputs = np.zeros(2)
+        for index in range(2):
+            tvc_commands[index], tvc_outputs[index] = compensated_actuator_command(
+                tvc[index],
+                self.previous_tvc[index],
+                self.control["gimbal_time_constant"],
+                self.control["gimbal_rate_limit"],
+                self.dt,
+                -self.control["max_gimbal_angle"],
+                self.control["max_gimbal_angle"],
+            )
         # Magnitude allocation is based on the feasible reference force.
-        throttle = 1.0 if self.force_full_throttle else magnitude/max(available, 1e-9)
-        throttle = np.clip(throttle, *self.control["throttle_range"])
-        change = self.control["throttle_rate_limit"]*self.dt
-        throttle = self.previous_throttle + np.clip(throttle-self.previous_throttle, -change, change)
-        roll = float(np.clip(-2*wn*self.inertia[2]*gyro[2], -self.control["max_roll_torque"], self.control["max_roll_torque"]))
-        self.previous_tvc = tvc.copy()
-        self.previous_throttle = float(throttle)
-        return tvc, roll, float(throttle)
+        desired_throttle = (
+            1.0 if self.force_full_throttle else magnitude / max(available, 1e-9)
+        )
+        throttle, throttle_output = compensated_actuator_command(
+            desired_throttle,
+            self.previous_throttle,
+            self.control["throttle_time_constant"],
+            self.control["throttle_rate_limit"],
+            self.dt,
+            *self.control["throttle_range"],
+        )
+        desired_roll = float(
+            np.clip(
+                -2 * wn * self.inertia[2] * gyro[2],
+                -self.control["max_roll_torque"],
+                self.control["max_roll_torque"],
+            )
+        )
+        roll, roll_output = compensated_actuator_command(
+            desired_roll,
+            self.previous_roll,
+            self.control["roll_torque_time_constant"],
+            self.control["torque_rate_limit"],
+            self.dt,
+            -self.control["max_roll_torque"],
+            self.control["max_roll_torque"],
+        )
+        self.previous_tvc = tvc_outputs
+        self.previous_roll = roll_output
+        self.previous_throttle = throttle_output
+        return tvc_commands, roll, throttle
 
     def get_action(self, observation):
         now = float(observation["simulation_time"])
@@ -262,7 +412,9 @@ class PhysicsGuidanceAgent(BaseAgent):
         sensors = np.asarray(observation["rocket_sensors"], dtype=float)
         tvc, roll, throttle = np.zeros(2), 0.0, 1.0
         if self.launched and np.all(np.isfinite(sensors)):
-            gyro = sensors[:3]
+            gyro, position, velocity = self._filter_sensors(
+                sensors[:3], sensors[6:9], sensors[9:12]
+            )
             increment = (gyro+self.previous_gyro)*self.dt/2
             angle = np.linalg.norm(increment)
             if angle > 1e-12:
@@ -270,7 +422,6 @@ class PhysicsGuidanceAgent(BaseAgent):
                 self.quaternion = _multiply_quaternions(self.quaternion, dq)
                 self.quaternion /= np.linalg.norm(self.quaternion)
             self.previous_gyro = gyro.copy()
-            position, velocity = sensors[6:9], sensors[9:12]
             available = self.available_acceleration(now)
             if self.previous_velocity is not None:
                 measured = (velocity-self.previous_velocity)/self.dt

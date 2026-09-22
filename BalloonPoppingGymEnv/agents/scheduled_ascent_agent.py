@@ -9,7 +9,7 @@ supplied, which is intentionally seed-specific for the leaderboard round.
 import numpy as np
 
 from BalloonPoppingGymEnv.agents.physics_guidance_agent import (
-    G, PhysicsGuidanceAgent, quintic_intercept,
+    G, PhysicsGuidanceAgent,
 )
 from BalloonPoppingGymEnv.agents.multi_target_agent import (
     _rotate_body_to_world, _rotate_world_to_body,
@@ -26,7 +26,8 @@ class ScheduledAscentAgent(PhysicsGuidanceAgent):
                  missed_grace=.8, braking_fraction=0., endpoint_velocities=None,
                  guidance_mode='chain', aggressive_rate_control=False,
                  attitude_gain=2.8, rate_gain=10.0, force_full_throttle=False,
-                 launch_attitude_override=None,
+                 launch_attitude_override=None, schedule_delay=0.0,
+                 waypoint_offset=(0.0, 0.0, 0.0),
                  **kwargs):
         super().__init__(given_parameters, **kwargs)
         self.sequence = [int(index) for index in target_sequence]
@@ -59,7 +60,10 @@ class ScheduledAscentAgent(PhysicsGuidanceAgent):
                                          np.asarray(launch_attitude_override, dtype=float))
         if self.launch_attitude_override is not None and self.launch_attitude_override.shape != (2,):
             raise ValueError('launch_attitude_override must be [inclination, heading]')
-        self.schedule_delay = 0.0
+        self.schedule_delay = float(schedule_delay)
+        self.waypoint_offset = np.asarray(waypoint_offset, dtype=float)
+        if self.waypoint_offset.shape != (3,):
+            raise ValueError('waypoint_offset must be an xyz vector')
         self.launch_initialized = False
         self.diagnostics.update(schedule_plans=0, schedule_skips=0)
 
@@ -154,6 +158,7 @@ class ScheduledAscentAgent(PhysicsGuidanceAgent):
         arrivals = effective_deadlines[schedule_indices]
         waypoints = np.asarray([self._waypoint(states, status, int(k), now, arrival, shared)
                                 for k,arrival in zip(schedule_indices,arrivals)])
+        waypoints += self.waypoint_offset
         durations = np.diff(np.r_[now, arrivals])
         if self.guidance_mode == 'zem':
             duration = durations[0]
@@ -199,7 +204,8 @@ class ScheduledAscentAgent(PhysicsGuidanceAgent):
             states = np.asarray(observation['balloon_states'], dtype=float)
             status = np.asarray(observation['balloon_status']).reshape(-1)
             shared = self._shared_drift(states, status)
-            target = self._waypoint(states, status, 0, now, self.deadlines[0], shared)
+            target = (self._waypoint(states, status, 0, now, self.deadlines[0], shared)
+                      + self.waypoint_offset)
             duration = max(self.deadlines[0]-now, .5)
             acceleration = 2.*(target-np.array([0., 0., self.elevation]))/duration**2
             axis = acceleration-G

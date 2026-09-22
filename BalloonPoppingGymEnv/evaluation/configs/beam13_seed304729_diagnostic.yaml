@@ -1,0 +1,23 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/scheduled_ascent_agent.py'
+agent_class_name: 'ScheduledAscentAgent'
+agent_name: 'Beam-13 observation-tracked schedule seed 304729 diagnostic'
+agent_kwargs:
+  launch_time: 36.3
+  replan_interval: 0.05
+  tracking_frequency: 1.3
+  minimum_vertical_acceleration: 0.6
+  max_axis_rate: 1.35
+  aggressive_rate_control: true
+  attitude_gain: 2.8
+  rate_gain: 10.0
+  force_full_throttle: true
+  route_horizon: 5
+  missed_grace: 0.35
+  braking_fraction: 0.0
+  guidance_mode: chain
+  target_sequence: [85, 45, 73, 18, 89, 42, 4, 25, 6, 23, 75, 62, 16]
+  target_times: [38.55, 42.30, 45.45, 48.40, 50.85, 53.10, 55.95, 58.90, 59.85, 61.10, 62.25, 63.90, 66.25]
+  release_times: [38.5, 37.0, 30.5, 22.0, 13.0, 7.5, 8.0, 10.5, 11.5, 19.0, 24.5, 32.0, 49.5]
+leaderboard_submission: false

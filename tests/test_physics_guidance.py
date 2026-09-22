@@ -4,7 +4,15 @@ import numpy as np
 import unittest
 
 from BalloonPoppingGymEnv.agents.physics_guidance_agent import (
-    G, PhysicsGuidanceAgent, allocate_acceleration, quintic_intercept, sample_curve,
+    G,
+    PhysicsGuidanceAgent,
+    allocate_acceleration,
+    compensated_actuator_command,
+    quintic_intercept,
+    sample_curve,
+)
+from BalloonPoppingGymEnv.agents.energy_opportunity_agent import (
+    constant_acceleration_intercept,
 )
 from BalloonPoppingGymEnv.evaluation.evaluate import load_scenario_parameters
 
@@ -75,6 +83,84 @@ def test_tvc_and_throttle_rate_limits_apply_to_successive_actions():
         assert abs(throttle-previous_throttle) <= agent.control["throttle_rate_limit"]*agent.dt+1e-12
         assert np.all(np.isfinite(tvc)) and np.isfinite(roll)
         previous_tvc, previous_throttle = tvc, throttle
+
+
+def test_actuator_compensation_reaches_rate_limited_output_with_published_lag():
+    command, output = compensated_actuator_command(
+        desired=5.0,
+        previous_output=0.0,
+        time_constant=0.064,
+        rate_limit=60.0,
+        timestep=0.01,
+        lower=-15.0,
+        upper=15.0,
+    )
+    alpha = 0.01 / (0.064 + 0.01)
+    assert command > output
+    assert np.isclose(output, 0.6)
+    assert np.isclose(alpha * command, output)
+
+
+def test_controller_defaults_adapt_only_when_actuator_lag_is_published():
+    _, no_lag = load_scenario_parameters(2)
+    no_lag_agent = PhysicsGuidanceAgent(no_lag)
+    assert no_lag_agent.attitude_frequency == 4.0
+    assert no_lag_agent.tracking_frequency == 1.0
+
+    _, lagged = load_scenario_parameters(3)
+    lagged_agent = PhysicsGuidanceAgent(lagged)
+    assert lagged_agent.attitude_frequency == 3.0
+    assert lagged_agent.tracking_frequency == 1.3
+
+    explicit_agent = PhysicsGuidanceAgent(
+        lagged, attitude_frequency=4.5, tracking_frequency=0.8
+    )
+    assert explicit_agent.attitude_frequency == 4.5
+    assert explicit_agent.tracking_frequency == 0.8
+
+
+def test_constant_acceleration_intercept_preserves_flythrough_velocity():
+    position = np.array([1.0, -2.0, 20.0])
+    velocity = np.array([3.0, 1.0, 4.0])
+    target = np.array([12.0, 5.0, 42.0])
+    duration = 2.5
+    curve = constant_acceleration_intercept(
+        position, velocity, target, duration
+    )
+    sampled_position, sampled_velocity, sampled_acceleration, jerk = sample_curve(
+        curve, duration, [0.0, duration]
+    )
+    np.testing.assert_allclose(sampled_position, [position, target])
+    np.testing.assert_allclose(sampled_velocity[0], velocity)
+    np.testing.assert_allclose(
+        sampled_velocity[1], velocity + sampled_acceleration[0] * duration
+    )
+    np.testing.assert_allclose(jerk, 0.0)
+
+
+def test_sensor_filter_is_passthrough_without_noise_and_smooths_noisy_position():
+    _, clean = load_scenario_parameters(1)
+    clean_agent = PhysicsGuidanceAgent(clean)
+    measured = np.array([2.0, -3.0, 24.0])
+    gyro, position, velocity = clean_agent._filter_sensors(
+        [0.1, -0.2, 0.3], measured, [1.0, 2.0, 3.0]
+    )
+    np.testing.assert_array_equal(gyro, [0.1, -0.2, 0.3])
+    np.testing.assert_array_equal(position, measured)
+    np.testing.assert_array_equal(velocity, [1.0, 2.0, 3.0])
+
+    _, noisy = load_scenario_parameters(2)
+    noisy_agent = PhysicsGuidanceAgent(noisy)
+    _, initial_position, _ = noisy_agent._filter_sensors(
+        [0.1, -0.2, 0.3], measured, [1.0, 2.0, 3.0]
+    )
+    np.testing.assert_array_equal(initial_position, [0.0, 0.0, 20.0])
+    _, filtered_position, _ = noisy_agent._filter_sensors(
+        [0.1, -0.2, 0.3], measured, [1.0, 2.0, 3.0]
+    )
+    assert np.linalg.norm(filtered_position - initial_position) < np.linalg.norm(
+        measured - initial_position
+    )
 
 
 def load_tests(loader, tests, pattern):

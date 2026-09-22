@@ -1,0 +1,13 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/submission_sqp_v2.py'
+agent_class_name: 'SubmissionAgent'
+agent_name: 'Observation-only SQP v2'
+agent_kwargs:
+  launch_time: 24.0
+  replan_interval: 0.8
+  first_candidates: 8
+  next_candidates: 3
+  second_horizon: 8.0
+  duration_step: 1.0
+leaderboard_submission: false

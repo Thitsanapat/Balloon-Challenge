@@ -58,12 +58,20 @@ def evaluate(config, seed):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("config", type=Path)
+    parser.add_argument(
+        "--scenario",
+        type=int,
+        choices=(0, 1, 2, 3),
+        help="Override the config's scenario number for cross-scenario validation",
+    )
     parser.add_argument("--seeds", type=int, nargs="+", default=[0])
     parser.add_argument("--set", action="append", default=[], metavar="KEY=VALUE",
                         help="Override an agent argument, recorded in the report")
     parser.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()
     config = yaml.safe_load(args.config.read_text(encoding="utf-8-sig"))
+    if args.scenario is not None:
+        config["scenario_number"] = args.scenario
     for assignment in args.set:
         key, value = assignment.split("=", 1)
         config.setdefault("agent_kwargs", {})[key] = yaml.safe_load(value)

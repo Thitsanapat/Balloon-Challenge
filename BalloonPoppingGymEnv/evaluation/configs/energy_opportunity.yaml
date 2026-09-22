@@ -1,0 +1,15 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/energy_opportunity_agent.py'
+agent_class_name: 'EnergyOpportunityAgent'
+agent_name: 'Observation-only energy-preserving opportunity guidance'
+agent_kwargs:
+  launch_time: 36.3
+  replan_interval: 0.2
+  minimum_duration: 0.8
+  maximum_duration: 6.0
+  duration_step: 0.2
+  minimum_climb_acceleration: 0.25
+  momentum_weight: 0.08
+leaderboard_submission: false
+

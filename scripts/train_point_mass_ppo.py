@@ -24,7 +24,11 @@ def expert_dataset(field, replay, model=None):
     env = PointMassBalloonEnv(field)
     observation, _ = env.reset()
     observations, actions = [], []
-    while env.step_index < env.burnout_step:
+    terminated = False
+    truncated = False
+    while not (terminated or truncated):
+        if env.step_index >= env.burnout_step:
+            break
         next_step = min(env.step_index + env.action_repeat, env.end_step)
         replay_index = int(np.argmin(np.abs(times - next_step * env.field_dt)))
         target = positions[replay_index]
@@ -49,8 +53,6 @@ def expert_dataset(field, replay, model=None):
         if model is not None:
             executed, _ = model.predict(observation, deterministic=True)
         observation, _, terminated, truncated, _ = env.step(executed)
-        if terminated or truncated:
-            break
     return np.asarray(observations), np.asarray(actions)
 
 
@@ -71,7 +73,7 @@ def behavior_clone(model, observations, actions, epochs):
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
-            running += float(loss) * len(index)
+            running += float(loss.detach().cpu()) * len(index)
         if epoch in {0, int(epochs) - 1} or (epoch + 1) % 100 == 0:
             print(f"bc epoch={epoch + 1} mse={running / len(obs):.6f}")
 
@@ -113,6 +115,10 @@ def main():
     parser.add_argument("--load", type=Path)
     parser.add_argument("--log-std", type=float)
     parser.add_argument("--zero-policy", action="store_true")
+    parser.add_argument(
+        "--device", default="auto",
+        help="Stable-Baselines3 device (auto, cpu, cuda, or cuda:N)",
+    )
     args = parser.parse_args()
     def make_training_env():
         training_env = PointMassBalloonEnv(
@@ -131,12 +137,12 @@ def main():
         vec_env_cls=SubprocVecEnv if args.subprocess else None,
     )
     if args.load is not None:
-        model = PPO.load(args.load, env=env, device="cpu")
+        model = PPO.load(args.load, env=env, device=args.device)
     else:
         model = PPO(
             "MlpPolicy", env, learning_rate=1e-4, n_steps=1024,
             batch_size=512, n_epochs=10, gamma=.995, gae_lambda=.95,
-            ent_coef=.01, verbose=1, device="cpu",
+            ent_coef=.01, verbose=1, device=args.device,
             policy_kwargs={"net_arch": [256, 256]},
         )
     if args.log_std is not None:
