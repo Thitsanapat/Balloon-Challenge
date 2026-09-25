@@ -1,0 +1,96 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 0,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/momentum_beam_agent.py",
+      "agent_class_name": "MomentumBeamAgent",
+      "agent_name": "Observation momentum beam",
+      "agent_kwargs": {
+        "launch_time": 36,
+        "replan_interval": 0.4,
+        "beam_width": 96,
+        "search_depth": 12,
+        "branch_targets": 24,
+        "time_grid": 0.5,
+        "arrival_model": "natural",
+        "max_axis_rate": 1.35,
+        "attitude_frequency": 6,
+        "first_quota": 8,
+        "commitment": false,
+        "capture_fraction": 0
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "2da07c35d7fe95327594d5c645f9a16e732a79c638a0da21433813b88a6283ca",
+    "score": 5,
+    "final_time": 74.26,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 116.45500466413796,
+    "pop_events": [
+      [
+        34,
+        44.45
+      ],
+      [
+        33,
+        50.38
+      ],
+      [
+        21,
+        53.82
+      ],
+      [
+        88,
+        60.46
+      ],
+      [
+        2,
+        64.44
+      ]
+    ],
+    "target_events": [
+      [
+        36.02,
+        34
+      ],
+      [
+        44.42,
+        33
+      ],
+      [
+        50.38,
+        21
+      ],
+      [
+        53.82,
+        74
+      ],
+      [
+        56.620000000000005,
+        88
+      ],
+      [
+        60.46,
+        2
+      ]
+    ],
+    "diagnostics": {
+      "plans": 51,
+      "no_feasible_plan": 26,
+      "saturated_steps": 1178,
+      "position_error_sum": 866.7888469725558,
+      "tracking_steps": 2842,
+      "position_innovation_sum": 1.830666979748254,
+      "navigation_updates": 3823,
+      "beam_searches": 32,
+      "beam_candidates": 1832880,
+      "beam_feasible": 119415,
+      "maximum_depth": 6
+    }
+  }
+]

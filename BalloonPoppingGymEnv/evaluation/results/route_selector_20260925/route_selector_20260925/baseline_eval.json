@@ -1,0 +1,25 @@
+{
+  "model": "None",
+  "kind": "baseline",
+  "scores": [
+    {
+      "episode": 0,
+      "score": 5,
+      "truncated": false,
+      "simulation_time": 40.36
+    },
+    {
+      "episode": 1,
+      "score": 6,
+      "truncated": false,
+      "simulation_time": 40.13
+    },
+    {
+      "episode": 2,
+      "score": 5,
+      "truncated": false,
+      "simulation_time": 40.06
+    }
+  ],
+  "mean_score": 5.333333333333333
+}

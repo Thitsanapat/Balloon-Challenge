@@ -1,0 +1,7 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/residual_ppo_agent.py'
+agent_class_name: 'ResidualPolicyAgent'
+agent_name: 'Zero residual parity control for official PPO'
+agent_kwargs: {}
+leaderboard_submission: false

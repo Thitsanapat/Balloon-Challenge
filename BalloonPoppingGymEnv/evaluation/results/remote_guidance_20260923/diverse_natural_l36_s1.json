@@ -1,0 +1,100 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 1,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/momentum_beam_agent.py",
+      "agent_class_name": "MomentumBeamAgent",
+      "agent_name": "Observation momentum beam",
+      "agent_kwargs": {
+        "launch_time": 36,
+        "replan_interval": 0.4,
+        "beam_width": 96,
+        "search_depth": 12,
+        "branch_targets": 24,
+        "time_grid": 0.5,
+        "arrival_model": "natural",
+        "max_axis_rate": 1.35,
+        "attitude_frequency": 6,
+        "first_quota": 8,
+        "commitment": false,
+        "capture_fraction": 0
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "2da07c35d7fe95327594d5c645f9a16e732a79c638a0da21433813b88a6283ca",
+    "score": 5,
+    "final_time": 69.94,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 119.72286832984537,
+    "pop_events": [
+      [
+        37,
+        44.93
+      ],
+      [
+        70,
+        50.370000000000005
+      ],
+      [
+        51,
+        53.81
+      ],
+      [
+        91,
+        58.11
+      ],
+      [
+        8,
+        62.07
+      ]
+    ],
+    "target_events": [
+      [
+        36.02,
+        37
+      ],
+      [
+        44.93,
+        70
+      ],
+      [
+        50.370000000000005,
+        51
+      ],
+      [
+        53.81,
+        43
+      ],
+      [
+        54.21,
+        91
+      ],
+      [
+        58.11,
+        8
+      ],
+      [
+        62.07,
+        19
+      ]
+    ],
+    "diagnostics": {
+      "plans": 54,
+      "no_feasible_plan": 12,
+      "saturated_steps": 760,
+      "position_error_sum": 1846.979243654374,
+      "tracking_steps": 2927,
+      "position_innovation_sum": 1.2825916299892008,
+      "navigation_updates": 3391,
+      "beam_searches": 19,
+      "beam_candidates": 1943880,
+      "beam_feasible": 108806,
+      "maximum_depth": 7
+    }
+  }
+]

@@ -1,0 +1,94 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 0,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/powered_ascent_agent.py",
+      "agent_class_name": "PoweredAscentAgent",
+      "agent_name": "Online powered ascent shooting",
+      "agent_kwargs": {
+        "launch_time": 36,
+        "replan_interval": 0.4,
+        "beam_width": 24,
+        "search_depth": 10,
+        "branch_targets": 30,
+        "time_grid": 0.5,
+        "max_axis_rate": 1.0,
+        "commitment": false,
+        "power_options": [
+          0.97,
+          0.85,
+          0.75
+        ],
+        "minimum_climb": -4
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "a5ffbec3324e803d0cb649421bd91f8039261d2a070dd7e13f2206ea7137c547",
+    "score": 5,
+    "final_time": 78.18,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 86.48905093129724,
+    "pop_events": [
+      [
+        34,
+        45.33
+      ],
+      [
+        77,
+        49.96
+      ],
+      [
+        97,
+        53.29
+      ],
+      [
+        23,
+        57.35
+      ],
+      [
+        41,
+        60.86
+      ]
+    ],
+    "target_events": [
+      [
+        36.02,
+        34
+      ],
+      [
+        45.33,
+        77
+      ],
+      [
+        49.96,
+        97
+      ],
+      [
+        53.29,
+        23
+      ],
+      [
+        57.35,
+        41
+      ]
+    ],
+    "diagnostics": {
+      "plans": 54,
+      "no_feasible_plan": 22,
+      "saturated_steps": 1365,
+      "position_error_sum": 5240.020474707383,
+      "tracking_steps": 4216,
+      "position_innovation_sum": 1.9525645532437905,
+      "navigation_updates": 4215,
+      "beam_searches": 48,
+      "beam_candidates": 117810,
+      "beam_feasible": 498,
+      "maximum_depth": 5
+    }
+  }
+]

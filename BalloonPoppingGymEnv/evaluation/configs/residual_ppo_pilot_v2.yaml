@@ -1,0 +1,7 @@
+scenario_number: 1
+agent_name: Official residual PPO pilot v2 (not promoted)
+render_mode: null
+leaderboard_submission: false
+agent_module_path: BalloonPoppingGymEnv/agents/submission_ppo_pilot_v2.py
+agent_class_name: ExportedResidualAgent
+agent_kwargs: {}

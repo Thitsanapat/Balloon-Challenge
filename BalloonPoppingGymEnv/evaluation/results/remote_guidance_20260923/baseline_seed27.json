@@ -1,0 +1,89 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 27,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/submission_sqp_v2.py",
+      "agent_class_name": "SubmissionAgent",
+      "agent_name": "Observation-only SQP v2",
+      "agent_kwargs": {
+        "launch_time": 24.0,
+        "replan_interval": 0.8,
+        "first_candidates": 8,
+        "next_candidates": 3,
+        "second_horizon": 8.0,
+        "duration_step": 1.0,
+        "capture_fraction": 0
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "7c9049f49b672df9f22294cec1d51f9eab5b2891de6ab8903fdfc9c4cab5a1bc",
+    "score": 5,
+    "final_time": 62.36,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 80.72408762387931,
+    "pop_events": [
+      [
+        79,
+        31.04
+      ],
+      [
+        16,
+        35.43
+      ],
+      [
+        33,
+        39.07
+      ],
+      [
+        60,
+        43.480000000000004
+      ],
+      [
+        12,
+        47.85
+      ]
+    ],
+    "target_events": [
+      [
+        24.02,
+        79
+      ],
+      [
+        31.04,
+        16
+      ],
+      [
+        35.43,
+        33
+      ],
+      [
+        39.07,
+        60
+      ],
+      [
+        43.480000000000004,
+        12
+      ]
+    ],
+    "diagnostics": {
+      "plans": 32,
+      "no_feasible_plan": 19,
+      "saturated_steps": 869,
+      "position_error_sum": 72.77179386114184,
+      "tracking_steps": 2383,
+      "position_innovation_sum": 1.3513949864212924,
+      "navigation_updates": 3833,
+      "pair_candidates": 5798,
+      "feasible_pairs": 24,
+      "pair_plans": 22,
+      "fallback_plans": 29,
+      "joint_calls": 22,
+      "joint_accepted": 22
+    }
+  }
+]

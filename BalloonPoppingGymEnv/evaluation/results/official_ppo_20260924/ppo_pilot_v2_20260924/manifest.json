@@ -1,0 +1,40 @@
+{
+  "settings": {
+    "output": "../ppo_pilot_v2_20260924",
+    "steps": 2048,
+    "envs": 4,
+    "device": "cuda",
+    "hours": 0.5,
+    "checkpoint_every": 512,
+    "n_steps": 128,
+    "batch_size": 128,
+    "epochs": 5,
+    "seed": 240926,
+    "resume": null
+  },
+  "source_sha256": {
+    "scripts/train_official_residual_ppo.py": "be9e06ee71a0516735ccc9e92dee62639cd2d530c7c1fa98fb88b09a8f2f8b25",
+    "BalloonPoppingGymEnv/training/official_residual_env.py": "8f6898763dec105a5e41831f81f557dbb8360873c61cbd0f0e8167b2ecccfbd3",
+    "BalloonPoppingGymEnv/agents/residual_ppo_agent.py": "a2e4bf5f9e3576e0108223709e8d07716176381474ee5d6043c590f6e39a0f39",
+    "BalloonPoppingGymEnv/agents/submission_time_allocation_v1.py": "92085e793fe2b44714accd5fbf825bf0477f69d4ad0d097b102254cb45d3d885"
+  },
+  "torch": "2.6.0+cu124",
+  "sb3": "2.7.0",
+  "numpy": "2.2.6",
+  "gymnasium": "1.2.3",
+  "cuda_visible_devices": "GPU-f32768cf-a4cf-c057-c466-db71f18efafa",
+  "observation": "96 finite observation/controller-history features, no seed/private state/future trajectory",
+  "action": "3 bounded residual acceleration components, 2 m/s^2 per component; held for 10 official steps",
+  "training": "fresh unmodified official Scenario 1 per episode; randomized external seed",
+  "policy": {
+    "layers": [
+      512,
+      512,
+      256
+    ],
+    "gamma": 0.995,
+    "learning_rate": 5e-05,
+    "target_kl": 0.015
+  },
+  "resume_sha256": null
+}

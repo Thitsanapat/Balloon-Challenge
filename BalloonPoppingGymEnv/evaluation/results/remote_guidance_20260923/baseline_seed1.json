@@ -1,0 +1,104 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 1,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/submission_sqp_v2.py",
+      "agent_class_name": "SubmissionAgent",
+      "agent_name": "Observation-only SQP v2",
+      "agent_kwargs": {
+        "launch_time": 24.0,
+        "replan_interval": 0.8,
+        "first_candidates": 8,
+        "next_candidates": 3,
+        "second_horizon": 8.0,
+        "duration_step": 1.0
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "26125f7ee26827e05d989aa9396f120b952d4b1c99db9edbddc0eef51f01c714",
+    "score": 7,
+    "final_time": 62.050000000000004,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 93.4708121707663,
+    "pop_events": [
+      [
+        20,
+        32.660000000000004
+      ],
+      [
+        77,
+        35.300000000000004
+      ],
+      [
+        31,
+        39.74
+      ],
+      [
+        29,
+        42.37
+      ],
+      [
+        43,
+        44.44
+      ],
+      [
+        57,
+        48.97
+      ],
+      [
+        9,
+        52.050000000000004
+      ]
+    ],
+    "target_events": [
+      [
+        24.02,
+        20
+      ],
+      [
+        32.660000000000004,
+        77
+      ],
+      [
+        35.300000000000004,
+        31
+      ],
+      [
+        39.74,
+        29
+      ],
+      [
+        42.37,
+        43
+      ],
+      [
+        44.44,
+        57
+      ],
+      [
+        48.97,
+        9
+      ]
+    ],
+    "diagnostics": {
+      "plans": 36,
+      "no_feasible_plan": 15,
+      "saturated_steps": 803,
+      "position_error_sum": 102.40898175475891,
+      "tracking_steps": 2803,
+      "position_innovation_sum": 1.076284730810092,
+      "navigation_updates": 3802,
+      "pair_candidates": 4716,
+      "feasible_pairs": 35,
+      "pair_plans": 30,
+      "fallback_plans": 21,
+      "joint_calls": 30,
+      "joint_accepted": 30
+    }
+  }
+]

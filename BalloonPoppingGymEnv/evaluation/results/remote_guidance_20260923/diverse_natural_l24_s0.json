@@ -1,0 +1,96 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 0,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/momentum_beam_agent.py",
+      "agent_class_name": "MomentumBeamAgent",
+      "agent_name": "Observation momentum beam",
+      "agent_kwargs": {
+        "launch_time": 24,
+        "replan_interval": 0.4,
+        "beam_width": 96,
+        "search_depth": 12,
+        "branch_targets": 24,
+        "time_grid": 0.5,
+        "arrival_model": "natural",
+        "max_axis_rate": 1.35,
+        "attitude_frequency": 6,
+        "first_quota": 8,
+        "commitment": false,
+        "capture_fraction": 0
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "2da07c35d7fe95327594d5c645f9a16e732a79c638a0da21433813b88a6283ca",
+    "score": 5,
+    "final_time": 63.6,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 124.91157140862197,
+    "pop_events": [
+      [
+        58,
+        30.45
+      ],
+      [
+        27,
+        32.3
+      ],
+      [
+        37,
+        37.74
+      ],
+      [
+        5,
+        46.25
+      ],
+      [
+        51,
+        50.31
+      ]
+    ],
+    "target_events": [
+      [
+        24.02,
+        58
+      ],
+      [
+        30.42,
+        27
+      ],
+      [
+        32.3,
+        37
+      ],
+      [
+        37.74,
+        94
+      ],
+      [
+        43.34,
+        5
+      ],
+      [
+        46.25,
+        51
+      ]
+    ],
+    "diagnostics": {
+      "plans": 41,
+      "no_feasible_plan": 34,
+      "saturated_steps": 1649,
+      "position_error_sum": 2111.395778961192,
+      "tracking_steps": 2623,
+      "position_innovation_sum": 1.821641846251151,
+      "navigation_updates": 3957,
+      "beam_searches": 40,
+      "beam_candidates": 2112840,
+      "beam_feasible": 126131,
+      "maximum_depth": 7
+    }
+  }
+]

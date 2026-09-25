@@ -1,0 +1,16 @@
+{
+  "status": "running",
+  "pid": 2127180,
+  "ppo_decisions": 3808,
+  "new_ppo_decisions": 1760,
+  "controlled_physics_steps": 17600,
+  "warmup_steps_included": false,
+  "wall_seconds": 192.18531859200448,
+  "decisions_per_second": 9.15782752238402,
+  "completed_episodes": 0,
+  "recent_episode_scores": [],
+  "mean_recent_score": null,
+  "stop_reason": null,
+  "source_unchanged": true,
+  "uploaded": false
+}

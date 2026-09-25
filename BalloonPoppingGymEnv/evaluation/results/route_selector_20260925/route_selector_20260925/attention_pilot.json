@@ -1,0 +1,54 @@
+{
+  "model": "../route_selector_20260925/attention_pilot.pt",
+  "history": [
+    {
+      "episode": 0,
+      "score": 5,
+      "truncated": false,
+      "steps": 89,
+      "return_value": 39.97527313232422,
+      "loss": -2.2282216548919678
+    },
+    {
+      "episode": 1,
+      "score": 5,
+      "truncated": false,
+      "steps": 95,
+      "return_value": 40.0298957824707,
+      "loss": -2.327338695526123
+    },
+    {
+      "episode": 2,
+      "score": 5,
+      "truncated": false,
+      "steps": 93,
+      "return_value": 40.64128112792969,
+      "loss": -2.372101068496704
+    },
+    {
+      "episode": 3,
+      "score": 5,
+      "truncated": false,
+      "steps": 86,
+      "return_value": 39.82548904418945,
+      "loss": -1.954480767250061
+    },
+    {
+      "episode": 4,
+      "score": 0,
+      "truncated": false,
+      "steps": 99,
+      "return_value": 0.6140130162239075,
+      "loss": -223.6166534423828
+    },
+    {
+      "episode": 5,
+      "score": 7,
+      "truncated": false,
+      "steps": 88,
+      "return_value": 55.90169143676758,
+      "loss": -0.41818201541900635
+    }
+  ],
+  "wall_seconds": 646.5303151672706
+}

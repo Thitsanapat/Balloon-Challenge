@@ -1,0 +1,25 @@
+{
+  "status": "running",
+  "pid": 2400956,
+  "ppo_decisions": 2555,
+  "new_ppo_decisions": 507,
+  "controlled_physics_steps": 5061,
+  "warmup_steps_included": false,
+  "wall_seconds": 268.16210967488587,
+  "decisions_per_second": 1.890647417022025,
+  "completed_episodes": 1,
+  "recent_episode_scores": [
+    {
+      "score": 7,
+      "truncated": false,
+      "ppo_decisions": 2405,
+      "episode_wall_seconds": 96.56622934527695,
+      "simulation_time": 59.63
+    }
+  ],
+  "truncated_episodes": 0,
+  "mean_recent_score": 7.0,
+  "stop_reason": null,
+  "source_unchanged": true,
+  "uploaded": false
+}

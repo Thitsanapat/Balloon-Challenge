@@ -1,0 +1,14 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/chain_beam_agent.py'
+agent_class_name: 'ChainBeamAgent'
+agent_name: 'Joint derivative route beam'
+agent_kwargs:
+  launch_time: 24.0
+  replan_interval: 0.4
+  beam_width: 12
+  search_depth: 10
+  branch_targets: 8
+  time_grid: 1.0
+  capture_fraction: 0.0
+leaderboard_submission: false

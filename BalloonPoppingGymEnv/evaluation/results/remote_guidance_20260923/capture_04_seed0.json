@@ -1,0 +1,105 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 0,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/submission_sqp_v2.py",
+      "agent_class_name": "SubmissionAgent",
+      "agent_name": "Observation-only SQP v2",
+      "agent_kwargs": {
+        "launch_time": 24.0,
+        "replan_interval": 0.8,
+        "first_candidates": 8,
+        "next_candidates": 3,
+        "second_horizon": 8.0,
+        "duration_step": 1.0,
+        "capture_fraction": 0.4
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "7c9049f49b672df9f22294cec1d51f9eab5b2891de6ab8903fdfc9c4cab5a1bc",
+    "score": 7,
+    "final_time": 60.17,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 92.88381143193692,
+    "pop_events": [
+      [
+        58,
+        30.61
+      ],
+      [
+        27,
+        33.28
+      ],
+      [
+        37,
+        38.300000000000004
+      ],
+      [
+        93,
+        41.7
+      ],
+      [
+        80,
+        47.79
+      ],
+      [
+        8,
+        49.51
+      ],
+      [
+        56,
+        52.95
+      ]
+    ],
+    "target_events": [
+      [
+        24.02,
+        58
+      ],
+      [
+        30.61,
+        27
+      ],
+      [
+        33.28,
+        37
+      ],
+      [
+        38.300000000000004,
+        93
+      ],
+      [
+        41.7,
+        80
+      ],
+      [
+        47.79,
+        8
+      ],
+      [
+        49.51,
+        56
+      ]
+    ],
+    "diagnostics": {
+      "plans": 40,
+      "no_feasible_plan": 11,
+      "saturated_steps": 621,
+      "position_error_sum": 138.37250363862844,
+      "tracking_steps": 2893,
+      "position_innovation_sum": 1.0926307702509748,
+      "navigation_updates": 3614,
+      "pair_candidates": 5251,
+      "feasible_pairs": 34,
+      "pair_plans": 28,
+      "fallback_plans": 23,
+      "joint_calls": 28,
+      "joint_accepted": 28
+    }
+  }
+]

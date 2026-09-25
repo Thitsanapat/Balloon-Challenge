@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "pid": 1978105,
+  "ppo_decisions": 2048,
+  "new_ppo_decisions": 2048,
+  "controlled_physics_steps": 20458,
+  "warmup_steps_included": false,
+  "wall_seconds": 609.848549448885,
+  "decisions_per_second": 3.358210824393631,
+  "completed_episodes": 4,
+  "recent_episode_scores": [
+    {
+      "score": 6,
+      "truncated": false,
+      "ppo_decisions": 1276
+    },
+    {
+      "score": 8,
+      "truncated": false,
+      "ppo_decisions": 1448
+    },
+    {
+      "score": 7,
+      "truncated": false,
+      "ppo_decisions": 1460
+    },
+    {
+      "score": 8,
+      "truncated": false,
+      "ppo_decisions": 1540
+    }
+  ],
+  "mean_recent_score": 7.25,
+  "stop_reason": null,
+  "source_unchanged": true,
+  "uploaded": false
+}

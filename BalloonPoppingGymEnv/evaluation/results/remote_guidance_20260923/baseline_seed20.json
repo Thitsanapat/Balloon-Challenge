@@ -1,0 +1,101 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 20,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/submission_sqp_v2.py",
+      "agent_class_name": "SubmissionAgent",
+      "agent_name": "Observation-only SQP v2",
+      "agent_kwargs": {
+        "launch_time": 24.0,
+        "replan_interval": 0.8,
+        "first_candidates": 8,
+        "next_candidates": 3,
+        "second_horizon": 8.0,
+        "duration_step": 1.0,
+        "capture_fraction": 0
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "7c9049f49b672df9f22294cec1d51f9eab5b2891de6ab8903fdfc9c4cab5a1bc",
+    "score": 7,
+    "final_time": 59.67,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 79.90399225149304,
+    "pop_events": [
+      [
+        15,
+        31.94
+      ],
+      [
+        66,
+        34.660000000000004
+      ],
+      [
+        69,
+        35.58
+      ],
+      [
+        71,
+        38.95
+      ],
+      [
+        90,
+        42.69
+      ],
+      [
+        22,
+        45.39
+      ],
+      [
+        95,
+        52.11
+      ]
+    ],
+    "target_events": [
+      [
+        24.02,
+        15
+      ],
+      [
+        31.94,
+        66
+      ],
+      [
+        34.660000000000004,
+        71
+      ],
+      [
+        38.95,
+        90
+      ],
+      [
+        42.69,
+        22
+      ],
+      [
+        45.39,
+        95
+      ]
+    ],
+    "diagnostics": {
+      "plans": 35,
+      "no_feasible_plan": 13,
+      "saturated_steps": 610,
+      "position_error_sum": 185.38317660900753,
+      "tracking_steps": 2809,
+      "position_innovation_sum": 1.0041108467300024,
+      "navigation_updates": 3564,
+      "pair_candidates": 5046,
+      "feasible_pairs": 28,
+      "pair_plans": 24,
+      "fallback_plans": 24,
+      "joint_calls": 24,
+      "joint_accepted": 24
+    }
+  }
+]

@@ -1,0 +1,19 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/submission_chain_launch_v1.py'
+agent_class_name: 'ChainSubmissionAgent'
+agent_name: 'Observation-only chain with online launch direction v1'
+agent_kwargs:
+  launch_time: 24.0
+  launch_candidates: 3
+  replan_interval: 0.4
+  beam_width: 12
+  search_depth: 14
+  branch_targets: 8
+  time_grid: 0.5
+  terminal_weight: 0.0
+  capture_fraction: 0.0
+  max_tilt: 75.0
+  max_axis_rate: 1.2
+  attitude_frequency: 4.0
+leaderboard_submission: false

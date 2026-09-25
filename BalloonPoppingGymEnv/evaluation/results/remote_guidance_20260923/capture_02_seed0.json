@@ -1,0 +1,105 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 0,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/submission_sqp_v2.py",
+      "agent_class_name": "SubmissionAgent",
+      "agent_name": "Observation-only SQP v2",
+      "agent_kwargs": {
+        "launch_time": 24.0,
+        "replan_interval": 0.8,
+        "first_candidates": 8,
+        "next_candidates": 3,
+        "second_horizon": 8.0,
+        "duration_step": 1.0,
+        "capture_fraction": 0.2
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "7c9049f49b672df9f22294cec1d51f9eab5b2891de6ab8903fdfc9c4cab5a1bc",
+    "score": 7,
+    "final_time": 60.24,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 91.35492706019431,
+    "pop_events": [
+      [
+        58,
+        30.6
+      ],
+      [
+        27,
+        33.25
+      ],
+      [
+        37,
+        38.26
+      ],
+      [
+        93,
+        41.65
+      ],
+      [
+        80,
+        47.71
+      ],
+      [
+        8,
+        49.51
+      ],
+      [
+        56,
+        52.86
+      ]
+    ],
+    "target_events": [
+      [
+        24.02,
+        58
+      ],
+      [
+        30.6,
+        27
+      ],
+      [
+        33.25,
+        37
+      ],
+      [
+        38.26,
+        93
+      ],
+      [
+        41.65,
+        80
+      ],
+      [
+        47.71,
+        8
+      ],
+      [
+        49.51,
+        56
+      ]
+    ],
+    "diagnostics": {
+      "plans": 40,
+      "no_feasible_plan": 11,
+      "saturated_steps": 635,
+      "position_error_sum": 145.15954575645023,
+      "tracking_steps": 2884,
+      "position_innovation_sum": 0.9850384532248296,
+      "navigation_updates": 3621,
+      "pair_candidates": 5263,
+      "feasible_pairs": 34,
+      "pair_plans": 28,
+      "fallback_plans": 23,
+      "joint_calls": 28,
+      "joint_accepted": 28
+    }
+  }
+]

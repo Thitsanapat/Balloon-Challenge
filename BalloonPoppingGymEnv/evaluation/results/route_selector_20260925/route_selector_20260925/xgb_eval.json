@@ -1,0 +1,25 @@
+{
+  "model": "../route_selector_20260925/xgb_ranker.json",
+  "kind": "xgb",
+  "scores": [
+    {
+      "episode": 0,
+      "score": 4,
+      "truncated": false,
+      "simulation_time": 39.78
+    },
+    {
+      "episode": 1,
+      "score": 5,
+      "truncated": false,
+      "simulation_time": 41.71
+    },
+    {
+      "episode": 2,
+      "score": 3,
+      "truncated": false,
+      "simulation_time": 38.32
+    }
+  ],
+  "mean_score": 4.0
+}

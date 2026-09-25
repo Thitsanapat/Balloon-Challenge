@@ -7,6 +7,8 @@ BalloonPoppingGymEnv/evaluation/results/**.json
 BalloonPoppingGymEnv/evaluation/results/**.pkl
 BalloonPoppingGymEnv/evaluation/results/**.npz
 BalloonPoppingGymEnv/evaluation/results/**.zip
+BalloonPoppingGymEnv/evaluation/results/**.log
+BalloonPoppingGymEnv/evaluation/results/**.tgz
 .mplconfig/
 
 # VSCode specific

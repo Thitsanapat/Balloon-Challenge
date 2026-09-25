@@ -1,0 +1,12 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/coverage_mpc_agent.py'
+agent_class_name: 'CoverageMPCAgent'
+agent_name: 'Online trajectory coverage MPC'
+agent_kwargs:
+  launch_time: 30.0
+  replan_interval: 1.0
+  knot_interval: 2.0
+  max_axis_rate: 1.0
+  attitude_frequency: 5.0
+leaderboard_submission: false

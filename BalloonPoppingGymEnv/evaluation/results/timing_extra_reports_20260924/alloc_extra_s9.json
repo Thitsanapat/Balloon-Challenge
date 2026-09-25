@@ -1,0 +1,314 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 9,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/time_allocation_agent.py",
+      "agent_class_name": "TimeAllocationAgent",
+      "agent_name": "Online continuous arrival-time optimization and insertion",
+      "agent_kwargs": {
+        "launch_time": 24.0,
+        "launch_candidates": 3,
+        "replan_interval": 0.4,
+        "beam_width": 12,
+        "search_depth": 14,
+        "branch_targets": 8,
+        "time_grid": 0.5,
+        "terminal_weight": 0.0,
+        "capture_fraction": 0.0,
+        "max_tilt": 75.0,
+        "max_axis_rate": 1.2,
+        "attitude_frequency": 4.0
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "7babf61f7d62cb7b1044e7e7897256c902570db3c935c9d7a602da64f29ed83a",
+    "agent_file_unchanged_during_run": true,
+    "agent_source_dependencies_sha256": {
+      "BalloonPoppingGymEnv/agents/base_agent.py": "82026684625de385058076f70537d850b006128e89541ddd247718067120f697",
+      "BalloonPoppingGymEnv/agents/capture_chain_agent.py": "49935369dbcb53c62a7fc62a6315e78f17c8e7ed100e39ba1a63aa5bf06d3a48",
+      "BalloonPoppingGymEnv/agents/chain_beam_agent.py": "556c4258f4b2c8b95f39919789f5a750c027d986e8552df20a367ba19afee975",
+      "BalloonPoppingGymEnv/agents/chain_launch_agent.py": "d964cefeaa851d67adf32502ea888152fee0a764abe594b45c7a6f202c73db76",
+      "BalloonPoppingGymEnv/agents/constrained_beam_agent.py": "ac7ae0974a7a813bf4686ec1f55755299343882ce1515bc4df6e995a566cf368",
+      "BalloonPoppingGymEnv/agents/constrained_chain_agent.py": "677286a0b3e19197e16ba21f06cf5e5206cc54943e058222ed2ca0f0e4e0bb8a",
+      "BalloonPoppingGymEnv/agents/final_approach_agent.py": "c63bc782e675c131879033c5e096d94601eb7c9d2db3e50dbde73af6bb5a656b",
+      "BalloonPoppingGymEnv/agents/momentum_beam_agent.py": "2da07c35d7fe95327594d5c645f9a16e732a79c638a0da21433813b88a6283ca",
+      "BalloonPoppingGymEnv/agents/opportunistic_chain_agent.py": "759f85e288b4f1c9c2a23eb43bda82e6c53a39719e1cf22b9817db9bc7d512f5",
+      "BalloonPoppingGymEnv/agents/submission_sqp_v2.py": "73c46da2eb179c71ad4f09be65c01c6d1f2dd82965d7590abbb37c4dd8fa45c6",
+      "BalloonPoppingGymEnv/agents/time_allocation_agent.py": "7babf61f7d62cb7b1044e7e7897256c902570db3c935c9d7a602da64f29ed83a"
+    },
+    "agent_sources_unchanged_during_run": true,
+    "score": 9,
+    "final_time": 60.42,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 140.59875804558396,
+    "pop_events": [
+      [
+        84,
+        31.88
+      ],
+      [
+        88,
+        35.95
+      ],
+      [
+        65,
+        37.97
+      ],
+      [
+        71,
+        41.0
+      ],
+      [
+        12,
+        42.92
+      ],
+      [
+        28,
+        44.86
+      ],
+      [
+        46,
+        48.96
+      ],
+      [
+        72,
+        50.96
+      ],
+      [
+        97,
+        52.97
+      ]
+    ],
+    "target_events": [
+      [
+        24.02,
+        84
+      ],
+      [
+        31.88,
+        88
+      ],
+      [
+        35.95,
+        65
+      ],
+      [
+        37.97,
+        71
+      ],
+      [
+        41.0,
+        12
+      ],
+      [
+        42.92,
+        28
+      ],
+      [
+        44.86,
+        46
+      ],
+      [
+        48.96,
+        72
+      ],
+      [
+        50.96,
+        97
+      ]
+    ],
+    "diagnostics": {
+      "plans": 52,
+      "no_feasible_plan": 19,
+      "saturated_steps": 745,
+      "position_error_sum": 330.7904045731004,
+      "tracking_steps": 2895,
+      "position_innovation_sum": 1.334094363291998,
+      "navigation_updates": 3639,
+      "beam_searches": 40,
+      "beam_candidates": 15664,
+      "beam_feasible": 3522,
+      "maximum_depth": 9,
+      "final_approach_holds": 4,
+      "timing_solves": 3,
+      "timing_adopted": 0,
+      "timing_extra_planned_hits": 0
+    },
+    "maximum_observed_altitude": 311.0214386493442,
+    "closest_observed_distances": [
+      90.89609490684721,
+      55.29334199871233,
+      117.10404237282299,
+      226.3699786774698,
+      166.80577169868303,
+      208.48492597141006,
+      112.6038770081011,
+      46.95289952481594,
+      38.67425463875398,
+      96.2538120856065,
+      45.23030130596081,
+      97.40068244662721,
+      1.7380783714061665,
+      46.578622305095514,
+      68.63870247119647,
+      25.540786697173626,
+      79.16711293978908,
+      60.80158952158069,
+      116.71934313548232,
+      44.03255371582619,
+      31.486356120057234,
+      38.60432093415701,
+      118.62375297200808,
+      122.87645715651745,
+      70.90426607679004,
+      96.77772298754294,
+      63.471972586300744,
+      142.95836655370562,
+      1.5631089664231195,
+      83.24598803989892,
+      13.918511408572275,
+      15.573339117866647,
+      188.025557997583,
+      81.79829027701369,
+      72.53619739767666,
+      174.6753782826898,
+      149.0654130046807,
+      189.0407372805293,
+      183.12668658953842,
+      199.96901129406075,
+      93.66958623926224,
+      38.8057715513144,
+      63.621081342769344,
+      146.4775411384044,
+      166.82134599945144,
+      46.90285742807286,
+      1.5698254471019304,
+      83.8089111650021,
+      74.13181182813494,
+      178.0634446604411,
+      135.16336641766844,
+      42.22004418157089,
+      8.291595384500065,
+      82.55349393411741,
+      63.330940387393305,
+      100.44879314466921,
+      108.95642241010864,
+      86.59571471170564,
+      111.44683371767968,
+      165.32674905248646,
+      62.848014860891226,
+      57.9862156849785,
+      183.4810002655379,
+      66.72932044188221,
+      214.41449977828472,
+      1.797104930426958,
+      40.98433734432327,
+      101.58866344184207,
+      82.68340758541173,
+      120.18245976013895,
+      38.76326940542907,
+      1.6335475357908904,
+      1.772405679955762,
+      158.3334749024444,
+      29.99748140362316,
+      85.97899121245642,
+      21.912073545696618,
+      117.58267742900097,
+      110.23765476592362,
+      208.44350307518351,
+      207.50384159735583,
+      61.30581390386883,
+      110.27236725579203,
+      60.02052857060143,
+      1.6151802139900402,
+      28.97137904545748,
+      28.5716132541731,
+      55.0989212099681,
+      1.6641673277070725,
+      28.96270092264293,
+      88.18347801410485,
+      76.57107483302318,
+      83.53649628229381,
+      85.51451471842792,
+      216.0158112251225,
+      69.18854970221358,
+      109.27930778155927,
+      1.8745060772724447,
+      176.30692428654868,
+      78.12859828001554
+    ],
+    "route_events": [
+      [
+        24.02,
+        [
+          84,
+          88,
+          65,
+          71,
+          12,
+          28,
+          46,
+          72,
+          97
+        ],
+        29.0
+      ],
+      [
+        41.0,
+        [
+          12,
+          28,
+          46,
+          72,
+          97
+        ],
+        12.0
+      ]
+    ],
+    "coverage_events": [],
+    "launch_comparisons": [
+      [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        9,
+        29.5
+      ],
+      [
+        [
+          -0.10563277304706237,
+          0.10311321496704025,
+          0.9890446815779096
+        ],
+        9,
+        29.5
+      ],
+      [
+        [
+          -0.051261997523149055,
+          -0.0734262825066903,
+          0.995982323461207
+        ],
+        9,
+        29.5
+      ],
+      [
+        [
+          0.19328391382103546,
+          -0.20574506061908943,
+          0.9593280453988978
+        ],
+        9,
+        29.5
+      ]
+    ],
+    "guidance_telemetry": null
+  }
+]

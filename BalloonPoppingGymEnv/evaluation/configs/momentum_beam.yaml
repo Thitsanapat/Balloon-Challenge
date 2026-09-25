@@ -1,0 +1,13 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/momentum_beam_agent.py'
+agent_class_name: 'MomentumBeamAgent'
+agent_name: 'Observation momentum beam'
+agent_kwargs:
+  launch_time: 24.0
+  replan_interval: 0.4
+  beam_width: 36
+  search_depth: 8
+  branch_targets: 12
+  time_grid: 0.5
+leaderboard_submission: false

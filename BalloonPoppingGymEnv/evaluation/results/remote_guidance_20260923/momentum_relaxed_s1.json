@@ -1,0 +1,96 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 1,
+    "seed": 1,
+    "config": {
+      "scenario_number": 1,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/momentum_beam_agent.py",
+      "agent_class_name": "MomentumBeamAgent",
+      "agent_name": "Observation momentum beam",
+      "agent_kwargs": {
+        "launch_time": 30,
+        "replan_interval": 0.4,
+        "beam_width": 36,
+        "search_depth": 8,
+        "branch_targets": 12,
+        "time_grid": 0.5,
+        "capture_fraction": 0,
+        "arrival_model": "relaxed"
+      },
+      "leaderboard_submission": false
+    },
+    "agent_sha256": "878d791cda618eaf921e8f128ed5ad526934fcebbd1e034e7e288aff79511dd6",
+    "score": 6,
+    "final_time": 69.59,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 84.46744158864021,
+    "pop_events": [
+      [
+        64,
+        38.410000000000004
+      ],
+      [
+        67,
+        41.84
+      ],
+      [
+        95,
+        45.75
+      ],
+      [
+        43,
+        50.22
+      ],
+      [
+        1,
+        55.29
+      ],
+      [
+        69,
+        58.22
+      ]
+    ],
+    "target_events": [
+      [
+        30.02,
+        64
+      ],
+      [
+        38.410000000000004,
+        67
+      ],
+      [
+        41.84,
+        95
+      ],
+      [
+        45.75,
+        43
+      ],
+      [
+        50.22,
+        1
+      ],
+      [
+        55.29,
+        69
+      ]
+    ],
+    "diagnostics": {
+      "plans": 57,
+      "no_feasible_plan": 29,
+      "saturated_steps": 957,
+      "position_error_sum": 92.08078516814442,
+      "tracking_steps": 2820,
+      "position_innovation_sum": 1.2871174982676576,
+      "navigation_updates": 3956,
+      "beam_searches": 31,
+      "beam_candidates": 284280,
+      "beam_feasible": 44459,
+      "maximum_depth": 6
+    }
+  }
+]

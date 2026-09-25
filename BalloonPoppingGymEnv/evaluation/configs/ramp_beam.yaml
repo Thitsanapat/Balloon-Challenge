@@ -1,0 +1,13 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/ramp_beam_agent.py'
+agent_class_name: 'RampBeamAgent'
+agent_name: 'Short slew ramp route beam'
+agent_kwargs:
+  launch_time: 24.0
+  replan_interval: 0.3
+  max_axis_rate: 1.0
+  beam_width: 48
+  search_depth: 12
+  branch_targets: 20
+leaderboard_submission: false

@@ -1,0 +1,15 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/powered_ascent_agent.py'
+agent_class_name: 'PoweredAscentAgent'
+agent_name: 'Online powered ascent shooting'
+agent_kwargs:
+  launch_time: 30.0
+  replan_interval: 0.4
+  beam_width: 24
+  search_depth: 10
+  branch_targets: 30
+  time_grid: 0.5
+  max_axis_rate: 1.0
+  commitment: false
+leaderboard_submission: false

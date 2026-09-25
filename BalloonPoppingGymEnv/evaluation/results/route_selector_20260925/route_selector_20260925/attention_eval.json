@@ -1,0 +1,25 @@
+{
+  "model": "../route_selector_20260925/attention_pilot.pt",
+  "kind": "attention",
+  "scores": [
+    {
+      "episode": 0,
+      "score": 3,
+      "truncated": false,
+      "simulation_time": 39.67
+    },
+    {
+      "episode": 1,
+      "score": 5,
+      "truncated": false,
+      "simulation_time": 41.71
+    },
+    {
+      "episode": 2,
+      "score": 5,
+      "truncated": false,
+      "simulation_time": 41.230000000000004
+    }
+  ],
+  "mean_score": 4.333333333333333
+}
