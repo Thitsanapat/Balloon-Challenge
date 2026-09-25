@@ -67,3 +67,37 @@ Artifacts, including models, dataset and score reports, are stored under
 `evaluation/results/route_selector_20260925/route_selector_20260925/`; their source snapshot is
 `evaluation/results/route_selector_source_v3_20260925.tgz`. The preserved
 verified 10-point submission was not changed or uploaded.
+
+## Beam-retention follow-up
+
+The first pilots were overly restrictive because they forced exactly one root
+target.  A follow-up instead retains every candidate from the frozen joint
+chain search.  A compact ridge model scores only current released-target rows
+and applies at most a 0.49-second root-node tie-breaking bonus.  It cannot
+discard a candidate, weaken a trajectory check, load a model/data file, or
+alter temporary launch-axis comparisons.  The generated candidate source is
+`agents/submission_learned_beam_candidate.py`; it contains all planner code and
+accepts its 16 numeric learned parameters through the recorded agent config.
+
+Sixteen fresh external random-policy episodes completed normally on the
+authorized CPU-only machine.  They yielded 333 root decisions and scores
+4, 5, 4, 5, 6, 5, 6, 1, 4, 5, 4, 6, 7, 0, 6, 5.  A strongly regularized ridge
+fit on chosen contextual-bandit rows had training RMSE 1.3503.  This remains
+observational bandit feedback, not counterfactual evidence about candidates
+that were not selected.
+
+The trained ranker was evaluated with the original fully checked beam on the
+same two existing development seeds as the paired reference:
+
+| Controller | Seed 0 | Seed 3 |
+| --- | ---: | ---: |
+| Frozen timing baseline | 10 | 9 |
+| Beam ranker, 0.20 s maximum bonus | 10 | 9 |
+| Beam ranker, 0.40 s maximum bonus | 10 | 9 |
+
+All four episodes terminated normally.  The ranker was therefore not promoted
+or packed as a new submission: matching the best file is not a score increase.
+The raw training data, compact model and four reports are retained at
+`evaluation/results/beam_learning_20260925/` and archive
+`evaluation/results/beam_learning_20260925_data.tgz` (SHA-256
+`a3e39365a7f3b7708ccc4a99993430106006af4690b579830805f6ea61a5c544`).

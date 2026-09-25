@@ -16,8 +16,12 @@ def main():
     parser.add_argument('--projected-tracking', action='store_true')
     parser.add_argument('--constrained', action='store_true')
     parser.add_argument('--time-allocation', action='store_true')
+    parser.add_argument('--learned-beam', action='store_true',
+                        help='Append the compact observation-only beam ranker')
     parser.add_argument('--output', type=Path, help='New agent file; existing files are never overwritten')
     args = parser.parse_args()
+    if args.learned_beam:
+        args.time_allocation = True
     if args.time_allocation and (args.projected_tracking or args.constrained):
         parser.error('Time allocation cannot be combined with the other experimental bundles')
     final_approach = args.final_approach or args.projected_tracking or args.constrained or args.time_allocation
@@ -78,6 +82,32 @@ from BalloonPoppingGymEnv.agents.base_agent import BaseAgent
     if args.time_allocation:
         parent = 'TimeAllocationAgent'
     parts.append(f'class ChainSubmissionAgent({parent}):\n    pass\n')
+    if args.learned_beam:
+        # The submission contains the small fixed numeric ranker, not an import
+        # of development code or a learned-weight file.  Only current released
+        # observation features are appended to the self-contained bundle.
+        for filename, names in (
+            ('route_selector_agent.py', {'SELECTOR_FEATURES', 'ranked_candidate_ids',
+                                         'selector_features'}),
+            ('learned_beam_agent.py', {'RANK_FEATURES', 'LearnedBeamAgent'}),
+        ):
+            tree = ast.parse((AGENTS/filename).read_text(encoding='utf-8'))
+            for node in tree.body:
+                node_name = getattr(node, 'name', None)
+                if (node_name is None and isinstance(node, ast.Assign)
+                        and len(node.targets) == 1
+                        and isinstance(node.targets[0], ast.Name)):
+                    node_name = node.targets[0].id
+                if node_name not in names:
+                    continue
+                source = ast.unparse(node)
+                if node_name == 'LearnedBeamAgent':
+                    source = source.replace(
+                        'class LearnedBeamAgent(ChainSubmissionAgent):',
+                        'class LearnedBeamSubmissionAgent(ChainSubmissionAgent):',
+                        1,
+                    )
+                parts.append(source)
     source = '\n\n'.join(parts)+'\n'
     compile(source,str(output),'exec')
     output.write_text(source,encoding='utf-8',newline='\n')

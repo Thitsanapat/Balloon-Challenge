@@ -1,0 +1,75 @@
+scenario_number: 1
+render_mode: null
+agent_module_path: ./BalloonPoppingGymEnv/agents/submission_learned_beam_candidate.py
+agent_class_name: LearnedBeamSubmissionAgent
+agent_name: Observation-only learned root-beam ranker
+agent_kwargs:
+  launch_time: 24.0
+  launch_candidates: 3
+  replan_interval: 0.4
+  beam_width: 12
+  search_depth: 14
+  branch_targets: 8
+  time_grid: 0.5
+  terminal_weight: 0.0
+  capture_fraction: 0.0
+  max_tilt: 75.0
+  max_axis_rate: 1.2
+  attitude_frequency: 4.0
+  timing_candidates: 4
+  timing_iterations: 20
+  timing_safety: 0.0
+  timing_only_more_hits: true
+  rank_coefficients:
+  - 0.17906026289826973
+  - -0.1404852832510154
+  - -0.11109843675895159
+  - 0.31632225103592476
+  - 0.181881299413237
+  - 0.14363741148552675
+  - -0.023997168343837774
+  - 0.012251877162622205
+  - -0.11109843675895151
+  - -0.3263927913730047
+  - 0.16268083825508065
+  - 0.0
+  - 0.09532908364034569
+  - 0.33264170270665244
+  - -0.03687495033329297
+  - 0.0
+  rank_feature_mean:
+  - -0.4521395987519916
+  - -0.14537415680423182
+  - -0.19417798190410088
+  - 0.21379715123825357
+  - -0.23018996030767455
+  - 0.8511664835336218
+  - 0.7155941023768203
+  - -0.11989676536057112
+  - -0.19417798190410088
+  - 0.25043425939462566
+  - 0.09941942053469452
+  - 1.0
+  - 0.3288126122486126
+  - 0.42798207798698645
+  - 0.7568983821542347
+  - 1.0
+  rank_feature_scale:
+  - 0.901605703011527
+  - 0.7576032090925892
+  - 0.5095175319033924
+  - 0.6664394133978784
+  - 0.6126247740908365
+  - 0.7398220820197197
+  - 0.5802543320800616
+  - 0.8282840330367556
+  - 0.5095175319033924
+  - 0.33498045155464096
+  - 0.2467404021147947
+  - 0.0001
+  - 0.08393940051335312
+  - 0.21785138665148512
+  - 0.34972917970192974
+  - 0.0001
+  rank_bonus: 0.4
+leaderboard_submission: false
