@@ -1,0 +1,43 @@
+{
+  "scope": "Evidence checks only; organizer retains final rules judgment. Static scans do not prove absence of all hidden behavior.",
+  "submission_file": "20260923T074855.512Z_TASTI_Cool_Ba_Malaew_3d64859bc1cc4647876b30e2f8928efd_submission.json",
+  "submission_sha256": "b6ff58aac9ad159357a1f33f155546bf2cb4d42a8636a609570b9c7c6a280afe",
+  "json_object": true,
+  "format_version": 2,
+  "scenario": 1,
+  "score": 10,
+  "embedded_source_sha256": "86795ef3e0afdf17dc894b99a57dc6082446ef4bf674a745ce299eabea26aa57",
+  "embedded_source_matches_local": true,
+  "imports": [
+    "BalloonPoppingGymEnv.agents.base_agent",
+    "copy",
+    "functools",
+    "numpy",
+    "scipy.optimize"
+  ],
+  "source_review_flags": [],
+  "official_components_unchanged_vs_bd9bb51": true,
+  "rules_reference": "https://github.com/ARRC-Rocket/BalloonPoppingChallenge/discussions/165",
+  "official_verifier_exit_code": 0,
+  "official_verifier_findings": [
+    "[ok  ] submission format version: format_version 2",
+    "[ok  ] the seed the run used: random_seed 0",
+    "[ok  ] scenario parameters are the shipped ones: identical to scenario 1 as shipped",
+    "[ok  ] balloon_states: expected (5728, 100, 6), got (5728, 100, 6)",
+    "[ok  ] balloon_status: expected (5728, 100), got (5728, 100)",
+    "[ok  ] rocket_states: expected (5728, 13), got (5728, 13)",
+    "[ok  ] attitude is a rotation: largest deviation of |quaternion| from 1 is 7.164e-08",
+    "[ok  ] the flight starts on the pad: first flown position is 0.00256 m from the pad at (np.float64(0.0), np.float64(0.0), np.float64(20.0))",
+    "[ok  ] the flight ends where it stops: 1 repeated positions at the end of the flight (limit 8)",
+    "[ok  ] recorded velocity matches the path: largest disagreement 0.00465 m/s over 3324 steps (tolerance 0.05 m/s)",
+    "[ok  ] the path does not drift away from its velocity: the positions run 0.0001058 m away from where the recorded velocities put them (tolerance 0.05 m)",
+    "[ok  ] the last step is not a jump: the last step covers 0.2028 m against the 0.4992 m the step before it allows",
+    "[ok  ] score matches the record: submission claims 10, the final statuses show 10",
+    "[ok  ] balloon status only moves forward: no balloon returns to an earlier state",
+    "[ok  ] no balloon is popped before release: every pop is on or after the balloon's release step",
+    "[ok  ] balloon count: 100 balloons, as expected",
+    "[ok  ] balloon trajectories: largest position difference 0.000e+00 m over 5728 steps (tolerance 1e-06 m)",
+    "[ok  ] release schedule: matches the schedule the seed produces",
+    "[ok  ] claimed pops are reachable: 10 balloons claimed popped, closest approach 0.392 m at worst against a 1.5 m radius"
+  ]
+}
