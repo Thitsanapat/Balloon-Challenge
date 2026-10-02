@@ -1,4 +1,4 @@
-"""Bounded, checkpointed PPO on fresh official Scenario-1 episodes.
+"""Bounded, checkpointed PPO on fresh official scenario episodes.
 
 Set CUDA_VISIBLE_DEVICES to ONE GPU UUID before starting this script, or use
 --device cpu with CUDA_VISIBLE_DEVICES=''. No simulator/score modifications.
@@ -30,8 +30,15 @@ SOURCES = ['scripts/train_official_residual_ppo.py',
            'BalloonPoppingGymEnv/agents/submission_time_allocation_v1.py']
 
 
-def hashes():
-    return {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in SOURCES}
+def hashes(scenario=1):
+    parameter_dir = 'BalloonPoppingGymEnv/envs/scenario_parameters'
+    paths = SOURCES + [f'{parameter_dir}/scenario_{scenario}_{suffix}.yaml'
+                       for suffix in ('parameters', 'given_parameters')]
+    return {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in paths}
+
+
+def make_training_env(scenario, reset_log):
+    return OfficialResidualEnv(scenario=scenario, reset_log=reset_log)
 
 
 def write_json(path, value):
@@ -41,7 +48,8 @@ def write_json(path, value):
 
 
 class RunControl(BaseCallback):
-    def __init__(self, directory, started, max_hours, checkpoint_every, source_hashes, truncation_limit=3):
+    def __init__(self, directory, started, max_hours, checkpoint_every, source_hashes,
+                 truncation_limit=3, scenario=1):
         super().__init__()
         self.directory, self.started = directory, started
         self.max_seconds = max_hours*3600.
@@ -53,6 +61,7 @@ class RunControl(BaseCallback):
         self.stop_requested = False
         self.stop_reason = None
         self.source_hashes = source_hashes
+        self.scenario = scenario
         self.initial_steps = 0
         self.truncation_guard = TruncationGuard(truncation_limit)
 
@@ -70,7 +79,7 @@ class RunControl(BaseCallback):
             completed_episodes=len(self.completed), recent_episode_scores=completed,
             truncated_episodes=self.truncation_guard.total,
             mean_recent_score=float(np.mean([r['score'] for r in completed])) if completed else None,
-            stop_reason=self.stop_reason, source_unchanged=hashes()==self.source_hashes,
+            stop_reason=self.stop_reason, source_unchanged=hashes(self.scenario)==self.source_hashes,
             uploaded=False)
 
     def _on_step(self):
@@ -99,14 +108,15 @@ class RunControl(BaseCallback):
             self.stop_reason = 'consecutive_official_truncations'
         elif elapsed >= self.max_seconds:
             self.stop_reason = 'wall_time_budget'
-        elif hashes() != self.source_hashes:
+        elif hashes(self.scenario) != self.source_hashes:
             self.stop_reason = 'source_changed'
         return self.stop_reason is None
 
 
-def main():
+def build_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--scenario', type=int, choices=(1, 2, 3, 4), default=1)
     parser.add_argument('--steps', type=int, default=2_000_000)
     parser.add_argument('--envs', type=int, default=8)
     parser.add_argument('--device', choices=['cpu', 'cuda'], default='cpu')
@@ -118,6 +128,11 @@ def main():
     parser.add_argument('--seed', type=int, default=240926)
     parser.add_argument('--resume', type=Path)
     parser.add_argument('--max-consecutive-truncations', type=int, default=3)
+    return parser
+
+
+def main():
+    parser = build_parser()
     args = parser.parse_args()
     if not 1 <= args.envs <= 8 or min(args.steps, args.n_steps, args.batch_size, args.checkpoint_every, args.max_consecutive_truncations) < 1 or args.hours <= 0:
         parser.error('Positive bounded settings required; at most eight workers')
@@ -129,26 +144,28 @@ def main():
     args.output.mkdir(parents=True, exist_ok=False)
     directory = args.output.resolve()
     started = time.monotonic()
-    source_hashes = hashes()
+    source_hashes = hashes(args.scenario)
     import stable_baselines3, gymnasium
     manifest = dict(settings={k: str(v) if isinstance(v, Path) else v for k, v in vars(args).items()},
         source_sha256=source_hashes, torch=torch.__version__, sb3=stable_baselines3.__version__,
         numpy=np.__version__, gymnasium=gymnasium.__version__, cuda_visible_devices=os.environ.get('CUDA_VISIBLE_DEVICES', ''),
         observation='96 finite observation/controller-history features, no seed/private state/future trajectory',
         action='3 bounded residual acceleration components, 2 m/s^2 per component; held for 10 official steps',
-        training='fresh unmodified official Scenario 1 per episode; randomized external seed',
+        training=f'fresh unmodified official Scenario {args.scenario} per episode; randomized external seed',
         policy=dict(layers=[512, 512, 256], gamma=.995, learning_rate=5e-5, target_kl=.015),
         resume_sha256=hashlib.sha256(args.resume.read_bytes()).hexdigest() if args.resume else None)
     write_json(directory/'manifest.json', manifest)
     def factory(rank):
         def make():
             # Monitor logs training reward separately from official popped_count.
-            return Monitor(OfficialResidualEnv(reset_log=directory/f'reset_failures_{rank}.jsonl'), filename=str(directory/f'worker_{rank}'),
+            return Monitor(make_training_env(args.scenario, directory/f'reset_failures_{rank}.jsonl'), filename=str(directory/f'worker_{rank}'),
                            info_keywords=('popped_count', 'official_truncated'))
         return make
     env = SubprocVecEnv([factory(i) for i in range(args.envs)], start_method='spawn')
     env.seed(args.seed)
-    callback = RunControl(directory, started, args.hours, args.checkpoint_every, source_hashes, args.max_consecutive_truncations)
+    callback = RunControl(directory, started, args.hours, args.checkpoint_every,
+                          source_hashes, args.max_consecutive_truncations,
+                          scenario=args.scenario)
     def request_stop(signum, frame):
         callback.stop_requested = True
     signal.signal(signal.SIGTERM, request_stop)

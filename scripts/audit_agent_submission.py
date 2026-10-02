@@ -48,6 +48,8 @@ def main():
     parser.add_argument('--agent',type=Path,required=True)
     parser.add_argument('--report',type=Path,required=True)
     parser.add_argument('--verify',action='store_true')
+    parser.add_argument('--official-reference',default='bd9bb51',
+                        help='Official release commit or tag used to check simulator files')
     args = parser.parse_args()
     raw = args.submission.read_bytes()
     payload = json.loads(raw)
@@ -57,7 +59,7 @@ def main():
     imports,flags = source_review(source)
     files = ['BalloonPoppingGymEnv/envs', 'BalloonPoppingGymEnv/evaluation/evaluate.py',
              'BalloonPoppingGymEnv/evaluation/results/utils.py','scripts/verify_submission.py']
-    check = subprocess.run(['git','diff','--exit-code','bd9bb51','--',*files],
+    check = subprocess.run(['git','diff','--exit-code',args.official_reference,'--',*files],
                            cwd=ROOT,capture_output=True,text=True)
     info = payload['leaderboard_info']
     result = {
@@ -69,7 +71,7 @@ def main():
         'embedded_source_sha256':hashlib.sha256(source.encode()).hexdigest(),
         'embedded_source_matches_local':source==args.agent.read_text(encoding='utf-8'),
         'imports':imports,'source_review_flags':flags,
-        'official_components_unchanged_vs_bd9bb51':check.returncode==0,
+        f'official_components_unchanged_vs_{args.official_reference}':check.returncode==0,
         'rules_reference':'https://github.com/ARRC-Rocket/BalloonPoppingChallenge/discussions/165',
     }
     if args.verify:
