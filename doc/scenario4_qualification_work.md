@@ -44,6 +44,14 @@ margin in m/s², not a simulator modification.
 | Wind profile + corrected fusion with `reserve=0.8` | 0 | 4 | One pop worse than the wind-profile-only control. |
 | Corrected IMU disturbance + fusion with `reserve=0.8` | 0 | 2 | One pop worse than fusion without this term. |
 | Risk-ranked short-horizon route with wind profile | 0 / 1 | 3 / 1 | Below wind-profile-only 5 / 2 on both paired seeds. |
+| Wind profile, launch 36 s | 0 / 1 | 1 / 0 | Later launch strongly underperformed 24 s. |
+| Wind profile, launch 42 s | 0 / 1 / 2 | 5 / 2 / 4 | One more pop on seed 2 than 24 s, tied seeds 0/1; seed-0 last pop was later (64.20 s vs 50.72 s). |
+
+The 42 s launch improved one of three tested seeds but did not improve the
+other two. Because the seed-0 tied score had a worse last-pop time and the
+qualification seeds are unknown, the standalone submission artifact remains
+the previously validated 24 s version. More unseen-seed comparisons would be
+needed before promoting the timing change.
 
 The short-horizon forecaster corrected some non-target balloon states, but its
 route and flight on seed 0 remained effectively unchanged. It is not selected
