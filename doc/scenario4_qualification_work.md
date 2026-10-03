@@ -279,3 +279,52 @@ when requested; use no seed-specific lookup or prerecorded flight.
 Sources: [v0.2.2 release](https://github.com/ARRC-Rocket/BalloonPoppingChallenge/releases/tag/v0.2.2),
 [official README and qualification rules](https://github.com/ARRC-Rocket/BalloonPoppingChallenge/blob/main/README.md),
 [organizer clarification #165](https://github.com/ARRC-Rocket/BalloonPoppingChallenge/discussions/165).
+
+## Follow-up: trackable intercepts, not nominal route length
+
+After the requested-seed check (66894811/133789622: 5/3 pops with the
+selected agent), a read-only audit of the 16 prior holdout flights found that
+the first planned target was actually popped in only 4 flights. The initial
+route contained 8.38 IDs on average, but only 0.94 of those IDs popped. Several
+first-target closest approaches missed by 6–30 m. Thus a long feasible spline
+is not a reliable estimate of actual capture count.
+
+Three observation-only variants were tested without changing the official
+simulator. Each run used a fresh official Scenario-4 reset and verified that
+the agent's source dependencies remained unchanged throughout the episode.
+
+| Policy | Development seeds 0/1/2 | Decision |
+| --- | --- | --- |
+| Selected wind-profile launch42 | 5/2/4 = 11 | Control |
+| First-leg correction-reachability launch rank | 5/3/2 = 10 | Reject: loses seed 2 |
+| Bounded forced-first-target trials | 2 on seed 0 | Reject early: loses three pops |
+| Thrust-envelope-aware adaptive tracking gain | 6/3/3 = 12 | Small, mixed +1; holdout required |
+
+The adaptive controller did **not** consistently reduce saturation. It gained
+one pop each on seeds 0 and 1 after the late route changed; on seed 2 it
+reduced saturation but arrived later at a shared target and lost a subsequent
+pop. Neither smoother tracking nor a lower saturation count is a sufficient
+surrogate for the official score. Its source and config were frozen before the
+new paired validation on seeds 300–303:
+
+| Seed | Selected baseline | Adaptive feedback | Difference |
+| --- | ---: | ---: | ---: |
+| 300 | 6 | 6 | 0 |
+| 301 | 6 | 5 | -1 |
+| 302 | 2 | 3 | +1 |
+| 303 | 2 | 6 | +4 |
+| **Four-flight total** | **16** | **20** | **+4** |
+
+All eight flights finished without truncation or source changes. The strong
+seed-303 gain motivates a second untouched paired validation on 304–307, still
+with the same frozen source/config. The four-flight total of 20 is **not** a
+20-pop qualification score, which sums only two live flights.
+
+A separate short-horizon shadow predictor and an evaluator-only validation
+harness were added for future model-based route screening. The predictor uses
+only public rocket parameters and observation-derived state; the harness may
+read official truth **only after the agent acts**, for offline diagnostics.
+Its point-mass dynamics omit aerodynamic moments, evolving wind, and online
+replanning, so it is **not** connected to the submitted agent until 1–3 s
+prediction error is checked on fresh flights. Unit tests alone do not
+establish collision-prediction accuracy.
