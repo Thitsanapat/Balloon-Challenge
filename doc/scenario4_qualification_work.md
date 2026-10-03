@@ -1,4 +1,4 @@
-# Scenario 4 qualification work (2026-10-02)
+# Scenario 4 qualification work (2026-10-03)
 
 ## Target and rule boundary
 
@@ -41,17 +41,63 @@ margin in m/s², not a simulator modification.
 | Observed altitude–wind profile with `reserve=0.8` | 0 | **5** | Better than margin-only on this seed; climbed to 279 m versus 171 m. |
 | Observed altitude–wind profile with `reserve=0.8` | 1 | **2** | Better than the paired baseline's 1, but still far below the target. |
 | Observed altitude–wind profile with `reserve=0.8` | 2 | **3** | Better than the paired holdout baseline's 1. |
+| Observed altitude–wind profile with `reserve=0.8` | 3 / 4 | **2 / 2** | Additional fresh seeds; source and config unchanged. |
 | Wind profile + corrected fusion with `reserve=0.8` | 0 | 4 | One pop worse than the wind-profile-only control. |
 | Corrected IMU disturbance + fusion with `reserve=0.8` | 0 | 2 | One pop worse than fusion without this term. |
 | Risk-ranked short-horizon route with wind profile | 0 / 1 | 3 / 1 | Below wind-profile-only 5 / 2 on both paired seeds. |
 | Wind profile, launch 36 s | 0 / 1 | 1 / 0 | Later launch strongly underperformed 24 s. |
-| Wind profile, launch 42 s | 0 / 1 / 2 | 5 / 2 / 4 | One more pop on seed 2 than 24 s, tied seeds 0/1; seed-0 last pop was later (64.20 s vs 50.72 s). |
+| Wind profile, launch 48 s | 0 / 1 | 2 / 2 | Below launch 42 s (5 / 2); exploratory sweep stopped early. |
+| Wind profile, launch 42 s | 0 / 1 / 2 / 3 / 4 | 5 / 2 / 4 / 2 / 3 | +2 total over launch 24 s on these five development seeds; no loss in pop count, but seed-0 last pop was later (64.20 s vs 50.72 s). |
+| Wind profile, launch 42 s vs 24 s | 100–107 | **23 vs 18 total** | Predeclared holdout: 5 wins, 2 ties, 1 loss; all episodes complete. |
+| Wind profile, 8 rather than 3 launch-axis candidates | 0 / 1 / 2 | 5 / 2 / 4 | Identical pop counts to the selected 42 s policy on these development seeds; not promoted. |
+| Wind profile, first-hit-aware launch ranking | 0 / 1 / 2 | 5 / 3 / 2 | One-pop gain on seed 1 but two-pop loss on seed 2; 10 vs incumbent 11 total, rejected. |
+| Wind profile, lower spline-tracking frequency 1.0 | 0 / 1 / 2 | 5 / 3 / 2 | Seed-1 gain offset by two-pop seed-2 loss; 10 vs 11 total. Seed-0 final hit was later (71.61 vs 64.20 s) with more saturated steps (843 vs 748). Rejected. |
+| Wind profile + bounded active-leg deadline rescue | 0 / 1 | 4 / 2 | Worse than incumbent 5 / 2; recovery was accepted 9 / 11 times, so this is a meaningful negative test. |
+| Wind profile + reserve-aware active refresh | 0 / 1 | 3 / 2 | Rejected three nominally feasible refreshes per seed for reserve; lost two seed-0 pops. |
+| Wind profile + climb-recovery beam ranking (weight 0.5) | 0 / 1 | 2 / 1 | Physically motivated climb proxy, but fewer actual pops than 5 / 2. |
 
-The 42 s launch improved one of three tested seeds but did not improve the
-other two. Because the seed-0 tied score had a worse last-pop time and the
-qualification seeds are unknown, the standalone submission artifact remains
-the previously validated 24 s version. More unseen-seed comparisons would be
-needed before promoting the timing change.
+The 42 s launch improved seeds 2 and 4 by one pop each, tied the other three,
+and had a worse seed-0 last-pop time. The predeclared untouched-seed comparison
+below supports using 42 s for the live qualification, although the earlier
+24 s JSON remains a valid historical local artifact.
+
+Offline telemetry points to launch-direction reliability as another bottleneck:
+the first planned target was missed on six of the eight 42 s holdout flights,
+while the initial search often planned eight or nine targets but only two to
+four were actually popped. Between 18% and 46% of powered steps saturated the
+available acceleration in those flights. This motivates an isolated
+first-hit-aware launch selector that ranks the *planned* first leg by duration
+and late thrust headroom. It scored 5/3/2 on development seeds 0/1/2 versus
+the selected agent's 5/2/4, so it is not promoted. The seed-1 extra pop was
+not the first planned target; the hypothesis remains unproven.
+
+The deadline-rescue variant keeps the official simulator unchanged and uses
+only observed targets. It attempted recovery 22 times on each of seeds 0/1 and
+accepted 9/11 alternatives after dense feasibility checks. It reduced seed-0
+command saturation but lost one pop; this shows a smoother feasible path is
+not necessarily a better collision route. Do not promote it on current evidence.
+
+The active refresh did have a real consistency gap: its ordinary feasibility
+test ignores the 0.8 m/s² planning reserve. A separate variant enforced the
+same reserve at 33 and 65 samples. It rejected three updates per tested seed,
+but scored 3/2 versus the incumbent's 5/2. This fix is physically conservative
+yet not a score improvement and is not promoted.
+
+The climb-recovery beam ranking penalized a feasible route's loss of vertical
+speed by an optimistic time to regain the observed target's climb rate. Its
+weight-0.5 test scored 2/1 on seeds 0/1, below 5/2. A plausible physical
+proxy can still prune the useful collision route, so this variant is not
+selected.
+
+A ridge-regularized, smooth-edge altitude/wind forecast was also checked
+against later *observations* of the same balloons in fresh, no-launch official
+Scenario 4 episodes (seeds 0/1/2). The incumbent's 4-second horizontal RMSE
+was 5.73/7.07/5.45 m, whereas the regularized version was
+6.99/8.39/6.32 m. It was worse at every tested 2/4/6/8-second horizon on
+all three seeds, despite correcting additional sparse-coverage cases. This
+offline metric is not a pop score; it is sufficient to reject the candidate
+before spending full-flight evaluations on it. The credential-free report is
+`s4_regularized_forecast_dev_20261003.json` in the ignored results directory.
 
 The short-horizon forecaster corrected some non-target balloon states, but its
 route and flight on seed 0 remained effectively unchanged. It is not selected
@@ -61,7 +107,7 @@ compared with a 1.5 m pop radius. The initial 7.5 s lookahead for target #8
 has about 12.5 m target-motion prediction error. This is diagnostic evidence,
 not evidence that a replacement predictor will necessarily score better.
 
-## Experiments in progress
+## Earlier development experiments
 
 - `Scenario4WindProfileAgent` estimates horizontal drift versus altitude from
   *currently observed released balloons*, anchored to each target's own
@@ -116,6 +162,72 @@ but still fails to pop balloons is not a score improvement.
 
 ## Reproduction
 
+### Multi-seed selection protocol (2026-10-03)
+
+Seeds 0–4 have already been used for exploratory development and are not a
+holdout set. Compare each candidate with the incumbent on exactly the same
+seeds and only count complete, nontruncated official episodes. Before seeing
+any candidate results, reserve seeds **100–107** as the next untouched holdout
+set. Freeze the selected agent and its config before running those seeds; do
+not tune it to the holdout outcomes. The read-only
+`scripts/summarize_paired_evaluations.py` checks source/config consistency and
+reports per-seed pop deltas. A 100,000-seed official sweep is not currently
+practical: the measured wind-profile episodes take roughly 4–7 minutes each,
+so one candidate alone would need around ten thousand core-hours. A fast
+surrogate may screen ideas, but any score claim must come from the unchanged
+official simulator with fresh independently seeded episodes.
+
+The 42 s launch candidate was selected on seeds 0–4 before running any of
+100–107. The candidate's frozen config is
+`evaluation/configs/scenario4_wind_profile_launch42.yaml`; the incumbent is
+`evaluation/configs/scenario4_wind_profile_reserve08.yaml`. The same
+`Scenario4WindProfileAgent` source is used for both, changing only launch
+time and the descriptive name. Neither config was tuned to the holdout set.
+
+All eight holdout pairs (100–107) completed without truncation or agent-source
+changes. The 24 s scores were **3/1/0/2/5/2/1/4** (sum 18); 42 s scored
+**3/2/2/4/2/3/3/4** (sum 23). Thus 42 s won 5, tied 2 and lost 1 paired
+seed, improving the mean from 2.25 to 2.875 pops per flight. Seed 104 is a
+material regression (5→2), so the result is a modest average gain, not a
+guarantee on every draw. Across the five development and eight holdout seeds,
+the totals were 32 for 24 s and 39 for 42 s. The qualification score still
+comes from two independent live seeds; at that stage, twice the observed
+holdout mean was only 5.75 pops, far below the target of 20.
+`s4_holdout_launch24_20261003.json` and `s4_holdout_launch42_20261003.json`
+are the ignored credential-free reports used for this comparison.
+
+An exploratory 48 s launch scored 2/2 on development seeds 0/1 versus 5/2
+for 42 s; the rest of that sweep was stopped early for lack of improvement.
+The 36 s launch was already tested with this agent on seeds 0/1 (1/0 pops),
+so a duplicate run was also stopped rather than consuming further simulation
+time. Increasing launch-axis candidates from 3 to 8 tied the selected policy
+on all three tested development seeds (5/2/4). First-hit-aware launch ranking
+regressed from 11 to 10 total pops on the same three seeds. These development
+runs do not change the frozen
+100–107 holdout result; any later promotion must use new untouched seeds.
+
+Seeds 200–207 were declared as a second fresh validation set after the
+first-hit-launch candidate was implemented but before seeing any scores on
+that set. The candidate subsequently regressed on development seed 2 and was
+rejected, so these seeds were run with the selected 42 s policy only to
+estimate its robustness, not to claim a paired improvement. They all completed
+without truncation or agent-source changes, scoring **1/6/2/2/4/4/1/2** (sum
+22, mean 2.75). The two distinct eight-seed holdouts together yielded 45 pops
+over 16 flights (mean **2.8125**), implying approximately 5.625 pops for a
+two-flight total if future draws resembled them; this is an empirical estimate,
+not a guarantee or a competition result. An independent
+development check tested `timing_candidates=0` because the original timing
+optimizer was adopted zero times on all eight first-holdout runs; this is a
+compute-efficiency experiment, not yet an accepted score improvement.
+Development runs with `timing_candidates=0` reproduced the selected agent's
+seed-0/1 scores and pop times (5/2) exactly, without any timing solves.
+Fresh timing-enabled controls also reproduced 5/2 and identical pop events.
+Post-reset flight wall times were 106.3/106.7 s with timing disabled versus
+115.3/121.8 s with timing enabled, saving 9.0/15.1 s locally while skipping
+17/20 timing solves. This is a measured two-seed compute reduction, not a
+guarantee for every machine or seed. Keep the reviewed qualification config
+unchanged until any resource-optimized variant is validated on new seeds.
+
 From the repository root, with the official v0.2.2 dependencies installed:
 
 ```powershell
@@ -143,6 +255,19 @@ score 5, embedded source matching the standalone file, no static source flags,
 unchanged official components versus v0.2.2, and **19/19 verifier findings
 passing**. The submission SHA-256 is
 `28e3a03d4749272c9c8b5902226a44917dd20f7c8dce37f64095c75322ad2ac8`.
+
+The promoted 42 s standalone config also completed the unmodified official
+evaluator on seed 0 with **5 pops**. Its credential-free receipt is
+`s4_standalone_launch42_official_seed0_20261003.json`; the official-format JSON
+is `20261003T021910.264Z_TASTI_Cool_Ba_Malaew_fe3e7d50c87b4528a1a793233faf988a_submission.json`
+in the ignored results directory, with SHA-256
+`77723417cef612dcb3f49f6bdb69e4763bea7ef79eeab9f59220c7f2fe513b5f`.
+The credential-free audit `s4_standalone_launch42_audit_20261003.json` reports
+matching embedded/local source, zero static source flags, unchanged official
+components versus v0.2.2, and the official verifier passing all 19 findings.
+This JSON likewise contains team credentials and must not be committed or
+shared publicly. The 42 s candidate is selected for its multi-seed improvement,
+not a seed-0 advantage over the earlier 24 s JSON.
 
 The qualifier on October 10 uses two *live* evaluations and source-code
 review, not a repeat of the closed Scenario-1 leaderboard upload. Therefore

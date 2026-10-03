@@ -1,6 +1,10 @@
 """Fresh official-environment evaluations with explicit seeds and JSON metrics.
 
 This does not pack/upload leaderboard submissions or modify scenario YAML.
+Wall timing starts immediately before env.reset: reset_wall_seconds includes
+balloon Monte Carlo and all other reset work; post_reset_wall_seconds includes
+the control flight and this runner's diagnostic bookkeeping. Agent construction
+and report writing are outside those two phase measurements.
 """
 
 import argparse
@@ -45,6 +49,7 @@ def evaluate(config, seed):
     agent = cls(given, **config.get("agent_kwargs", {}))
     start = time.monotonic()
     observation, info = env.reset(seed=seed)
+    reset_finished = time.monotonic()
     popped = set()
     events = []
     closest = np.full(len(observation['balloon_states']), np.inf)
@@ -93,6 +98,7 @@ def evaluate(config, seed):
                     popped.add(index)
                     events.append([index, float(observation["simulation_time"])])
             print(f"seed={seed} score={info['popped_count']} time={observation['simulation_time']:.2f}", flush=True)
+    episode_finished = time.monotonic()
     result = {
         "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
         "scenario": config["scenario_number"], "seed": seed, "config": config,
@@ -103,7 +109,10 @@ def evaluate(config, seed):
         "score": int(info["popped_count"]),
         "final_time": float(observation["simulation_time"]),
         "terminated": bool(terminated), "truncated": bool(truncated),
-        "wall_seconds": time.monotonic()-start, "pop_events": events,
+        "wall_seconds": episode_finished-start,
+        "reset_wall_seconds": reset_finished-start,
+        "post_reset_wall_seconds": episode_finished-reset_finished,
+        "pop_events": events,
         "target_events": getattr(agent, "target_events", []),
         "diagnostics": getattr(agent, "diagnostics", {}),
         "maximum_observed_altitude": maximum_altitude,

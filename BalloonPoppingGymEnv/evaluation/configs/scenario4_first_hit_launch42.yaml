@@ -1,0 +1,31 @@
+scenario_number: 4
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/scenario4_first_hit_launch_agent.py'
+agent_class_name: 'Scenario4FirstHitLaunchAgent'
+agent_name: 'Observed wind profile with reliable first-hit launch selection'
+agent_kwargs:
+  launch_time: 42.0
+  launch_candidates: 3
+  replan_interval: 0.4
+  beam_width: 12
+  search_depth: 14
+  branch_targets: 8
+  time_grid: 0.5
+  terminal_weight: 0.0
+  capture_fraction: 0.0
+  reserve: 0.8
+  max_tilt: 75.0
+  max_axis_rate: 1.2
+  attitude_frequency: 4.0
+  timing_candidates: 4
+  timing_iterations: 20
+  timing_safety: 0.0
+  timing_only_more_hits: true
+  profile_horizon: 8.0
+  profile_max_range: 150.0
+  profile_blend: 0.75
+  profile_max_position_correction: 12.0
+  launch_margin_weight: 1.0
+  launch_margin_floor: 0.25
+  launch_beyond_profile_weight: 2.0
+leaderboard_submission: false
