@@ -1,0 +1,71 @@
+{"seed": 314159265, "usage": "qualification_rehearsal_attempt", "run_id": "20261006T155411Z_seed314159265_1ffdef17", "agent_sha256": "89e563d1c099c8190c5aa9e3f93d286ddac2a7d387a99c49448a0becb12f1d4b", "started_utc": "2026-10-06T15:54:37.391458+00:00"}
+{"seed": 271828182, "usage": "qualification_live_attempt", "run_id": "20261006T170952Z_seed271828182_b4c2f6ce", "agent_sha256": "89e563d1c099c8190c5aa9e3f93d286ddac2a7d387a99c49448a0becb12f1d4b", "started_utc": "2026-10-06T17:10:11.829059+00:00"}
+{"seed": 123456789, "usage": "qualification_live_attempt", "run_id": "20261007T053421Z_seed123456789_2b40c09d", "agent_sha256": "89e563d1c099c8190c5aa9e3f93d286ddac2a7d387a99c49448a0becb12f1d4b", "started_utc": "2026-10-07T05:34:39.216596+00:00"}
+{"seed": 830471237, "usage": "qualification_rehearsal_attempt", "run_id": "20261007T085016Z_seed830471237_8f88c173", "agent_sha256": "dab27623c797c70c6fc5c13b48e4faa2e146a694c7de737f6cae8138485fb333", "started_utc": "2026-10-07T08:50:16.149061+00:00"}
+{"seed": 1552368575, "usage": "scenario4_reachable_refresh_paired_holdout_predeclared_20261007"}
+{"seed": 1991638024, "usage": "scenario4_joint_refresh_second_paired_holdout_predeclared_20261008"}
+{"seed": 1020145031, "usage": "scenario4_joint_refresh_stage2_paired_holdout_predeclared_20261008"}
+{"seed": 1605969870, "usage": "scenario4_joint_refresh_stage2_paired_holdout_predeclared_20261008"}
+{"seed": 313734695, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 48700076, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 470928925, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 257808910, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 164593090, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 300439883, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 93120163, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 767678882, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 230652457, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 333239953, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 839958652, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 724686099, "usage": "scenario4_guarded_route_ml_training_predeclared_20261008"}
+{"seed": 761692544, "usage": "scenario4_guarded_route_ml_candidate_holdout_reserved_20261008"}
+{"seed": 234703015, "usage": "scenario4_guarded_route_ml_candidate_holdout_reserved_20261008"}
+{"seed": 439862696, "usage": "scenario4_guarded_route_ml_candidate_holdout_reserved_20261008"}
+{"seed": 130752622, "usage": "scenario4_guarded_route_ml_candidate_holdout_reserved_20261008"}
+{"seed": 140200341, "usage": "scenario4_guarded_route_ml_stage2_paired_holdout_predeclared_20261008"}
+{"seed": 1098270439, "usage": "scenario4_guarded_route_ml_stage2_paired_holdout_predeclared_20261008"}
+{"seed": 1904235602, "usage": "scenario4_guarded_route_ml_stage2_paired_holdout_predeclared_20261008"}
+{"seed": 568300771, "usage": "scenario4_guarded_route_ml_stage2_paired_holdout_predeclared_20261008"}
+{"seed": 178420909, "usage": "scenario4_guarded_route_ml_stage2_paired_holdout_predeclared_20261008"}
+{"seed": 820431975, "usage": "scenario4_guarded_route_ml_stage2_paired_holdout_predeclared_20261008"}
+{"seed": 1126043508, "usage": "scenario4_guarded_route_ml_stage2_paired_holdout_predeclared_20261008"}
+{"seed": 662504311, "usage": "scenario4_guarded_route_ml_stage2_paired_holdout_predeclared_20261008"}
+{"seed": 10298371, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 68394312, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 50192733, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 482617990, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 297410583, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 700126354, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 846320117, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 119657428, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 337854091, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 914708236, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 592461073, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 781235409, "usage": "scenario4_guarded_route_ml_second_training_pool_predeclared_20261009"}
+{"seed": 605131410, "usage": "scenario4_pure_joint_refresh_paired_holdout_predeclared_20261009"}
+{"seed": 435857031, "usage": "scenario4_pure_joint_refresh_paired_holdout_predeclared_20261009"}
+{"seed": 927297526, "usage": "scenario4_pure_joint_refresh_paired_holdout_predeclared_20261009"}
+{"seed": 298628555, "usage": "scenario4_pure_joint_refresh_paired_holdout_predeclared_20261009"}
+{"seed": 2, "usage": "scenario4_sensor_coupled_gnc_development_ablation_20261009"}
+{"seed": 0, "usage": "scenario4_sensor_coupled_gnc_development_ablation_20261009"}
+{"seed": 2, "usage": "scenario4_pure_joint_standalone_packaging_parity_20261009"}
+{"seed": 0, "usage": "scenario4_proactive_joint_development_20261010"}
+{"seed": 2, "usage": "scenario4_proactive_joint_development_20261010"}
+{"seed": 0, "usage": "scenario4_timed_rescue_development_20261010"}
+{"seed": 2, "usage": "scenario4_timed_rescue_development_20261010"}
+{"seed": 0, "usage": "scenario4_same_route_timing_development_20261010"}
+{"seed": 2, "usage": "scenario4_same_route_timing_development_20261010"}
+{"seed": 0, "usage": "scenario4_beam24_development_20261010"}
+{"seed": 741093826, "usage": "qualification_live_attempt", "run_id": "20261009T173906Z_seed741093826_8c968ab8", "agent_sha256": "9ff7f93d21a945d0479289be57bd893d8f33ab169fb1a6bfeb153ea442b6efb9", "started_utc": "2026-10-09T17:39:06.077610+00:00"}
+{"seed": 0, "usage": "scenario4_horizon_profile_development_20261010"}
+{"seed": 2, "usage": "scenario4_horizon_profile_development_20261010"}
+{"seed": 2, "usage": "scenario4_terminal_cadence_development_20261010"}
+{"seed": 0, "usage": "scenario4_shadow_crossdepth_development_20261010"}
+{"seed": 2, "usage": "scenario4_shadow_crossdepth_development_20261010"}
+{"seed": 6818, "usage": "scenario4_entry_horizon_fresh_pair_stage1_20261010"}
+{"seed": 933878928, "usage": "scenario4_entry_horizon_fresh_pair_stage1_20261010"}
+{"seed": 1990, "usage": "scenario4_adaptive_entry_fresh_pair_20261010"}
+{"seed": 282227154, "usage": "scenario4_adaptive_entry_fresh_pair_20261010"}
+{"seed": 1497481877, "usage": "qualification_live_attempt", "run_id": "20261010T111933Z_seed1497481877_462484df", "agent_sha256": "9ff7f93d21a945d0479289be57bd893d8f33ab169fb1a6bfeb153ea442b6efb9", "started_utc": "2026-10-10T11:19:38.828505+00:00"}
+{"seed": 2796897388, "usage": "qualification_live_attempt", "run_id": "20261010T113157Z_seed2796897388_db8a5afe", "agent_sha256": "9ff7f93d21a945d0479289be57bd893d8f33ab169fb1a6bfeb153ea442b6efb9", "started_utc": "2026-10-10T11:32:00.533120+00:00"}
+{"seed": 63199287, "usage": "qualification_live_attempt", "run_id": "20261010T122226Z_seed63199287_6bb5437e", "agent_sha256": "9ff7f93d21a945d0479289be57bd893d8f33ab169fb1a6bfeb153ea442b6efb9", "started_utc": "2026-10-10T12:22:37.986675+00:00"}

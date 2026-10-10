@@ -10,6 +10,7 @@ class GuidanceTelemetryTests(unittest.TestCase):
         curve = np.zeros((6, 3))
         curve[0], curve[1] = [0., 0., 20.], [10., 0., 0.]
         agent = SimpleNamespace(target_index=0, plan=curve, plan_start=0., plan_duration=10.,
+                                diagnostics={'saturated_steps': 1},
                                 available_acceleration=lambda now: 15.)
         obs = dict(simulation_time=0., balloon_states=np.array([[10., 0., 20., 0., 0., 0.]]),
                    balloon_status=np.array([1]), rocket_sensors=np.zeros(12))
@@ -23,7 +24,7 @@ class GuidanceTelemetryTests(unittest.TestCase):
         after['simulation_time'] = 10.
         after['rocket_sensors'][6:9] = [8., 1., 20.]
         after['balloon_states'][0, :3] = [11., 0., 20.]
-        observer.after_step(after)
+        observer.after_step(after, true_position=[9., 0., 20.])
         result = observer.finish(10.)
         closest = result['target_episodes'][0]['closest']
         total = sum(np.asarray(closest[name]) for name in
@@ -33,6 +34,12 @@ class GuidanceTelemetryTests(unittest.TestCase):
         self.assertEqual(closest['prediction_error'], 1.)
         self.assertEqual(result['unpopped_forecast_checks'][0]['endpoint_error'], 1.)
         self.assertEqual(len(observer.forecasts), 0)
+        true_closest = result['target_episodes'][0]['true_closest']
+        self.assertAlmostEqual(true_closest['distance'], 2.)
+        total_true = sum(np.asarray(true_closest[name]) for name in
+                         ('tracking_vector', 'alignment_vector', 'prediction_error_vector'))
+        np.testing.assert_allclose(total_true, [-2., 0., 0.])
+        self.assertTrue(true_closest['command']['allocator_saturated'])
 
     def test_popped_forecasts_are_not_counted_as_prediction_misses(self):
         observer = GuidanceTelemetry()

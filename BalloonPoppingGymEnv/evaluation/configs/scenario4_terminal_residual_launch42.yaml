@@ -1,0 +1,38 @@
+scenario_number: 4
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/scenario4_terminal_residual_agent.py'
+agent_class_name: 'Scenario4TerminalResidualAgent'
+agent_name: 'Scenario 4 bounded terminal tracking-residual correction'
+agent_kwargs:
+  launch_time: 42.0
+  launch_candidates: 3
+  replan_interval: 0.4
+  beam_width: 12
+  search_depth: 14
+  branch_targets: 8
+  time_grid: 0.5
+  terminal_weight: 0.0
+  capture_fraction: 0.0
+  reserve: 0.8
+  max_tilt: 75.0
+  max_axis_rate: 1.2
+  attitude_frequency: 4.0
+  timing_candidates: 4
+  timing_iterations: 20
+  timing_safety: 0.0
+  timing_only_more_hits: true
+  profile_horizon: 8.0
+  profile_max_range: 150.0
+  profile_blend: 0.75
+  profile_max_position_correction: 12.0
+  terminal_start: 3.5
+  terminal_stop: 0.3
+  terminal_fade: 0.55
+  terminal_strength: 0.35
+  terminal_max_range: 90.0
+  terminal_deadband: 0.65
+  terminal_max_error: 3.0
+  terminal_max_delta: 1.5
+  terminal_max_vertical_delta: 0.8
+  terminal_time_floor: 1.0
+leaderboard_submission: false

@@ -18,7 +18,7 @@ BASE_KWARGS = dict(launch_time=24., launch_candidates=3, replan_interval=.4,
     timing_safety=0., timing_only_more_hits=True)
 
 
-def residual_features(agent, observation, nearest=8):
+def residual_features(agent, observation, nearest=8, active_first=False):
     sensors = np.asarray(observation['rocket_sensors'], dtype=float)
     now = float(observation['simulation_time'])
     position = np.nan_to_num(sensors[6:9], nan=0.).copy()
@@ -41,7 +41,11 @@ def residual_features(agent, observation, nearest=8):
     states = np.asarray(observation['balloon_states'], dtype=float)
     ids = np.flatnonzero(np.asarray(observation['balloon_status']).reshape(-1) == 1)
     distances = np.linalg.norm(states[ids, :3]-position, axis=1)
-    ids = ids[np.argsort(distances, kind='stable')[:nearest]]
+    ids = ids[np.argsort(distances, kind='stable')]
+    active = getattr(agent, 'target_index', None)
+    if active_first and active is not None and active in ids:
+        ids = np.r_[int(active), ids[ids != active]]
+    ids = ids[:nearest]
     targets = np.zeros((nearest, 8))
     if len(ids):
         targets[:len(ids), :3] = (states[ids, :3]-position)/100.

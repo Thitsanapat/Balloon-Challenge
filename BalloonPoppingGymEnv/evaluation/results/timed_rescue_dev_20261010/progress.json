@@ -1,0 +1,80 @@
+{
+  "2": {
+    "reference": {
+      "score": 4,
+      "navigation": {
+        "samples": 3465,
+        "mean": 0.4392285012893954,
+        "rms": 0.47287664181467565,
+        "max": 0.9816998349015419
+      },
+      "mean_tracking_error": 0.5189468185445189,
+      "saturation_steps": 1177,
+      "missed_targets_within_3m": 2,
+      "angular_response_gain": null,
+      "angular_response_samples": 0,
+      "adaptive_control_steps": 0,
+      "post_reset_wall_seconds": 136.625
+    },
+    "candidate": {
+      "score": 4,
+      "navigation": {
+        "samples": 3368,
+        "mean": 0.3903259594243059,
+        "rms": 0.42669619699902933,
+        "max": 0.9562557902967859
+      },
+      "mean_tracking_error": 0.41465216854790066,
+      "saturation_steps": 747,
+      "missed_targets_within_3m": 0,
+      "angular_response_gain": null,
+      "angular_response_samples": 0,
+      "adaptive_control_steps": 0,
+      "post_reset_wall_seconds": 145.71899999980815
+    },
+    "timed": {
+      "timed_rescue_attempts": 33,
+      "timed_rescue_accepted": 2,
+      "timed_rescue_delay_sum": 1.2000000000000002
+    }
+  },
+  "0": {
+    "reference": {
+      "score": 6,
+      "navigation": {
+        "samples": 3403,
+        "mean": 0.4157426467320446,
+        "rms": 0.44295185165735784,
+        "max": 0.9442927761999091
+      },
+      "mean_tracking_error": 0.5044278346564127,
+      "saturation_steps": 674,
+      "missed_targets_within_3m": 0,
+      "angular_response_gain": null,
+      "angular_response_samples": 0,
+      "adaptive_control_steps": 0,
+      "post_reset_wall_seconds": 128.6720000000205
+    },
+    "candidate": {
+      "score": 5,
+      "navigation": {
+        "samples": 3538,
+        "mean": 0.4127390556556716,
+        "rms": 0.43886416317720633,
+        "max": 0.8985204097262729
+      },
+      "mean_tracking_error": 0.5146033451485625,
+      "saturation_steps": 772,
+      "missed_targets_within_3m": 0,
+      "angular_response_gain": null,
+      "angular_response_samples": 0,
+      "adaptive_control_steps": 0,
+      "post_reset_wall_seconds": 150.4069999998901
+    },
+    "timed": {
+      "timed_rescue_attempts": 88,
+      "timed_rescue_accepted": 1,
+      "timed_rescue_delay_sum": 0.4
+    }
+  }
+}

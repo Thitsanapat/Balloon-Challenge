@@ -1,0 +1,78 @@
+{
+  "completed": [
+    {
+      "seed": 10298371,
+      "score": 4,
+      "attempts": 7,
+      "audit_sha256": "c68b1ff8977d7fba3f0b06672ca00b9a38ed1afebfbfc4d213ada8edc2db26b7"
+    },
+    {
+      "seed": 68394312,
+      "score": 5,
+      "attempts": 6,
+      "audit_sha256": "6b1d3357c41c836a11a87f4ed65c943b91981965f089a30cb6255063471ccbd8"
+    },
+    {
+      "seed": 50192733,
+      "score": 3,
+      "attempts": 5,
+      "audit_sha256": "b1f2f89e44e209f83a7a256ddc034d216ffe5be681dc6cd64e9097a0b88da280"
+    },
+    {
+      "seed": 482617990,
+      "score": 3,
+      "attempts": 7,
+      "audit_sha256": "bd313b02eb97c33afd9a85caa4e2df03ca7c56d3f121bb01feb83951ab17c2ff"
+    },
+    {
+      "seed": 297410583,
+      "score": 7,
+      "attempts": 7,
+      "audit_sha256": "55f951a1eefd1a4865adb16b101d38e1995d381df7d8456eabfb1eab7622df43"
+    },
+    {
+      "seed": 700126354,
+      "score": 5,
+      "attempts": 7,
+      "audit_sha256": "2c52960ae39ad7a77d3661a9f709bc6d8326e6d0358ebc8773b3a5f35caa9a50"
+    },
+    {
+      "seed": 846320117,
+      "score": 5,
+      "attempts": 7,
+      "audit_sha256": "190048874580a4b865c5f16e5a553990594ccbf962d43da067ce36cb282f9c0a"
+    },
+    {
+      "seed": 119657428,
+      "score": 7,
+      "attempts": 8,
+      "audit_sha256": "7b3a4ab939f14addbe90747423e13968f086acc33d807ca9446fb01da0b16076"
+    },
+    {
+      "seed": 337854091,
+      "score": 5,
+      "attempts": 7,
+      "audit_sha256": "84eb81352fcd3b2c516644af850c4aba318a5e7ddf5295777c4d9e14e5eb8277"
+    },
+    {
+      "seed": 914708236,
+      "score": 3,
+      "attempts": 6,
+      "audit_sha256": "da85e1990afafe3e6ede5a8ab5462aeddc27156050315ae7e213bd20772dea6c"
+    },
+    {
+      "seed": 592461073,
+      "score": 6,
+      "attempts": 7,
+      "audit_sha256": "cf94c9d7bdada3e3990d880c2c48ebb257594c4ab2fae92eece61a3b2577345a"
+    },
+    {
+      "seed": 781235409,
+      "score": 3,
+      "attempts": 6,
+      "audit_sha256": "3502620de06afd256128e3010d8b764ff85f63be40d81c4eded66a7da75d902a"
+    }
+  ],
+  "completed_pairs": 12,
+  "planned_pairs": 12
+}

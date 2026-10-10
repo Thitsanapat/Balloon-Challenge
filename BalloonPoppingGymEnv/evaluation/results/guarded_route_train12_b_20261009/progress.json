@@ -1,0 +1,36 @@
+{
+  "completed": [
+    {
+      "seed": 10298371,
+      "score": 4,
+      "attempts": 7,
+      "audit_sha256": "c68b1ff8977d7fba3f0b06672ca00b9a38ed1afebfbfc4d213ada8edc2db26b7"
+    },
+    {
+      "seed": 68394312,
+      "score": 5,
+      "attempts": 6,
+      "audit_sha256": "6b1d3357c41c836a11a87f4ed65c943b91981965f089a30cb6255063471ccbd8"
+    },
+    {
+      "seed": 50192733,
+      "score": 3,
+      "attempts": 5,
+      "audit_sha256": "b1f2f89e44e209f83a7a256ddc034d216ffe5be681dc6cd64e9097a0b88da280"
+    },
+    {
+      "seed": 482617990,
+      "score": 3,
+      "attempts": 7,
+      "audit_sha256": "bd313b02eb97c33afd9a85caa4e2df03ca7c56d3f121bb01feb83951ab17c2ff"
+    },
+    {
+      "seed": 297410583,
+      "score": 7,
+      "attempts": 7,
+      "audit_sha256": "55f951a1eefd1a4865adb16b101d38e1995d381df7d8456eabfb1eab7622df43"
+    }
+  ],
+  "completed_pairs": 5,
+  "planned_pairs": 12
+}

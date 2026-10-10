@@ -1,0 +1,38 @@
+[
+  {
+    "seed": 2,
+    "score": 4,
+    "near_misses": [
+      {
+        "target": 59,
+        "distance": 1.5708978833954768,
+        "margin_outside_balloon_m": 0.07089788339547676,
+        "time_to_deadline": 0.0,
+        "allocator_saturated_at_sample": true,
+        "tracking_along_miss_m": -0.9001119472791834,
+        "alignment_along_miss_m": -0.863405825396571,
+        "prediction_error_along_miss_m": 3.334415656071231
+      },
+      {
+        "target": 9,
+        "distance": 1.9455736417767218,
+        "margin_outside_balloon_m": 0.44557364177672176,
+        "time_to_deadline": 0.020000000000003126,
+        "allocator_saturated_at_sample": false,
+        "tracking_along_miss_m": -0.1761608310300442,
+        "alignment_along_miss_m": -0.2686948918431422,
+        "prediction_error_along_miss_m": 2.390429364649908
+      },
+      {
+        "target": 17,
+        "distance": 3.1693089356239565,
+        "margin_outside_balloon_m": 1.6693089356239565,
+        "time_to_deadline": 0.14999999999999858,
+        "allocator_saturated_at_sample": true,
+        "tracking_along_miss_m": -1.3894408471508615,
+        "alignment_along_miss_m": -1.836026854311729,
+        "prediction_error_along_miss_m": 6.394776637086547
+      }
+    ]
+  }
+]

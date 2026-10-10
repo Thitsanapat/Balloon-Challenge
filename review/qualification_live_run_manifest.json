@@ -1,0 +1,23 @@
+{
+  "team_name": "TASTI_Cool_Ba_Malaew",
+  "challenge_release": "v0.2.2",
+  "scenario": 4,
+  "agent_source": "BalloonPoppingGymEnv/agents/submission_scenario4_pure_joint_v2.py",
+  "agent_class": "Scenario4PureJointRefreshAgent",
+  "agent_sha256": "9ff7f93d21a945d0479289be57bd893d8f33ab169fb1a6bfeb153ea442b6efb9",
+  "evaluations": [
+    {
+      "seed": 1497481877,
+      "score": 7,
+      "official_receipt": "qualification/receipts/20261010T111933Z_seed1497481877_462484df_official_receipt.json",
+      "submission_sha256": "d03778ddeca76b6392178007b44fc36020c30b271c2a17c0bc68ff2470e27c26"
+    },
+    {
+      "seed": 2796897388,
+      "score": 3,
+      "official_receipt": "qualification/receipts/20261010T113157Z_seed2796897388_db8a5afe_official_receipt.json",
+      "submission_sha256": "722a5b0b16b8ba603d0bcd0b2022f4a71e18f1f48e9a904cac58309331bfa2f0"
+    }
+  ],
+  "privacy": "Submission JSON and credentials are intentionally excluded. Official receipts are credential-free."
+}

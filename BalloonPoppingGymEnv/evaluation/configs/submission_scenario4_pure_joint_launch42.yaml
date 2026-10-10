@@ -1,0 +1,37 @@
+scenario_number: 4
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/submission_scenario4_pure_joint_v2.py'
+agent_class_name: 'Scenario4PureJointRefreshAgent'
+agent_name: 'Scenario 4 pure joint route refresh v2'
+agent_kwargs:
+  launch_time: 42.0
+  launch_candidates: 3
+  replan_interval: 0.4
+  beam_width: 12
+  search_depth: 14
+  branch_targets: 8
+  time_grid: 0.5
+  terminal_weight: 0.0
+  capture_fraction: 0.0
+  reserve: 0.8
+  max_tilt: 75.0
+  max_axis_rate: 1.2
+  attitude_frequency: 4.0
+  timing_candidates: 4
+  timing_iterations: 20
+  timing_safety: 0.0
+  timing_only_more_hits: true
+  profile_horizon: 8.0
+  profile_max_range: 150.0
+  profile_blend: 0.75
+  profile_max_position_correction: 12.0
+  innovation_start_seconds: 5.0
+  innovation_stop_seconds: 0.2
+  innovation_fade_seconds: 0.6
+  innovation_strength: 0.65
+  innovation_max_target_range: 150.0
+  innovation_max_error: 6.0
+  innovation_max_lateral_delta: 4.0
+  innovation_time_floor: 1.0
+  innovation_tracking_radius_multiple: 2.0
+leaderboard_submission: false

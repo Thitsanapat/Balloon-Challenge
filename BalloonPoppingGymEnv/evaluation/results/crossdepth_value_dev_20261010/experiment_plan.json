@@ -1,0 +1,21 @@
+{
+  "scope": "Development only; separate across-depth selector, not a live promotion",
+  "seeds": [0, 2],
+  "incumbent_scores": [6, 4],
+  "candidate_config": "BalloonPoppingGymEnv/evaluation/configs/scenario4_crossdepth_value_launch42.yaml",
+  "search_order_unchanged": true,
+  "launch_comparison_unchanged": true,
+  "proposal_pool_limit_per_depth": 3,
+  "discount_seconds": 20.0,
+  "failed_entry_cost_per_second": 0.08,
+  "adoption_margin": 0.05,
+  "fresh_holdout_eligibility_screen": {
+    "minimum_total_gain": 1,
+    "maximum_single_regression": 1,
+    "minimum_candidate_wins": 1,
+    "all_flights_complete_and_sources_unchanged": true
+  },
+  "automatic_live_promotion": false,
+  "mpcc_controller_gate": "Require calibrated shadow capture prediction first; current distance calibration failed",
+  "limitations": "Later-leg reference-state values are an unvalidated surrogate; development seed gains would only justify fresh held-out tests."
+}

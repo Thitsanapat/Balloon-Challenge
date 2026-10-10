@@ -1,0 +1,75 @@
+{
+  "scope": "Old guarded policy only; not a submission model",
+  "feature_names": [
+    "planned_route_length",
+    "planned_first_seconds",
+    "planned_second_seconds",
+    "planned_departure_cosine"
+  ],
+  "labels": {
+    "first_hit": {
+      "a_to_b": {
+        "train_fields": 12,
+        "test_fields": 12,
+        "train_labels": 65,
+        "test_labels": 72,
+        "test_hits": 45,
+        "prior": {
+          "brier": 0.2395546372819101,
+          "log_loss": 0.6721882304039816
+        },
+        "learned": {
+          "brier": 0.2409715228798554,
+          "log_loss": 0.6749183380714813
+        }
+      },
+      "b_to_a": {
+        "train_fields": 12,
+        "test_fields": 12,
+        "train_labels": 72,
+        "test_labels": 65,
+        "test_hits": 36,
+        "prior": {
+          "brier": 0.2519227160529469,
+          "log_loss": 0.6973973200722093
+        },
+        "learned": {
+          "brier": 0.2576382398746536,
+          "log_loss": 0.7109071484141944
+        }
+      }
+    },
+    "second_hit": {
+      "a_to_b": {
+        "train_fields": 11,
+        "test_fields": 10,
+        "train_labels": 25,
+        "test_labels": 27,
+        "test_hits": 20,
+        "prior": {
+          "brier": 0.24111056322594782,
+          "log_loss": 0.6753597150938724
+        },
+        "learned": {
+          "brier": 0.24944158956003354,
+          "log_loss": 0.6918229065293967
+        }
+      },
+      "b_to_a": {
+        "train_fields": 10,
+        "test_fields": 11,
+        "train_labels": 27,
+        "test_labels": 25,
+        "test_hits": 13,
+        "prior": {
+          "brier": 0.29460459183673465,
+          "log_loss": 0.7944301195198481
+        },
+        "learned": {
+          "brier": 0.290774188386205,
+          "log_loss": 0.7836010278226867
+        }
+      }
+    }
+  }
+}

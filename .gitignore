@@ -9,7 +9,10 @@ BalloonPoppingGymEnv/evaluation/results/**.npz
 BalloonPoppingGymEnv/evaluation/results/**.zip
 BalloonPoppingGymEnv/evaluation/results/**.log
 BalloonPoppingGymEnv/evaluation/results/**.tgz
+BalloonPoppingGymEnv/evaluation/results/multiscenario_checkpoint*/
 .mplconfig/
+qualification/.runtime/
+qualification/receipts/
 
 # VSCode specific
 .vscode/

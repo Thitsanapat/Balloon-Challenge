@@ -1,0 +1,17 @@
+{
+  "seeds": [
+    0,
+    2
+  ],
+  "scenario": 4,
+  "stage": "development, not held-out",
+  "source_sha256": "4c13a1da0e0713adaad4e89339f8934bf88d4f5b03c61efd80b3383f21a378e5",
+  "reference_scores": [
+    6,
+    4
+  ],
+  "cpu_workers": 2,
+  "gpu_visible": false,
+  "auto_promote": false,
+  "gate": "total gain >=2, no seed loss >1, accepted delayed rescue >0"
+}

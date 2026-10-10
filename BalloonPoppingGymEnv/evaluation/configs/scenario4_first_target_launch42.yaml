@@ -1,0 +1,37 @@
+scenario_number: 4
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/scenario4_first_target_agent.py'
+agent_class_name: 'Scenario4FirstTargetAgent'
+agent_name: 'Observed-wind route with recoverable first-target choice'
+agent_kwargs:
+  launch_time: 42.0
+  launch_candidates: 3
+  replan_interval: 0.4
+  beam_width: 12
+  search_depth: 14
+  branch_targets: 8
+  time_grid: 0.5
+  terminal_weight: 0.0
+  capture_fraction: 0.0
+  reserve: 0.8
+  max_tilt: 75.0
+  max_axis_rate: 1.2
+  attitude_frequency: 4.0
+  timing_candidates: 4
+  timing_iterations: 20
+  timing_safety: 0.0
+  timing_only_more_hits: true
+  profile_horizon: 8.0
+  profile_max_range: 150.0
+  profile_blend: 0.75
+  profile_max_position_correction: 12.0
+  correction_radii: [1.5, 3.0, 5.0]
+  correction_fractions: [0.5, 0.75]
+  continuation_credit: 0.12
+  robustness_floor: 0.05
+  first_time_cost: 0.08
+  first_target_trials: 2
+  first_target_depth: 3
+  first_target_beam_width: 8
+  first_target_branch_targets: 6
+leaderboard_submission: false

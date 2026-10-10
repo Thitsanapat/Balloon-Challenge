@@ -1,0 +1,36 @@
+scenario_number: 4
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/scenario4_risk_route_agent.py'
+agent_class_name: 'Scenario4RiskRouteAgent'
+agent_name: 'Observed-wind, risk-ranked short-horizon route'
+agent_kwargs:
+  launch_time: 24.0
+  launch_candidates: 3
+  replan_interval: 0.4
+  beam_width: 12
+  search_depth: 14
+  branch_targets: 8
+  time_grid: 0.5
+  terminal_weight: 0.0
+  capture_fraction: 0.0
+  max_tilt: 75.0
+  max_axis_rate: 1.2
+  attitude_frequency: 4.0
+  timing_candidates: 4
+  timing_iterations: 20
+  timing_safety: 0.0
+  timing_only_more_hits: true
+  reserve: 0.8
+  profile_horizon: 8.0
+  profile_max_range: 150.0
+  profile_blend: 0.75
+  profile_max_position_correction: 12.0
+  risk_depth_limit: 5
+  risk_first_horizon: 4.0
+  risk_future_horizon: 5.0
+  risk_first_weight: 0.20
+  risk_future_weight: 0.035
+  risk_drift_weight: 0.01
+  risk_force_soft_limit: 0.80
+  risk_force_weight: 1.5
+leaderboard_submission: false

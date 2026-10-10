@@ -1,0 +1,14 @@
+{
+  "scenario": 4,
+  "stage": "development on already-used seeds",
+  "seeds": [0, 2],
+  "current_scores": [6, 4],
+  "candidate_change": {"beam_width": 24},
+  "other_agent_parameters": "unchanged from scenario4_pure_joint_refresh_launch42.yaml",
+  "pure_joint_source_sha256": "45f02197657857f6db2985e5318cb7f4194dbd102f49185dd4c96292eabc6495",
+  "gpu_visible": false,
+  "cpu_workers": 1,
+  "stop_if_seed_0": "score below 5, source changed, or post-reset runtime over 300 seconds",
+  "gate_after_seed_2": "total gain >=2, no seed loses more than 1 pop, beam candidates exceed baseline; then separate fresh paired validation before live change",
+  "auto_promote": false
+}

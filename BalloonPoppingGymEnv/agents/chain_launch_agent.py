@@ -44,6 +44,15 @@ class ChainLaunchAgent(ChainBeamAgent):
         self.launch_comparisons = []
         self.launch_selected = False
 
+    def _launch_candidate_key(self, axis, count, finish, observation, now):
+        """Rank a rail direction after its first route has been planned.
+
+        The default preserves the established longest-chain selection. A
+        subclass may score the first executable leg using only this candidate's
+        plan, the current observation, and public vehicle parameters.
+        """
+        return (-count, finish)
+
     def get_action(self, observation):
         now = float(observation['simulation_time'])
         if not self.launched and not self.launch_selected and now >= self.launch_time:
@@ -62,7 +71,8 @@ class ChainLaunchAgent(ChainBeamAgent):
                 self._make_plan(observation, position, np.zeros(3), now)
                 count = len(self.route)
                 finish = self.deadlines[-1]-now if count else float('inf')
-                key = (-count, finish)
+                key = self._launch_candidate_key(
+                    axis, count, finish, observation, now)
                 comparisons.append([axis.tolist(), count, finish if count else None])
                 if best is None or key < best[0]:
                     best = key, axis.copy()

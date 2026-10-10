@@ -1,0 +1,176 @@
+{
+  "stage": "development only; independent validation still needed",
+  "results": {
+    "2": {
+      "navigation": {
+        "score": 3,
+        "navigation": {
+          "samples": 3353,
+          "mean": 0.40013798845390003,
+          "rms": 0.426915536044875,
+          "max": 0.8686822399261418
+        },
+        "mean_tracking_error": 0.4186396909680544,
+        "saturation_steps": 1089,
+        "missed_targets_within_3m": 1,
+        "angular_response_gain": null,
+        "angular_response_samples": 0,
+        "adaptive_control_steps": 0,
+        "post_reset_wall_seconds": 131.06299999984913
+      },
+      "joint": {
+        "score": 4,
+        "navigation": {
+          "samples": 3465,
+          "mean": 0.4392285012893954,
+          "rms": 0.47287664181467565,
+          "max": 0.9816998349015419
+        },
+        "mean_tracking_error": 0.5189468185445189,
+        "saturation_steps": 1177,
+        "missed_targets_within_3m": 2,
+        "angular_response_gain": null,
+        "angular_response_samples": 0,
+        "adaptive_control_steps": 0,
+        "post_reset_wall_seconds": 136.625
+      },
+      "control": {
+        "score": 4,
+        "navigation": {
+          "samples": 3465,
+          "mean": 0.4387359371907139,
+          "rms": 0.47229320205130504,
+          "max": 0.9813608032098373
+        },
+        "mean_tracking_error": 0.520089381022439,
+        "saturation_steps": 1182,
+        "missed_targets_within_3m": 1,
+        "angular_response_gain": [
+          0.9620858451541192,
+          0.85
+        ],
+        "angular_response_samples": 4990,
+        "adaptive_control_steps": 3255,
+        "post_reset_wall_seconds": 129.01599999982864
+      },
+      "combined": {
+        "score": 4,
+        "navigation": {
+          "samples": 3531,
+          "mean": 0.36922535666891654,
+          "rms": 0.39776571063682614,
+          "max": 0.9161553603882742
+        },
+        "mean_tracking_error": 0.4272514646888347,
+        "saturation_steps": 984,
+        "missed_targets_within_3m": 1,
+        "angular_response_gain": [
+          1.099544870469926,
+          1.0693000000000088
+        ],
+        "angular_response_samples": 5116,
+        "adaptive_control_steps": 3321,
+        "post_reset_wall_seconds": 129.64000000013039
+      }
+    },
+    "0": {
+      "joint": {
+        "score": 6,
+        "navigation": {
+          "samples": 3403,
+          "mean": 0.4157426467320446,
+          "rms": 0.44295185165735784,
+          "max": 0.9442927761999091
+        },
+        "mean_tracking_error": 0.5044278346564127,
+        "saturation_steps": 674,
+        "missed_targets_within_3m": 0,
+        "angular_response_gain": null,
+        "angular_response_samples": 0,
+        "adaptive_control_steps": 0,
+        "post_reset_wall_seconds": 128.6720000000205
+      },
+      "navigation": {
+        "score": 6,
+        "navigation": {
+          "samples": 3495,
+          "mean": 0.38585423178716005,
+          "rms": 0.40968867844491624,
+          "max": 0.8262254934120199
+        },
+        "mean_tracking_error": 0.813739303832976,
+        "saturation_steps": 899,
+        "missed_targets_within_3m": 0,
+        "angular_response_gain": null,
+        "angular_response_samples": 0,
+        "adaptive_control_steps": 0,
+        "post_reset_wall_seconds": 129.68799999984913
+      },
+      "control": {
+        "score": 5,
+        "navigation": {
+          "samples": 3570,
+          "mean": 0.44863643279721116,
+          "rms": 0.4858112923765884,
+          "max": 1.027737200673723
+        },
+        "mean_tracking_error": 0.4267866356783762,
+        "saturation_steps": 704,
+        "missed_targets_within_3m": 0,
+        "angular_response_gain": [
+          1.113400000000004,
+          1.1226656621265982
+        ],
+        "angular_response_samples": 4709,
+        "adaptive_control_steps": 3359,
+        "post_reset_wall_seconds": 128.8430000001099
+      },
+      "combined": {
+        "score": 6,
+        "navigation": {
+          "samples": 3493,
+          "mean": 0.3859718780747223,
+          "rms": 0.4098547143085038,
+          "max": 0.8275502514452016
+        },
+        "mean_tracking_error": 0.8110304977762841,
+        "saturation_steps": 889,
+        "missed_targets_within_3m": 0,
+        "angular_response_gain": [
+          1.15,
+          1.15
+        ],
+        "angular_response_samples": 4729,
+        "adaptive_control_steps": 3282,
+        "post_reset_wall_seconds": 128.81199999991804
+      }
+    }
+  },
+  "screens": {
+    "navigation": {
+      "deltas": [
+        -1,
+        0
+      ],
+      "total_gain": -1,
+      "passed": false
+    },
+    "control": {
+      "deltas": [
+        0,
+        -1
+      ],
+      "total_gain": -1,
+      "passed": false
+    },
+    "combined": {
+      "deltas": [
+        0,
+        0
+      ],
+      "total_gain": 0,
+      "passed": false
+    }
+  },
+  "live_agent_changed": false
+}

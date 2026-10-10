@@ -1,0 +1,4 @@
+{
+  "error": "Command '('C:\\\\Users\\\\thits\\\\Documents\\\\Balloon Challenge\\\\.venv\\\\Scripts\\\\python.exe', '-m', 'scripts.collect_guarded_route_shadow', '--config', 'C:\\\\Users\\\\thits\\\\Documents\\\\Balloon Challenge\\\\BalloonPoppingGymEnv\\\\evaluation\\\\configs\\\\submission_scenario4_guarded_innovation_launch42.yaml', '--output', 'C:\\\\Users\\\\thits\\\\Documents\\\\Balloon Challenge\\\\BalloonPoppingGymEnv\\\\evaluation\\\\results\\\\guarded_route_train12_b_20261009\\\\700126354', '--seeds', '700126354', '--flight', 'baseline')' returned non-zero exit status 1.",
+  "completed_pairs": 5
+}

@@ -1,0 +1,2005 @@
+{
+  "schema": "qualification_used_seed_registry_v1",
+  "note": "Conservative local evidence, not proof of every legacy training episode",
+  "seed_count": 451,
+  "files_checked": 702,
+  "seeds": {
+    "0": [
+      "BalloonPoppingGymEnv/evaluation/configs/multi_target_5point_reference.yaml",
+      "BalloonPoppingGymEnv/evaluation/results/20260907T134921.274Z_TASTI_Cool_Ba_Malaew_d63c826cabff4400a00c6aecdd802656_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20260907T165739.564Z_TASTI_Cool_Ba_Malaew_1fb435aad49d4451bdd63220725d18b7_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20260907T171348.920Z_TASTI_Cool_Ba_Malaew_46ebdb7f7494481ca0ea540b329bf87c_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20260907T171617.055Z_TASTI_Cool_Ba_Malaew_84b67800899143869cc387780a2477b0_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20260922T191237.126Z_TASTI_Cool_Ba_Malaew_1c191bdd849d4a0cb5f01ce2be950088_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20260923T022239.546Z_TASTI_Cool_Ba_Malaew_ed5e6184de4f495bbe229fe8f4b06025_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20260923T074356.012Z_TASTI_Cool_Ba_Malaew_6a7f06d28fda4a6993004dd82a11c056_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20260923T074855.512Z_TASTI_Cool_Ba_Malaew_3d64859bc1cc4647876b30e2f8928efd_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20260924T023250.314Z_TASTI_Cool_Ba_Malaew_5df48f1ab723401dadbbefac8ba1a57a_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20260924T083109.930Z_TASTI_Cool_Ba_Malaew_09938a81f52f49e3a9e086132a48bb90_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20261002T175943.429Z_TASTI_Cool_Ba_Malaew_2cbbfcd3a2574a7fb162da9bebea9c80_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20261003T021910.264Z_TASTI_Cool_Ba_Malaew_fe3e7d50c87b4528a1a793233faf988a_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/20261007T084654.377Z_TASTI_Cool_Ba_Malaew_a3c400fbe88941df820c00443547164e_submission.json",
+      "BalloonPoppingGymEnv/evaluation/results/capture_spline_07_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/capture_spline_09_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/cloud_corridor_launch45_fresh_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/committed_first2next2_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/committed_first3next2_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/committed_first4next2_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/committed_first4next3_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/committed_next1_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/committed_next2_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/committed_spline_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/coverage_seeded_s0.json",
+      "BalloonPoppingGymEnv/evaluation/results/flythrough_speed2_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/flythrough_speed5_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/flythrough_speed8_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_baseline24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_lookahead30_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_lookahead36_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_lookahead42_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_spline_launch22_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_spline_launch23_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_spline_launch23p25_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_spline_launch23p5_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_spline_launch23p75_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_spline_launch24p25_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_spline_launch25_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/fullfield_spline_launch26_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/gnc_baseline_pop_states_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/gnc_scripted_baseline_order_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/gnc_scripted_insert80_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/gnc_scripted_late80_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_anchor_seed0_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_anchor_seed0_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_anchor_seed0_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!capture_02_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!capture_04_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!capture_06_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!submission_sqp_v2_s1_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/inclined_spline_55_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/inclined_spline_55_target85_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/inclined_spline_65_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/inclined_spline_65_target85_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/inclined_spline_70_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/inclined_spline_75_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/inclined_spline_75_target85_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/lookahead_launch45_fresh_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/lookahead_weight0.5_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/lookahead_weight002_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/lookahead_weight01_launch24_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/lookahead_weight1_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/lookahead_weight2_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/lookahead_weight4_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/model_aware_accel_only_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/model_aware_fast_filter_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/model_aware_full_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/model_aware_no_drag_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/optimized_spiral_margin_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/optimized_spiral_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/optimized_spline_climb_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/optimized_spline_launch35_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/optimized_spline_rate_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/pair_launch45_fresh_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/physics_cache_validation_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/physics_fresh_seed0_seed1_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/eval_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_acceleration_active_dev_seed0_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_baseline_telemetry_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_adaptive_launch_group20_horizon10_seed0_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_adaptive_launch_group20_seed0_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_adaptive_launch_seed0_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_feasible_feedback_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_first_target_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_forecast_innovation_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_hopeless_leg_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_intercept_candidates_seed0_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_joint_innovation_seed0_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_joint_refresh_full_route_seed0_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_joint_refresh_seed0_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_recoverable_launch_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_residual_zero_seed0_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_swept_corridor_conservative_seed0_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_swept_corridor_seed0_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_zem_terminal_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_innovation_dev_seed01_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_standalone_official_seed0_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_standalone_package_seed0_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_latched_capture_dev_seed0_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_navigation_tau1_dev_seed012_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_near_term_chance_dev_seed0_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_reachable_joint_dev_seed0_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_rescue_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_reserve_refresh_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_shadow_validation_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_standalone_launch42_official_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_terminal_residual_dev_seed0_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_terminal_residual_g015_dev_seed0_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_terminal_window_dev_seed012_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_trackability_dev_seed0_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_vertical_energy_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario3_control_time_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_baseline_time_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_disturbance_gravityfix_reserve08_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_disturbance_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_forecast_reserve08_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_forecast_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_fusion_gravityfix_reserve08_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_fusion_gravityfix_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_fusion_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_risk_route_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_standalone_official_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_time_launch16_reserve08_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_time_launch28_reserve08_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_time_reserve08_replan01_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_time_reserve08_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_time_reserve08_tilt45_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_wind_fusion_reserve08_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_wind_profile_launch36_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_wind_profile_launch42_seed0_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_wind_profile_reserve08_seed0_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed0_v1.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed0_v2.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed0_v3.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed0_v4.json",
+      "BalloonPoppingGymEnv/evaluation/results/scripted_insert80_after8_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/scripted_insert80_before8_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/scripted_top16_route_seed0.json",
+      "BalloonPoppingGymEnv/evaluation/results/sensor_coupled_gnc_dev_20261009_stdout.log",
+      "BalloonPoppingGymEnv/evaluation/results/spline_long_second_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_replan04_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_route_launch12_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_route_launch18_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_route_launch24_fresh_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_route_launch30_fresh_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_route_launch40_fresh_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_route_launch4_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_step05_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_tilt65_rate0.7_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_tilt65_rate1.2_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_tilt75_rate0.7_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_tilt75_rate1.2_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_wide_candidates_launch24_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/submission_chain_agile_v1_receipt.json",
+      "BalloonPoppingGymEnv/evaluation/results/submission_chain_launch_v1_receipt.json",
+      "BalloonPoppingGymEnv/evaluation/results/submission_chain_v1_receipt.json",
+      "BalloonPoppingGymEnv/evaluation/results/submission_final_approach_v1_receipt.json",
+      "BalloonPoppingGymEnv/evaluation/results/submission_sqp_v2_receipt.json",
+      "BalloonPoppingGymEnv/evaluation/results/submission_time_allocation_v1_receipt.json",
+      "BalloonPoppingGymEnv/evaluation/results/three_intercept_launch24_fresh_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/timed_spline_launch24_fresh_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/wide_spiral_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/wind_spiral_capture_tilted_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/wind_spiral_capture_vertical_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/wind_spiral_tilted_seed0_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/wind_spiral_vertical_seed0_metrics.json",
+      "BalloonPoppingGymEnv\\envs\\scenario_parameters\\scenario_4_parameters.yaml",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/validate_proactive_joint.py",
+      "scripts/validate_scenario4_shadow.py",
+      "scripts/validate_sensor_coupled_gnc.py",
+      "scripts/validate_timed_rescue.py",
+      "tests/test_guidance_outcomes.py",
+      "tests/test_monte_carlo_output_path.py",
+      "tests/test_monte_carlo_result_count.py",
+      "tests/test_qualification_run.py",
+      "tests/test_qualification_seed_registry.py",
+      "tests/test_random_seed_null.py",
+      "tests/test_render.py",
+      "tests/test_scenario0_static.py",
+      "tests/test_scenario1_regression.py",
+      "tests/test_sensor_determinism.py",
+      "tests/test_submission_payload.py",
+      "tests/test_submission_serialization.py",
+      "tests/test_submission_write_safety.py",
+      "tests/test_unusable_action_reasons.py"
+    ],
+    "1": [
+      "BalloonPoppingGymEnv/evaluation/results/coverage_seeded_s1.json",
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed1.json",
+      "BalloonPoppingGymEnv/evaluation/results/physics_fresh_seed0_seed1_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_acceleration_active_dev_seed1_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_adaptive_launch_group20_seed1_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_adaptive_launch_seed1_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_feasible_feedback_seed1_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_forecast_innovation_seed1_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_joint_refresh_full_route_seed1_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_recoverable_launch_seed1_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_residual_zero_seed1_20261004.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_zem_terminal_seed1_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_innovation_dev_seed01_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_shadow_dense_seed1_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_latched_capture_dev_seed1_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_near_term_chance_dev_seed1_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_reachable_joint_dev_seed1_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_rescue_seed1_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_reserve_refresh_seed1_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_terminal_window_dev_seed012_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_trackability_dev_seed12_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_trackability_tiebreak_seed1_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_vertical_energy_seed1_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_baseline_time_seed1_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_fusion_seed1_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_risk_route_seed1_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_time_reserve08_seed1_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_wind_profile_launch36_seed1_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_wind_profile_launch42_seed1_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_wind_profile_reserve08_seed1_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/spline_route_launch24_fresh_seed1_metrics.json",
+      "tests/test_assess_shadow_calibration.py",
+      "tests/test_seed_round_trip.py",
+      "tests/test_sensor_determinism.py"
+    ],
+    "2": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed2.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_feasible_feedback_seed2_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_forecast_innovation_seed2_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_recoverable_launch_seed2_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_innovation_dev_seed2_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_seed2_guidance_telemetry_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_shadow_arrival_seed2_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_shadow_dense_seed2_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_shadow_seed2_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_joint_acceleration_guarded_dev_seed2_20261008.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_reachable_joint_dev_seed2_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_reachable_refresh_dev_seed2_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_tracking_wn16_dev_seed2_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_time_reserve08_seed2_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_wind_profile_launch42_seed2_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/scenario4_wind_profile_reserve08_seed2_20261002.json",
+      "BalloonPoppingGymEnv/evaluation/results/sensor_coupled_gnc_dev_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/validate_joint_standalone_parity.py",
+      "scripts/validate_proactive_joint.py",
+      "scripts/validate_sensor_coupled_gnc.py",
+      "scripts/validate_timed_rescue.py",
+      "tests/test_assess_shadow_calibration.py",
+      "tests/test_summarize_scenario4_shadow.py"
+    ],
+    "3": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed3.json",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/eval_seed3.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_base_seed3_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_launch42_seed3_20261003.json"
+    ],
+    "4": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed4.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_base_seed4_20261003.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_launch42_seed4_20261003.json"
+    ],
+    "5": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed5.json",
+      "tests/test_submission_serialization.py",
+      "tests/test_summarize_guidance_misses.py"
+    ],
+    "6": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed6.json"
+    ],
+    "7": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed7.json",
+      "tests/test_evaluate_guidance_timing.py",
+      "tests/test_multiscenario_resume.py",
+      "tests/test_submission_serialization.py"
+    ],
+    "8": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed8.json",
+      "tests/test_submission_serialization.py"
+    ],
+    "9": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed9.json"
+    ],
+    "10": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed10.json"
+    ],
+    "11": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed11.json"
+    ],
+    "12": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed12.json"
+    ],
+    "13": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed13.json"
+    ],
+    "14": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed14.json"
+    ],
+    "15": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed15.json"
+    ],
+    "16": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed16.json"
+    ],
+    "17": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed17.json"
+    ],
+    "18": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed18.json"
+    ],
+    "19": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed19.json"
+    ],
+    "20": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed20.json"
+    ],
+    "21": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed21.json"
+    ],
+    "22": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed22.json"
+    ],
+    "23": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed23.json"
+    ],
+    "24": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed24.json"
+    ],
+    "25": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed25.json"
+    ],
+    "26": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed26.json"
+    ],
+    "27": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed27.json"
+    ],
+    "28": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed28.json"
+    ],
+    "29": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed29.json"
+    ],
+    "30": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed30.json"
+    ],
+    "31": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed31.json"
+    ],
+    "32": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed32.json"
+    ],
+    "33": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed33.json"
+    ],
+    "34": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed34.json"
+    ],
+    "35": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed35.json"
+    ],
+    "36": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed36.json"
+    ],
+    "37": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed37.json"
+    ],
+    "38": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed38.json"
+    ],
+    "39": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed39.json"
+    ],
+    "40": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed40.json"
+    ],
+    "41": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed41.json"
+    ],
+    "42": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed42.json"
+    ],
+    "43": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed43.json",
+      "tests/test_qualification_run.py"
+    ],
+    "44": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed44.json"
+    ],
+    "45": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed45.json"
+    ],
+    "46": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed46.json"
+    ],
+    "47": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed47.json"
+    ],
+    "48": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed48.json"
+    ],
+    "49": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed49.json"
+    ],
+    "50": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed50.json"
+    ],
+    "51": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed51.json"
+    ],
+    "52": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed52.json"
+    ],
+    "53": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed53.json"
+    ],
+    "54": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed54.json"
+    ],
+    "55": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed55.json"
+    ],
+    "56": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed56.json"
+    ],
+    "57": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed57.json"
+    ],
+    "58": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed58.json"
+    ],
+    "59": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed59.json"
+    ],
+    "60": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed60.json"
+    ],
+    "61": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed61.json"
+    ],
+    "62": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed62.json"
+    ],
+    "63": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed63.json"
+    ],
+    "64": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed64.json"
+    ],
+    "65": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed65.json"
+    ],
+    "66": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed66.json"
+    ],
+    "67": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed67.json"
+    ],
+    "68": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed68.json"
+    ],
+    "69": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed69.json"
+    ],
+    "70": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed70.json"
+    ],
+    "71": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed71.json"
+    ],
+    "72": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed72.json"
+    ],
+    "73": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed73.json"
+    ],
+    "74": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed74.json"
+    ],
+    "75": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed75.json"
+    ],
+    "76": [
+      "BalloonPoppingGymEnv/evaluation/results/guidance_reports_20260923.tgz!baseline_seed76.json"
+    ],
+    "100": [
+      "BalloonPoppingGymEnv/evaluation/results/s4_dev_hopeless_leg_seed100_20261003.json"
+    ],
+    "123": [
+      "tests/test_multiscenario_residual.py"
+    ],
+    "300": [
+      "tests/test_official_residual_env.py"
+    ],
+    "1990": [
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "6818": [
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "41827": [
+      "tests/test_qualification_run.py"
+    ],
+    "123456": [
+      "tests/test_qualification_run.py"
+    ],
+    "240926": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/manifest.json"
+    ],
+    "240927": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/manifest.json",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_large_start_20260924.tgz!ppo_large_20260924/manifest.json"
+    ],
+    "240928": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_single_recovery_20260924/manifest.json",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/manifest.json"
+    ],
+    "261004": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_checkpoint_256_snapshot_20261004.zip!manifest.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!manifest.json"
+    ],
+    "261006": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!manifest.json",
+      "scripts/resume_multiscenario_ppo.py"
+    ],
+    "304729": [
+      "BalloonPoppingGymEnv/evaluation/configs/beam13_seed304729_diagnostic.yaml",
+      "BalloonPoppingGymEnv/evaluation/configs/scheduled_ascent_seed304729_diagnostic.yaml",
+      "BalloonPoppingGymEnv/evaluation/results/optimized_spline_seed304729_ascent.json",
+      "BalloonPoppingGymEnv/evaluation/results/reference_tracking_seed304729_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed304729_fast_attitude.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed304729_v1.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed304729_v2.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed304729_v3.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed304729_v4.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed304729_v5.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed304729_v6.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed304729_v7.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_ascent_seed304729_v8.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_base_seed304729_fixed.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_boundary_climb_seed304729.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_boundary_seed304729.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_rate_seed304729_fixed.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_rate_seed304729_metrics.json",
+      "BalloonPoppingGymEnv/evaluation/results/scheduled_rate_seed304729_short.json",
+      "scripts/train_point_mass_ppo.py"
+    ],
+    "10298371": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_20261009_stdout.log",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "16069280": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17"
+    ],
+    "19528699": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "20968604": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "27105052": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "48700076": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "50192733": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_20261009_stdout.log",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "51767977": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "52513829": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "54731007": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "63736142": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "64485052": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "66894811": [
+      "BalloonPoppingGymEnv/evaluation/results/s4_requested_seed_66894811_20261003.json"
+    ],
+    "67868380": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "68394312": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_20261009_stdout.log",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "73265564": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "86650446": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "90435389": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "93120163": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "93986779": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "109933324": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17"
+    ],
+    "119657428": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "123456789": [
+      "BalloonPoppingGymEnv/evaluation/results/20261007T053840.049Z_TASTI_Cool_Ba_Malaew_a88ede08695d475fbb94f9fcd667af5e_submission.json",
+      "qualification/receipts/20261007T053421Z_seed123456789_2b40c09d_official_receipt.json",
+      "qualification/receipts/20261007T053421Z_seed123456789_2b40c09d_summary.json",
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "130752622": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_holdout4_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/validate_guarded_route_ml.py"
+    ],
+    "132349747": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "133789622": [
+      "BalloonPoppingGymEnv/evaluation/results/s4_requested_seed_133789622_20261003.json"
+    ],
+    "136222531": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "139294086": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "140200341": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_stage2_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/assess_guarded_route_ml_stage2.py",
+      "scripts/validate_guarded_route_ml_stage2.py"
+    ],
+    "164593090": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "169536038": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "174005754": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "178420909": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_stage2_20261008_stdout.log",
+      "BalloonPoppingGymEnv/evaluation/results/s4_joint_refresh_stability_probe_seed178420909_20261009.json",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/assess_guarded_route_ml_stage2.py",
+      "scripts/validate_guarded_route_ml_stage2.py"
+    ],
+    "181471585": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "181956863": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "190038660": [
+      "scripts/validate_scenario4_latched_capture.py"
+    ],
+    "193902494": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "193946995": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "194135875": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "204776124": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "205320497": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "210741019": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "214775032": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "230652457": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "231902429": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "234703015": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_holdout4_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/validate_guarded_route_ml.py"
+    ],
+    "235207204": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "257808910": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "261006001": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_complete_20261006.zip!route_shadow_20261006/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_complete_20261006.zip!route_shadow_20261006/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_anchor_complete_20261006.zip!route_shadow_v2_anchor_20261006/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_anchor_complete_20261006.zip!route_shadow_v2_anchor_20261006/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_anchor_complete_20261006.zip!route_shadow_v2_anchor_20261006/summary.json",
+      "scripts/compare_preview_mpc.py"
+    ],
+    "261006010": [
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/summary.json"
+    ],
+    "261006011": [
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/summary.json"
+    ],
+    "261006012": [
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/summary.json"
+    ],
+    "261006013": [
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/summary.json"
+    ],
+    "261006014": [
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/summary.json"
+    ],
+    "261006015": [
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/summary.json"
+    ],
+    "261006016": [
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/summary.json"
+    ],
+    "261006017": [
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/summary.json"
+    ],
+    "261006018": [
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/summary.json"
+    ],
+    "261006019": [
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/route_shadow_v2_train10_complete_20261006.zip!data/summary.json"
+    ],
+    "261006020": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/summary.json",
+      "scripts/compare_preview_mpc.py"
+    ],
+    "261006021": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/summary.json",
+      "scripts/compare_preview_mpc.py"
+    ],
+    "261006022": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_pilot_complete_20261006.zip!data/summary.json",
+      "scripts/compare_preview_mpc.py"
+    ],
+    "261775572": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "265255730": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "271828182": [
+      "BalloonPoppingGymEnv/evaluation/results/20261006T171441.003Z_TASTI_Cool_Ba_Malaew_9c5fbcde12c14c7fab90a0b51ed71b06_submission.json",
+      "qualification/receipts/20261006T170952Z_seed271828182_b4c2f6ce_official_receipt.json",
+      "qualification/receipts/20261006T170952Z_seed271828182_b4c2f6ce_summary.json",
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "272268527": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "272899994": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "274611493": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "275352900": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "280132313": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "282066933": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "282227154": [
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "283332637": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "285047672": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "287718280": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "292799362": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "297410583": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_20261009_stdout.log",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "298628555": [
+      "BalloonPoppingGymEnv/evaluation/results/pure_joint_holdout4_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/validate_pure_joint_holdout.py"
+    ],
+    "300439883": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "304077094": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "307394138": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "308712757": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "311969326": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "313734695": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "314159265": [
+      "qualification/receipts/20261006T155411Z_seed314159265_1ffdef17_official_receipt.json",
+      "qualification/receipts/20261006T155411Z_seed314159265_1ffdef17_summary.json",
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "323608259": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "332550378": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "333239953": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "337854091": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "342255508": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "343629988": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "344677722": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "350852496": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "354181639": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "355707239": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "376805294": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "380540395": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "384724280": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "386688283": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "397272004": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "399065320": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "401496272": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "402992567": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "410851270": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_checkpoint_256_snapshot_20261004.zip!episode_seeds.jsonl",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "418352188": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "427112062": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "435857031": [
+      "BalloonPoppingGymEnv/evaluation/results/pure_joint_holdout4_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/validate_pure_joint_holdout.py"
+    ],
+    "439862696": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_holdout4_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/validate_guarded_route_ml.py"
+    ],
+    "449728228": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "452231204": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "461094748": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_checkpoint_256_snapshot_20261004.zip!episode_seeds.jsonl",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "462044542": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17"
+    ],
+    "470928925": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "471502115": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "475307528": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "482617990": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_20261009_stdout.log",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "495311813": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "502640436": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "522331375": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/reset_failures_0.jsonl"
+    ],
+    "524849974": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "531780888": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "532439797": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "535121695": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "539008069": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "539302071": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "541941372": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "543235275": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "553723234": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "557507563": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "568300771": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_stage2_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/assess_guarded_route_ml_stage2.py",
+      "scripts/validate_guarded_route_ml_stage2.py"
+    ],
+    "574271741": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "578472641": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "578507330": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "585495292": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "590958272": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "592461073": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "597583121": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "605131410": [
+      "BalloonPoppingGymEnv/evaluation/results/pure_joint_holdout4_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/validate_pure_joint_holdout.py"
+    ],
+    "608533837": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "615256686": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "615317347": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "617673087": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "618478271": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "622029511": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "627445071": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "629093901": [
+      "scripts/validate_scenario4_latched_capture.py"
+    ],
+    "634732832": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "652381888": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "662504311": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_stage2_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/assess_guarded_route_ml_stage2.py",
+      "scripts/validate_guarded_route_ml_stage2.py"
+    ],
+    "662589303": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "678684663": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "681401812": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "684268080": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "695245796": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "699112124": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "700126354": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "708803296": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "710178333": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "719113262": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "721021051": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "721771533": [
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_standalone_parity_seed721771533_20261007.json"
+    ],
+    "722419964": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "724686099": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "731804959": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "734285068": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "741093826": [
+      "BalloonPoppingGymEnv/evaluation/results/20261009T174635.260Z_TASTI_Cool_Ba_Malaew_4290a1b28f6a4d4fab936c8b13bfbea2_submission.json",
+      "qualification/finalnight_joint_readiness.json",
+      "qualification/receipts/20261009T173906Z_seed741093826_8c968ab8_official_receipt.json",
+      "qualification/receipts/20261009T173906Z_seed741093826_8c968ab8_summary.json",
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "750967620": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "752065690": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "752272696": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "752384784": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "761692544": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_holdout4_20261008_stdout.log",
+      "BalloonPoppingGymEnv/evaluation/results/s4_selected_seed761692544_miss_summary_20261008.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_selected_seed761692544_terminal_decomp_20261008.json",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/validate_guarded_route_ml.py"
+    ],
+    "767678882": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "775521109": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "779911101": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "781235409": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "792129905": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "802019667": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "808940212": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "818619157": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "820180488": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16"
+    ],
+    "820431975": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_stage2_20261008_stdout.log",
+      "BalloonPoppingGymEnv/evaluation/results/s4_joint_refresh_stability_probe_seed820431975_20261009.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_pure_joint_refresh_parity_seed820431975_20261009.json",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/assess_guarded_route_ml_stage2.py",
+      "scripts/validate_guarded_route_ml_stage2.py"
+    ],
+    "829483226": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "830471237": [
+      "BalloonPoppingGymEnv/evaluation/results/s4_guarded_launcher_seed830471237_baseline_20261007.json",
+      "qualification/receipts/20261007T085016Z_seed830471237_8f88c173_official_receipt.json",
+      "qualification/receipts/20261007T085016Z_seed830471237_8f88c173_summary.json",
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "833579483": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "835387399": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "839958652": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/package_guarded_capture_model.py"
+    ],
+    "846320117": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "849880078": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "851973296": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "856571125": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "859737681": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "866309937": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "870902379": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "877632538": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "886851589": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "905843084": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "907576341": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "912088088": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "914708236": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009.zip!data/summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_train12_b_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/fit_combined_guarded_route.py"
+    ],
+    "917082960": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "920760171": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "927297526": [
+      "BalloonPoppingGymEnv/evaluation/results/pure_joint_holdout4_recovered_20261009_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/validate_pure_joint_holdout.py"
+    ],
+    "933878928": [
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "934150219": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "937573610": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16"
+    ],
+    "945925667": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "949686996": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "955306444": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "957007799": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "967480385": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "971343525": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "972305277": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "983425821": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "990880282": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "996170035": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_final_snapshot_20261005.zip!episode_seeds.jsonl"
+    ],
+    "997870248": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_continuation_final_20261006.zip!episode_seeds.jsonl"
+    ],
+    "1000000007": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_validation_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_validation_complete_20261005.zip!summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_validation_first_pair_20261005.zip!plan.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1001687767": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1017421605": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_comparison_complete_20261006.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_comparison_complete_20261006.zip!summary.json"
+    ],
+    "1020145031": [
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "1022020488": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1028119475": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1031559622": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1040828982": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "1044662930": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "1089919622": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1092318811": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17"
+    ],
+    "1098270439": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_stage2_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/assess_guarded_route_ml_stage2.py",
+      "scripts/validate_guarded_route_ml_stage2.py"
+    ],
+    "1106734470": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16"
+    ],
+    "1111111111": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_validation_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_validation_complete_20261005.zip!summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_validation_first_pair_20261005.zip!plan.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1121306046": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_comparison_complete_20261006.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_comparison_complete_20261006.zip!summary.json"
+    ],
+    "1126043508": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_stage2_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/assess_guarded_route_ml_stage2.py",
+      "scripts/validate_guarded_route_ml_stage2.py"
+    ],
+    "1126348939": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "1141149390": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/summary.json",
+      "scripts/validate_preview_mpc.py"
+    ],
+    "1154366829": [
+      "scripts/validate_scenario4_acceleration.py"
+    ],
+    "1165092567": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/summary.json",
+      "scripts/validate_preview_mpc.py"
+    ],
+    "1181454816": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1186510002": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "1200058069": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "1202675372": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1223901179": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "1231321468": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "1253188905": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "1253917694": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "1255148541": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1257343482": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1280590006": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "1282211834": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1302914821": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "1305683497": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "1325755670": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "1330373592": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "1341911543": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1350974102": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1352273614": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/summary.json",
+      "scripts/validate_preview_mpc.py"
+    ],
+    "1366843882": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "1370279849": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "1399585391": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/summary.json",
+      "scripts/validate_preview_mpc.py"
+    ],
+    "1402454945": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1403881619": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1404248912": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1410104461": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_validation_complete_20261006.zip!data/summary.json",
+      "scripts/validate_preview_mpc.py"
+    ],
+    "1420401609": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "1423016707": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "1428571429": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_validation_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_validation_complete_20261005.zip!summary.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_validation_first_pair_20261005.zip!plan.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1447180970": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "1452198292": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1460140236": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "1462280736": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_comparison_complete_20261006.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_comparison_complete_20261006.zip!summary.json"
+    ],
+    "1466398684": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1485969150": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "1497481877": [
+      "BalloonPoppingGymEnv/evaluation/results/20261010T112607.688Z_TASTI_Cool_Ba_Malaew_217e30be89304c2c812f141e0c8bc0bb_submission.json",
+      "qualification/receipts/20261010T111933Z_seed1497481877_462484df_official_receipt.json",
+      "qualification/receipts/20261010T111933Z_seed1497481877_462484df_summary.json",
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "1504003660": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "1504633979": [
+      "scripts/validate_scenario4_acceleration.py"
+    ],
+    "1512147923": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "1527078034": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "1533739991": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/summary.json",
+      "scripts/holdout_preview_mpc.py"
+    ],
+    "1537314834": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1552368575": [
+      "BalloonPoppingGymEnv/evaluation/results/s4_reachable_holdout_baseline_seed1552368575_20261007.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_reachable_holdout_candidate_seed1552368575_20261007.json",
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "1552984460": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "1559412939": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1570091972": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/summary.json",
+      "scripts/holdout_preview_mpc.py"
+    ],
+    "1576325320": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!summary.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1584252769": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/summary.json",
+      "scripts/holdout_preview_mpc.py"
+    ],
+    "1587049308": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1591279084": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "1605969870": [
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "1615237492": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1617394268": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "1623742957": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "1630657292": [
+      "scripts/validate_scenario4_acceleration.py"
+    ],
+    "1638022520": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1638895464": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/summary.json",
+      "scripts/holdout_preview_mpc.py"
+    ],
+    "1640238257": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1652635469": [
+      "scripts/validate_scenario4_acceleration.py"
+    ],
+    "1661394322": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "1664870565": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "1665418376": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "1670497498": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "1676901674": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/summary.json",
+      "scripts/holdout_preview_mpc.py"
+    ],
+    "1716173633": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "1717629685": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!summary.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1721673703": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1722428225": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/summary.json",
+      "scripts/holdout_preview_mpc.py"
+    ],
+    "1726021446": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!summary.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1735313215": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!summary.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1773316002": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "1776102205": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "1779961095": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_1_first_12"
+    ],
+    "1793692987": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!summary.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1794386632": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1798252623": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1803060829": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1807896436": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "1812793182": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_4_first_16"
+    ],
+    "1818045955": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!summary.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1823361192": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17"
+    ],
+    "1824032641": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/summary.json",
+      "scripts/holdout_preview_mpc.py"
+    ],
+    "1830415931": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/summary.json",
+      "scripts/holdout_preview_mpc.py"
+    ],
+    "1834767755": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "1836592353": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "1849939288": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "1850633269": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "1859249791": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "1859368188": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/summary.json",
+      "scripts/holdout_preview_mpc.py"
+    ],
+    "1863498095": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_0_first_16"
+    ],
+    "1874165841": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "1874268156": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1875518545": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1877745918": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!summary.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1881119138": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "1887054065": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "1889085391": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!summary.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1895400601": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "1904235602": [
+      "BalloonPoppingGymEnv/evaluation/results/guarded_route_ml_stage2_20261008_stdout.log",
+      "qualification\\used_seed_manual.jsonl",
+      "scripts/assess_guarded_route_ml_stage2.py",
+      "scripts/validate_guarded_route_ml_stage2.py"
+    ],
+    "1931191098": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!summary.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1945086148": [
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/progress.json",
+      "BalloonPoppingGymEnv/evaluation/results/preview_mpc_holdout10_complete_20261006.zip!data/summary.json",
+      "scripts/holdout_preview_mpc.py"
+    ],
+    "1954286051": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "1961007129": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_0_first_13"
+    ],
+    "1968662391": [
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!plan.json",
+      "BalloonPoppingGymEnv/evaluation/results/multiscenario_holdout_complete_20261005.zip!summary.json",
+      "scripts/validate_multiscenario_pilot.py"
+    ],
+    "1968793050": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "1979521076": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1991638024": [
+      "BalloonPoppingGymEnv/evaluation/results/s4_joint_second_holdout_baseline_seed1991638024_20261008.json",
+      "BalloonPoppingGymEnv/evaluation/results/s4_joint_second_holdout_candidate_seed1991638024_20261008.json",
+      "qualification\\used_seed_manual.jsonl"
+    ],
+    "1994513810": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "1997384302": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "2004403976": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "2004623163": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "2006279295": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "2011515895": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_1_first_16",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_2_first_12",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "2020191600": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_5_first_16"
+    ],
+    "2020672312": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "2020770495": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "2036924312": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_7_first_16"
+    ],
+    "2050820396": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_3_first_16"
+    ],
+    "2069657073": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_6_first_16"
+    ],
+    "2074508437": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "2089859517": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "2106863083": [
+      "BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/legacy_rng_worker_2_first_17",
+      "BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/legacy_rng_worker_3_first_12"
+    ],
+    "2111961874": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "2121540646": [
+      "BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/legacy_rng_worker_0_first_63"
+    ],
+    "2796897388": [
+      "BalloonPoppingGymEnv/evaluation/results/20261010T113742.767Z_TASTI_Cool_Ba_Malaew_0e5aaed86eba45b3b3839849a580d273_submission.json",
+      "qualification/receipts/20261010T113157Z_seed2796897388_db8a5afe_official_receipt.json",
+      "qualification/receipts/20261010T113157Z_seed2796897388_db8a5afe_summary.json",
+      "qualification\\used_seed_manual.jsonl"
+    ]
+  },
+  "warnings": [
+    "Conservative RNG prefix reconstructed, exact episodes unverified: BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924",
+    "Conservative RNG prefix reconstructed, exact episodes unverified: BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924",
+    "Conservative RNG prefix reconstructed, exact episodes unverified: BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924",
+    "Legacy episode log lacks field seeds: BalloonPoppingGymEnv/evaluation/results/exit_health_artifacts_20260924.tgz!ppo_large_20260924/episodes.jsonl",
+    "Legacy episode log lacks field seeds: BalloonPoppingGymEnv/evaluation/results/ppo_pilot_v2_artifacts_20260924.tgz!ppo_pilot_v2_20260924/episodes.jsonl",
+    "Legacy episode log lacks field seeds: BalloonPoppingGymEnv/evaluation/results/ppo_recovery_final_artifacts_20260925.tgz!ppo_single_recovery_20260924/episodes.jsonl"
+  ]
+}

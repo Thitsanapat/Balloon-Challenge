@@ -85,6 +85,30 @@ class OfficialResidualEnvTests(unittest.TestCase):
                 env.reset(seed=300)
             env.close()
 
+    def test_scenario_four_uses_its_own_controller(self):
+        prefix = 'BalloonPoppingGymEnv.training.official_residual_env.'
+        with patch(prefix+'BalloonPoppingEnv', FakeEnv), patch(
+                prefix+'Scenario4ResidualController', side_effect=FakeAgent) as scenario4, patch(
+                prefix+'ResidualPPOController', side_effect=FakeAgent) as scenario1, patch(
+                prefix+'scenario4_residual_features', return_value=np.zeros(96, np.float32)):
+            env = OfficialResidualEnv(scenario=4)
+            env.reset(seed=300)
+            scenario4.assert_called_once()
+            scenario1.assert_not_called()
+            env.close()
+
+    def test_scenario_four_potential_follows_selected_target(self):
+        env = OfficialResidualEnv(scenario=4)
+        env.agent = type('Selected', (), {'target_index': 1})()
+        sensors = np.zeros(12)
+        sensors[8] = 20.
+        env.observation = dict(
+            rocket_sensors=sensors,
+            balloon_status=np.array([1, 1]),
+            balloon_states=np.array([[1., 0., 20., 0., 0., 0.],
+                                     [100., 0., 20., 0., 0., 0.]]))
+        self.assertAlmostEqual(env._potential(), -1.)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,0 +1,18 @@
+[
+  {
+    "seed": 0,
+    "score": 6,
+    "near_misses": [
+      {
+        "target": 77,
+        "distance": 3.08799937766821,
+        "margin_outside_balloon_m": 1.58799937766821,
+        "time_to_deadline": 0.05999999999998806,
+        "allocator_saturated_at_sample": false,
+        "tracking_along_miss_m": -0.6687419751924306,
+        "alignment_along_miss_m": 0.06721391652959496,
+        "prediction_error_along_miss_m": 3.689527436331046
+      }
+    ]
+  }
+]

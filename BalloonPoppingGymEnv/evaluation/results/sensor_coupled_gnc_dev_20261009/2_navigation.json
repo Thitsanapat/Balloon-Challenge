@@ -1,0 +1,951 @@
+[
+  {
+    "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
+    "scenario": 4,
+    "seed": 2,
+    "config": {
+      "scenario_number": 4,
+      "render_mode": null,
+      "agent_module_path": "./BalloonPoppingGymEnv/agents/scenario4_sensor_coupled_agent.py",
+      "agent_class_name": "Scenario4SensorCoupledAgent",
+      "agent_name": "Sensor coupled GNC development navigation",
+      "agent_kwargs": {
+        "launch_time": 42.0,
+        "launch_candidates": 3,
+        "replan_interval": 0.4,
+        "beam_width": 12,
+        "search_depth": 14,
+        "branch_targets": 8,
+        "time_grid": 0.5,
+        "terminal_weight": 0.0,
+        "capture_fraction": 0.0,
+        "reserve": 0.8,
+        "max_tilt": 75.0,
+        "max_axis_rate": 1.2,
+        "attitude_frequency": 4.0,
+        "timing_candidates": 4,
+        "timing_iterations": 20,
+        "timing_safety": 0.0,
+        "timing_only_more_hits": true,
+        "profile_horizon": 8.0,
+        "profile_max_range": 150.0,
+        "profile_blend": 0.75,
+        "profile_max_position_correction": 12.0,
+        "innovation_start_seconds": 5.0,
+        "innovation_stop_seconds": 0.2,
+        "innovation_fade_seconds": 0.6,
+        "innovation_strength": 0.65,
+        "innovation_max_target_range": 150.0,
+        "innovation_max_error": 6.0,
+        "innovation_max_lateral_delta": 4.0,
+        "innovation_time_floor": 1.0,
+        "innovation_tracking_radius_multiple": 2.0,
+        "navigation_trapezoid": true,
+        "adaptive_angular_response": false
+      },
+      "leaderboard_submission": false,
+      "record_guidance_telemetry": true
+    },
+    "agent_sha256": "475ec41aa30087ea86fcb290ae7fcd1d36d4f8db622ab482f1fbc89b2ea22a7b",
+    "agent_file_unchanged_during_run": true,
+    "agent_source_dependencies_sha256": {
+      "BalloonPoppingGymEnv\\agents\\base_agent.py": "708e8737dadce5b650e36198daea2059ec02ac06eef562035c422f25ca49d4cf",
+      "BalloonPoppingGymEnv\\agents\\capture_chain_agent.py": "49935369dbcb53c62a7fc62a6315e78f17c8e7ed100e39ba1a63aa5bf06d3a48",
+      "BalloonPoppingGymEnv\\agents\\chain_beam_agent.py": "a653c620003118af56d69cfe9744191c8285e62ebe15d3bedabc9708c053245d",
+      "BalloonPoppingGymEnv\\agents\\chain_launch_agent.py": "9b05b8918f4de5ac9c7ce935c0600af85238140b2158d7c137310a2c3c788e8c",
+      "BalloonPoppingGymEnv\\agents\\constrained_beam_agent.py": "ac7ae0974a7a813bf4686ec1f55755299343882ce1515bc4df6e995a566cf368",
+      "BalloonPoppingGymEnv\\agents\\constrained_chain_agent.py": "677286a0b3e19197e16ba21f06cf5e5206cc54943e058222ed2ca0f0e4e0bb8a",
+      "BalloonPoppingGymEnv\\agents\\final_approach_agent.py": "c63bc782e675c131879033c5e096d94601eb7c9d2db3e50dbde73af6bb5a656b",
+      "BalloonPoppingGymEnv\\agents\\momentum_beam_agent.py": "2da07c35d7fe95327594d5c645f9a16e732a79c638a0da21433813b88a6283ca",
+      "BalloonPoppingGymEnv\\agents\\opportunistic_chain_agent.py": "759f85e288b4f1c9c2a23eb43bda82e6c53a39719e1cf22b9817db9bc7d512f5",
+      "BalloonPoppingGymEnv\\agents\\scenario4_forecast_innovation_agent.py": "43e928a4645ccd51f00ccc84ba241b5c0e4daf9aa4bfda831bb749958c64204b",
+      "BalloonPoppingGymEnv\\agents\\scenario4_guarded_innovation_agent.py": "5752835de07fd8359dec71cda2cc6a80fff7c41ea056566fca09b1766340edf8",
+      "BalloonPoppingGymEnv\\agents\\scenario4_pure_joint_refresh_agent.py": "45f02197657857f6db2985e5318cb7f4194dbd102f49185dd4c96292eabc6495",
+      "BalloonPoppingGymEnv\\agents\\scenario4_sensor_coupled_agent.py": "475ec41aa30087ea86fcb290ae7fcd1d36d4f8db622ab482f1fbc89b2ea22a7b",
+      "BalloonPoppingGymEnv\\agents\\scenario4_wind_profile_agent.py": "f15dcc4f133c707bd677243fe439280f8651f1e4e9c50386dfe4c94df8601365",
+      "BalloonPoppingGymEnv\\agents\\submission_sqp_v2.py": "73c46da2eb179c71ad4f09be65c01c6d1f2dd82965d7590abbb37c4dd8fa45c6",
+      "BalloonPoppingGymEnv\\agents\\time_allocation_agent.py": "7babf61f7d62cb7b1044e7e7897256c902570db3c935c9d7a602da64f29ed83a"
+    },
+    "agent_sources_unchanged_during_run": true,
+    "score": 3,
+    "final_time": 75.55,
+    "terminated": true,
+    "truncated": false,
+    "wall_seconds": 314.39100000006147,
+    "reset_wall_seconds": 183.32800000021234,
+    "post_reset_wall_seconds": 131.06299999984913,
+    "pop_events": [
+      [
+        36,
+        58.36
+      ],
+      [
+        23,
+        62.78
+      ],
+      [
+        16,
+        66.85
+      ]
+    ],
+    "target_events": [
+      [
+        42.02,
+        17
+      ],
+      [
+        51.52,
+        9
+      ],
+      [
+        54.52,
+        36
+      ],
+      [
+        58.36,
+        23
+      ],
+      [
+        62.78,
+        16
+      ]
+    ],
+    "diagnostics": {
+      "plans": 34,
+      "no_feasible_plan": 22,
+      "saturated_steps": 1089,
+      "position_error_sum": 1039.482352673679,
+      "tracking_steps": 2483,
+      "position_innovation_sum": 10883.687677605041,
+      "navigation_updates": 3352,
+      "beam_searches": 49,
+      "beam_candidates": 38608,
+      "beam_feasible": 4329,
+      "maximum_depth": 8,
+      "final_approach_holds": 2,
+      "timing_solves": 12,
+      "timing_adopted": 0,
+      "timing_extra_planned_hits": 0,
+      "profile_plans": 72,
+      "profile_corrected_targets": 2420,
+      "innovation_applied_steps": 1816,
+      "innovation_saturated_steps": 0,
+      "innovation_error_sum": 2668.4791167813096,
+      "guarded_skipped_tracking": 0,
+      "guarded_skipped_saturated": 79,
+      "guarded_applied_steps": 1816,
+      "pure_joint_attempts": 35,
+      "pure_joint_accepted": 5,
+      "sensor_position_updates": 3352,
+      "adaptive_control_steps": 0
+    },
+    "maximum_observed_altitude": 168.87129026523226,
+    "closest_observed_distances": [
+      148.60801188969873,
+      143.17632289897156,
+      167.70321215322065,
+      216.46065239526183,
+      65.69671412896933,
+      23.371088565973626,
+      188.73034400024258,
+      147.80459137645528,
+      195.28411479293237,
+      0.9774991764988914,
+      149.44130260208416,
+      141.96122899217318,
+      78.57580656874107,
+      72.99529307121101,
+      51.339041516844865,
+      169.7618848115585,
+      0.38951041553272375,
+      1.4110339428097978,
+      167.87602852351836,
+      70.1940302433987,
+      111.23839947076996,
+      232.64951584122127,
+      48.12524230861282,
+      0.7552275852051569,
+      94.61307243163107,
+      165.75832749986128,
+      122.50692562291361,
+      56.22442235730252,
+      228.4090536508399,
+      118.021100185778,
+      94.25920732678152,
+      103.27472948689457,
+      53.71102020361087,
+      200.86431119158058,
+      94.7495403439224,
+      123.90044740660771,
+      1.3962159919776522,
+      41.439289472052785,
+      120.86498930920366,
+      45.61411357103737,
+      130.14272238619247,
+      61.67568586968163,
+      40.03123295600772,
+      270.2864392801646,
+      9.62446102879713,
+      48.74006290355138,
+      140.68421182888082,
+      173.1704451292163,
+      71.88704541491023,
+      181.04354479717358,
+      53.95886199255244,
+      146.12948970464234,
+      194.50010776563846,
+      47.76231238703566,
+      167.66690676857215,
+      178.61048979656093,
+      192.80127083242976,
+      165.62849293144228,
+      57.57953820128313,
+      30.66995380188146,
+      82.87102065656512,
+      72.34395866758538,
+      176.36684844806055,
+      78.15351590230279,
+      203.05358530954652,
+      145.28123530271,
+      61.76960101370541,
+      47.308879769666916,
+      124.96899183614732,
+      108.23111527654369,
+      82.30936596624163,
+      205.4845622397101,
+      249.65101345160622,
+      237.88809173391408,
+      37.32803156603359,
+      89.97381279240544,
+      23.03477108813307,
+      17.116489196308997,
+      125.48388263643061,
+      68.97132105076014,
+      71.47804572266286,
+      33.63177610113973,
+      89.79395034258123,
+      127.15756645033699,
+      13.599238772862066,
+      193.53048095495248,
+      170.93468473049992,
+      205.07630327365507,
+      45.49092970952393,
+      225.7585667659656,
+      25.5984196461502,
+      97.82111162618621,
+      37.41425607328318,
+      98.29880558288664,
+      57.77989542293724,
+      86.34954498600615,
+      84.01005201534342,
+      73.24596602717153,
+      73.97865994483303,
+      220.90996106506168
+    ],
+    "closest_true_distances": [
+      152.76230368548923,
+      148.41911397934845,
+      172.99919154259533,
+      221.49638981080398,
+      70.85625245662811,
+      29.020575045855427,
+      194.06387769709576,
+      152.32941394041538,
+      200.8999944327562,
+      1.94404445762279,
+      155.46946346014136,
+      146.4934586517222,
+      84.78350538888365,
+      77.71381342299283,
+      53.59370920384282,
+      174.75973644137437,
+      1.5160873424059613,
+      3.2057571886057867,
+      172.76189808819495,
+      73.33524202139307,
+      117.14313189750497,
+      236.71632033248537,
+      53.56885232323532,
+      1.53260422353157,
+      99.2468046073731,
+      169.85174259526943,
+      127.02152711408472,
+      61.487753770343545,
+      234.25472368823915,
+      124.3338180494001,
+      98.43840774639888,
+      108.91221352979596,
+      58.95134674398353,
+      206.5942206388353,
+      99.48012376491342,
+      130.00014125457446,
+      1.5105887748782665,
+      44.918462409463174,
+      125.28992261018838,
+      48.998008728634076,
+      135.7368338639902,
+      67.6970552337218,
+      45.80794539086646,
+      275.31635386948415,
+      14.652174565548936,
+      53.82476799433539,
+      145.09333488997638,
+      178.24457276389177,
+      75.91247291228348,
+      185.9046965086576,
+      60.405416690767304,
+      152.28057312238772,
+      200.22634317908046,
+      52.288485040588206,
+      172.5707158175765,
+      184.57030975486165,
+      197.68899302375493,
+      169.7907588289447,
+      62.63209795019251,
+      34.95340867172625,
+      87.3484838118349,
+      77.0163173711155,
+      181.7132839843973,
+      83.53328073278887,
+      207.06764816156263,
+      149.41562440352027,
+      67.3320354824913,
+      52.494954544655194,
+      130.19591715809833,
+      114.14976167307698,
+      89.03740716178793,
+      210.39902155845644,
+      254.1562090550419,
+      241.97247991830056,
+      41.89206790152921,
+      94.10440696822506,
+      27.82264173232663,
+      21.577768392753452,
+      129.47873568947978,
+      73.66335086049021,
+      76.22723111856203,
+      38.362375663127565,
+      94.46546566291222,
+      133.15047097252526,
+      17.573171837488058,
+      197.83601263057645,
+      175.1042999580413,
+      210.47998133213125,
+      49.74033220481568,
+      230.68637621534367,
+      29.67865181230708,
+      102.57037779113202,
+      41.35907091203068,
+      103.81157893204251,
+      63.98061417136148,
+      91.41382597299277,
+      89.27583481962199,
+      78.17965948255346,
+      78.82994775689633,
+      225.11001997452564
+    ],
+    "navigation_error": {
+      "samples": 3353,
+      "mean": 0.40013798845390003,
+      "rms": 0.426915536044875,
+      "max": 0.8686822399261418
+    },
+    "route_events": [
+      [
+        42.02,
+        [
+          17,
+          36,
+          80,
+          24,
+          26,
+          65,
+          30,
+          98
+        ],
+        29.5
+      ],
+      [
+        51.52,
+        [
+          9,
+          36,
+          84,
+          88,
+          39,
+          14
+        ],
+        20.0
+      ],
+      [
+        54.52,
+        [
+          36,
+          23,
+          92,
+          12
+        ],
+        17.0
+      ],
+      [
+        58.36,
+        [
+          23,
+          16
+        ],
+        8.5
+      ]
+    ],
+    "bridge_events": [],
+    "coverage_events": [],
+    "launch_comparisons": [
+      [
+        [
+          0.0,
+          0.0,
+          1.0
+        ],
+        9,
+        28.184303236864054
+      ],
+      [
+        [
+          -0.09402482860563488,
+          -0.06886159381723836,
+          0.9931854874607415
+        ],
+        8,
+        29.0
+      ],
+      [
+        [
+          -0.16123730217414542,
+          -0.18593225633066643,
+          0.9692428634988193
+        ],
+        8,
+        27.0
+      ],
+      [
+        [
+          0.023801496336946556,
+          0.17480068053939476,
+          0.9843161132761603
+        ],
+        8,
+        28.5
+      ]
+    ],
+    "guidance_telemetry": {
+      "scope": "Offline post-action diagnostics, never provided to the agent; optional true_closest uses simulator info only after env.step. Distances are sampled, not official collision checks.",
+      "target_episodes": [
+        {
+          "target": 17,
+          "start_time": 42.02,
+          "closest": {
+            "time": 51.42,
+            "distance": 1.4110339428097978,
+            "time_to_deadline": 0.10000000000000142,
+            "tracking_vector": [
+              3.545699149807975,
+              -3.3953888677878297,
+              2.226002616638212
+            ],
+            "alignment_vector": [
+              3.1634405579175393,
+              -0.8601725126263915,
+              -0.8472208380766091
+            ],
+            "prediction_error_vector": [
+              -6.751453266002015,
+              3.9586340504140054,
+              7.730843762487893e-06
+            ],
+            "tracking_error": 5.390337250462784,
+            "alignment_error": 3.3860059160354203,
+            "prediction_error": 7.826423496602151,
+            "command": {
+              "throttle": 1.0,
+              "tvc": [
+                3.536945054563204,
+                4.030278413493661
+              ],
+              "available_acceleration": 12.650356341022947,
+              "allocator_saturated": true
+            }
+          },
+          "max_tracking_error": 8.221920194782507,
+          "samples": 950,
+          "true_closest": {
+            "time": 51.370000000000005,
+            "distance": 3.2057571886057867,
+            "time_to_deadline": 0.14999999999999858,
+            "tracking_vector": [
+              1.6437902210184152,
+              -0.5915175856507062,
+              0.10329250013435853
+            ],
+            "alignment_vector": [
+              3.3071376005105186,
+              -0.7341827798439766,
+              -1.2676978895455875
+            ],
+            "prediction_error_vector": [
+              -6.626470542803121,
+              3.7982710756801907,
+              4.331091759013361e-06
+            ],
+            "tracking_error": 1.7500310527055847,
+            "alignment_error": 3.617076361108269,
+            "prediction_error": 7.637864558828273,
+            "command": {
+              "throttle": 1.0,
+              "tvc": [
+                -1.3739403941619872,
+                -4.564356044704106
+              ],
+              "available_acceleration": 12.6460085114444,
+              "allocator_saturated": true
+            }
+          },
+          "end_time": 51.52,
+          "end_reason": "target_changed"
+        },
+        {
+          "target": 9,
+          "start_time": 51.52,
+          "closest": {
+            "time": 54.28,
+            "distance": 1.4750045620417747,
+            "time_to_deadline": 0.240000000000002,
+            "tracking_vector": [
+              2.330666742667063,
+              -3.110532615529195,
+              1.5665027825212121
+            ],
+            "alignment_vector": [
+              -3.8943068424629494,
+              0.8663043769107475,
+              -0.8771338554816737
+            ],
+            "prediction_error_vector": [
+              0.33700382741058377,
+              1.801976937818985,
+              0.00013502527249897867
+            ],
+            "tracking_error": 4.190626633964411,
+            "alignment_error": 4.08478553379986,
+            "prediction_error": 1.8332191582985087,
+            "command": {
+              "throttle": 0.8156082870383659,
+              "tvc": [
+                -0.4367014401633946,
+                4.0042483628489
+              ],
+              "available_acceleration": 12.904128366733286,
+              "allocator_saturated": false
+            }
+          },
+          "max_tracking_error": 7.46042014779883,
+          "samples": 300,
+          "true_closest": {
+            "time": 54.52,
+            "distance": 1.9508088662699425,
+            "time_to_deadline": 0.0,
+            "tracking_vector": [
+              0.3664046201490603,
+              -0.20684129349216818,
+              0.07235354886310574
+            ],
+            "alignment_vector": [
+              -0.5911738638641015,
+              -0.2834444466339079,
+              2.842170943040401e-14
+            ],
+            "prediction_error_vector": [
+              0.40575614426379225,
+              2.4313264617313877,
+              0.00017156138915197516
+            ],
+            "tracking_error": 0.426931730365847,
+            "alignment_error": 0.6556121503172538,
+            "prediction_error": 2.4649516103884066,
+            "command": {
+              "throttle": 0.7561212435559307,
+              "tvc": [
+                3.45442725684042,
+                -5.016951530538368
+              ],
+              "available_acceleration": 12.925887749708147,
+              "allocator_saturated": false
+            }
+          },
+          "end_time": 54.52,
+          "end_reason": "target_changed"
+        },
+        {
+          "target": 36,
+          "start_time": 54.52,
+          "closest": {
+            "time": 58.14,
+            "distance": 1.3962159919776522,
+            "time_to_deadline": 0.38000000000000256,
+            "tracking_vector": [
+              -1.2546439721647324,
+              -0.8998722917123843,
+              -2.78381304820752
+            ],
+            "alignment_vector": [
+              2.7522919333151963,
+              0.9914367368286321,
+              1.8319934515839975
+            ],
+            "prediction_error_vector": [
+              -0.7144528663228771,
+              -0.7475445867269102,
+              0.00012920920511305667
+            ],
+            "tracking_error": 3.1833185083575035,
+            "alignment_error": 3.451703593295919,
+            "prediction_error": 1.034053105037019,
+            "command": {
+              "throttle": 1.0,
+              "tvc": [
+                -2.1271151345067354,
+                0.8451811422235139
+              ],
+              "available_acceleration": 13.263225053214898,
+              "allocator_saturated": true
+            }
+          },
+          "max_tracking_error": 7.146128637036766,
+          "samples": 384,
+          "true_closest": {
+            "time": 58.36,
+            "distance": 1.4280094043241935,
+            "time_to_deadline": 0.1600000000000037,
+            "tracking_vector": [
+              0.07267765468453113,
+              0.737917350804338,
+              0.29483514911930797
+            ],
+            "alignment_vector": [
+              1.718321113685132,
+              0.14755526022563714,
+              0.8510486905952064
+            ],
+            "prediction_error_vector": [
+              -0.940365703782545,
+              -0.9324604551297284,
+              0.00016432278840738945
+            ],
+            "tracking_error": 0.7979547752001619,
+            "alignment_error": 1.923196266198586,
+            "prediction_error": 1.3242998845552922,
+            "command": {
+              "throttle": 0.92995403717546,
+              "tvc": [
+                -7.240177763787893,
+                2.4418349942255606
+              ],
+              "available_acceleration": 13.284294668202941,
+              "allocator_saturated": false
+            }
+          },
+          "end_time": 58.36,
+          "end_reason": "popped"
+        },
+        {
+          "target": 23,
+          "start_time": 58.36,
+          "closest": {
+            "time": 62.72,
+            "distance": 0.7552275852051569,
+            "time_to_deadline": 0.14000000000000057,
+            "tracking_vector": [
+              -1.0970075206504575,
+              0.9722343246308753,
+              -1.1146136930833848
+            ],
+            "alignment_vector": [
+              1.9347745769761104,
+              -1.44969811047714,
+              0.9468621640062338
+            ],
+            "prediction_error_vector": [
+              -0.6899090136011594,
+              -0.2439222078233776,
+              9.428111644638193e-05
+            ],
+            "tracking_error": 1.8414746175723138,
+            "alignment_error": 2.5964447294060866,
+            "prediction_error": 0.7317598645775024,
+            "command": {
+              "throttle": 0.9077110045584726,
+              "tvc": [
+                0.0148269660940052,
+                -5.162520469017986
+              ],
+              "available_acceleration": 13.716114281544982,
+              "allocator_saturated": false
+            }
+          },
+          "max_tracking_error": 7.758617301847562,
+          "samples": 442,
+          "true_closest": {
+            "time": 62.78,
+            "distance": 1.4041047792367303,
+            "time_to_deadline": 0.0799999999999983,
+            "tracking_vector": [
+              0.07706938527790186,
+              0.29386253030568454,
+              0.035514164874427934
+            ],
+            "alignment_vector": [
+              1.3295949578192108,
+              -1.1073231425966483,
+              0.5382793702976016
+            ],
+            "prediction_error_vector": [
+              -0.7387207577844421,
+              -0.2801606591512389,
+              0.00010028128204453424
+            ],
+            "tracking_error": 0.30586947015271254,
+            "alignment_error": 1.8121070538123207,
+            "prediction_error": 0.7900622525940678,
+            "command": {
+              "throttle": 0.8397457321455618,
+              "tvc": [
+                7.518232744650379,
+                2.875856393266922
+              ],
+              "available_acceleration": 13.722252665309714,
+              "allocator_saturated": false
+            }
+          },
+          "end_time": 62.78,
+          "end_reason": "popped"
+        },
+        {
+          "target": 16,
+          "start_time": 62.78,
+          "closest": {
+            "time": 66.84,
+            "distance": 0.38951041553272375,
+            "time_to_deadline": 0.01999999999999602,
+            "tracking_vector": [
+              -0.12798953535116198,
+              0.24763540100673254,
+              -0.16658205174769591
+            ],
+            "alignment_vector": [
+              0.013609620001616918,
+              -1.069390186279108,
+              0.43404900564740956
+            ],
+            "prediction_error_vector": [
+              0.25123003842324465,
+              1.0695824401109775,
+              6.222417323442642e-05
+            ],
+            "tracking_error": 0.32473711360982993,
+            "alignment_error": 1.1542006461487355,
+            "prediction_error": 1.0986915546556937,
+            "command": {
+              "throttle": 0.0,
+              "tvc": [
+                15.0,
+                -8.139340163304865
+              ],
+              "available_acceleration": 14.15077956670493,
+              "allocator_saturated": true
+            }
+          },
+          "max_tracking_error": 8.173914874694493,
+          "samples": 407,
+          "true_closest": {
+            "time": 66.85,
+            "distance": 1.1774399182941504,
+            "time_to_deadline": 0.010000000000005116,
+            "tracking_vector": [
+              -0.3457038955331768,
+              -1.495333362429264,
+              0.004384700505056571
+            ],
+            "alignment_vector": [
+              0.05556189437167802,
+              -0.7488332355345904,
+              0.21734645472966463
+            ],
+            "prediction_error_vector": [
+              0.25439225483789585,
+              1.088357791813877,
+              6.316492812175056e-05
+            ],
+            "tracking_error": 1.5347808552947684,
+            "alignment_error": 0.7817146666981034,
+            "prediction_error": 1.1176932075991584,
+            "command": {
+              "throttle": 0.0,
+              "tvc": [
+                15.0,
+                -8.739340163304865
+              ],
+              "available_acceleration": 14.151868096741687,
+              "allocator_saturated": true
+            }
+          },
+          "end_time": 66.85,
+          "end_reason": "popped"
+        }
+      ],
+      "unpopped_forecast_checks": [
+        {
+          "target": 17,
+          "origin_time": 42.02,
+          "deadline": 51.52,
+          "horizon": 9.5,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 28.489501303981545,
+          "endpoint_error": 24.288296183395882
+        },
+        {
+          "target": 17,
+          "origin_time": 42.42,
+          "deadline": 51.52,
+          "horizon": 9.100000000000001,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 26.600019426528146,
+          "endpoint_error": 26.600019426528217
+        },
+        {
+          "target": 17,
+          "origin_time": 42.82,
+          "deadline": 51.52,
+          "horizon": 8.700000000000003,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 22.06003170796368,
+          "endpoint_error": 22.060031707963674
+        },
+        {
+          "target": 17,
+          "origin_time": 43.22,
+          "deadline": 51.52,
+          "horizon": 8.300000000000004,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 15.721564483041597,
+          "endpoint_error": 15.721564483041622
+        },
+        {
+          "target": 17,
+          "origin_time": 43.62,
+          "deadline": 51.52,
+          "horizon": 7.900000000000006,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 8.867109071746833,
+          "endpoint_error": 8.465349268986438
+        },
+        {
+          "target": 17,
+          "origin_time": 44.02,
+          "deadline": 51.52,
+          "horizon": 7.5,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 5.210572768062775,
+          "endpoint_error": 2.5456338822515248
+        },
+        {
+          "target": 17,
+          "origin_time": 44.42,
+          "deadline": 51.52,
+          "horizon": 7.100000000000001,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 9.395949133564006,
+          "endpoint_error": 6.462626271474599
+        },
+        {
+          "target": 17,
+          "origin_time": 44.82,
+          "deadline": 51.52,
+          "horizon": 6.700000000000003,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 14.730582619333655,
+          "endpoint_error": 9.937938593584816
+        },
+        {
+          "target": 17,
+          "origin_time": 45.62,
+          "deadline": 51.52,
+          "horizon": 5.900000000000006,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 20.45252115508436,
+          "endpoint_error": 15.746398497032352
+        },
+        {
+          "target": 17,
+          "origin_time": 46.42,
+          "deadline": 51.52,
+          "horizon": 5.100000000000001,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 18.40539882126777,
+          "endpoint_error": 13.93057022706073
+        },
+        {
+          "target": 17,
+          "origin_time": 46.82,
+          "deadline": 51.52,
+          "horizon": 4.700000000000003,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 15.855139091792932,
+          "endpoint_error": 10.967947163558401
+        },
+        {
+          "target": 17,
+          "origin_time": 47.22,
+          "deadline": 51.52,
+          "horizon": 4.300000000000004,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 13.04461039480292,
+          "endpoint_error": 8.632818614558957
+        },
+        {
+          "target": 17,
+          "origin_time": 47.62,
+          "deadline": 51.52,
+          "horizon": 3.9000000000000057,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 10.40288214727935,
+          "endpoint_error": 6.300665266429799
+        },
+        {
+          "target": 17,
+          "origin_time": 48.02,
+          "deadline": 51.52,
+          "horizon": 3.5,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 8.205244891495756,
+          "endpoint_error": 5.192763136466184
+        },
+        {
+          "target": 9,
+          "origin_time": 51.52,
+          "deadline": 54.52,
+          "horizon": 3.0,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 4.0719862977606605,
+          "endpoint_error": 3.3269433254536454
+        },
+        {
+          "target": 9,
+          "origin_time": 52.72,
+          "deadline": 54.52,
+          "horizon": 1.8000000000000043,
+          "sample_offset": 0.0,
+          "velocity_prediction_error": 2.4649516103884066,
+          "endpoint_error": 2.155870337231416
+        }
+      ]
+    }
+  }
+]

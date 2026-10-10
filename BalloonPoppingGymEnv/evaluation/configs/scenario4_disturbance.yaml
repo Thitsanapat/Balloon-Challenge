@@ -1,0 +1,26 @@
+scenario_number: 4
+render_mode: null
+agent_module_path: './BalloonPoppingGymEnv/agents/scenario4_disturbance_agent.py'
+agent_class_name: 'Scenario4DisturbanceAgent'
+agent_name: 'Scenario 4 observed IMU disturbance experiment'
+agent_kwargs:
+  launch_time: 24.0
+  launch_candidates: 3
+  replan_interval: 0.4
+  beam_width: 12
+  search_depth: 14
+  branch_targets: 8
+  time_grid: 0.5
+  terminal_weight: 0.0
+  capture_fraction: 0.0
+  max_tilt: 75.0
+  max_axis_rate: 1.2
+  attitude_frequency: 4.0
+  timing_candidates: 4
+  timing_iterations: 20
+  timing_safety: 0.0
+  timing_only_more_hits: true
+  process_acceleration_sigma: 0.8
+  disturbance_time_constant: 0.20
+  disturbance_limit: 3.0
+leaderboard_submission: false

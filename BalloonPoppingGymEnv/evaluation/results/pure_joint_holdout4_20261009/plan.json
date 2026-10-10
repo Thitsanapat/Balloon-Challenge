@@ -1,0 +1,26 @@
+{
+  "scenario": 4,
+  "seeds": [
+    605131410,
+    435857031,
+    927297526,
+    298628555
+  ],
+  "order": [
+    "selected",
+    "candidate"
+  ],
+  "source_sha256": {
+    "BalloonPoppingGymEnv\\evaluation\\configs\\submission_scenario4_guarded_innovation_launch42.yaml": "6264f724d321cb1b61a6e3e497c3d7430979940efbf30723e079198839675ec9",
+    "BalloonPoppingGymEnv\\evaluation\\configs\\scenario4_pure_joint_refresh_launch42.yaml": "2582f500c1785a32d97592757d6cc253385a47c6f878e1cb8fd37979dd551f4b",
+    "BalloonPoppingGymEnv\\agents\\submission_scenario4_guarded_innovation_v1.py": "dab27623c797c70c6fc5c13b48e4faa2e146a694c7de737f6cae8138485fb333",
+    "BalloonPoppingGymEnv\\agents\\scenario4_pure_joint_refresh_agent.py": "45f02197657857f6db2985e5318cb7f4194dbd102f49185dd4c96292eabc6495"
+  },
+  "official_fresh_process_per_flight": true,
+  "auto_promote": false,
+  "gate": {
+    "min_total_gain": 2,
+    "max_single_regression": 1,
+    "min_candidate_wins": 2
+  }
+}

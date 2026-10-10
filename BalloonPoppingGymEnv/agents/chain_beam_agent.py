@@ -75,6 +75,18 @@ class ChainBeamAgent(MomentumBeamAgent):
         return free_chain(position,velocity,self.acceleration,targets,durations,
                           drift,self.terminal_weight)
 
+    def _rescue_committed_leg(self, observation, position, velocity, now, duration):
+        """Optional recovery after the active leg cannot be refreshed.
+
+        The default deliberately preserves the established chain policy.
+        Subclasses may return True only after installing a validated plan.
+        """
+        return False
+
+    def _accept_committed_curve(self, curve, duration, now):
+        """Check an active-leg refresh; unchanged unless a subclass opts in."""
+        return self._feasible(curve, duration, now)
+
     def _make_plan(self,observation,position,velocity,now):
         states = np.asarray(observation['balloon_states'],dtype=float)
         released = np.flatnonzero(np.asarray(observation['balloon_status']).reshape(-1)==1)
@@ -90,8 +102,10 @@ class ChainBeamAgent(MomentumBeamAgent):
                 target = self._intercept_target(states,self.route[0],duration)
                 curve = boundary_curve(position,velocity,self.acceleration,target,
                                        self.ends_v[0],self.ends_a[0],duration)
-                if self._feasible(curve,duration,now):
+                if self._accept_committed_curve(curve,duration,now):
                     self._select(self.route[0],curve,duration,now)
+                    return
+                if self._rescue_committed_leg(observation,position,velocity,now,duration):
                     return
                 if self.plan is not None and now<self.plan_start+self.plan_duration:
                     return

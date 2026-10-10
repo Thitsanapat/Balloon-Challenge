@@ -1,0 +1,58 @@
+{
+  "seed": 313734695,
+  "exact_parity": true,
+  "dataset_sha256": "d2a6b3287a8b34570a51cfbab364ac36ee97112a626a8c2918877f9cc53e86f9",
+  "baseline": {
+    "score": 5,
+    "steps": 7876,
+    "final_time": 78.76,
+    "terminated": true,
+    "truncated": false,
+    "action_sha256": "d5002719addab6e50bf82b5bb9381dfc43bda349dcecfcf78a2d51bb35de86e0",
+    "observation_sha256": "1ce86a6b2b622a15b6d1d244b8b59dfbdec236f010cb40699b4b89e5df5c46d2",
+    "collection_counts": null,
+    "wall_seconds": 263.04699999978766,
+    "source_manifest": {
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\BalloonPoppingGymEnv\\evaluation\\configs\\submission_scenario4_guarded_innovation_launch42.yaml": "6264f724d321cb1b61a6e3e497c3d7430979940efbf30723e079198839675ec9",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\BalloonPoppingGymEnv\\agents\\submission_scenario4_guarded_innovation_v1.py": "dab27623c797c70c6fc5c13b48e4faa2e146a694c7de737f6cae8138485fb333",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\scripts\\collect_guarded_route_shadow.py": "25ef2a9404602c5f09276c5b0aea94af9ba2245a5a520147277819a59fbe66e0",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\BalloonPoppingGymEnv\\training\\route_shadow.py": "b8c4954bb1ca249bfde08e9ce1d20f66fe6d97e3a5565fdab31eb3c3b122fe4c",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\BalloonPoppingGymEnv\\agents\\route_attention_features.py": "b075b3fd3dc8b760e6139e0b9fc25308d0eafe48923b0cf9a00aae03e6c2925f",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\scripts\\collect_route_shadow.py": "11277242799285a229efea3e3fe5426bad4bafc282e52151c512582432341633",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\scripts\\audit_route_shadow.py": "13e7862519c124ef6f2ab67d9dbf1b64fd71dbbe0726836096a4de20ab0b50f2",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\scripts\\diagnose_route_capture_ml.py": "fc89b5a0ffb5068052e8f855c9dbc7dd3618419052f5c2993bf5c49304739ed5"
+    }
+  },
+  "shadow": {
+    "score": 5,
+    "steps": 7876,
+    "final_time": 78.76,
+    "terminated": true,
+    "truncated": false,
+    "action_sha256": "d5002719addab6e50bf82b5bb9381dfc43bda349dcecfcf78a2d51bb35de86e0",
+    "observation_sha256": "1ce86a6b2b622a15b6d1d244b8b59dfbdec236f010cb40699b4b89e5df5c46d2",
+    "collection_counts": {
+      "decisions": 35,
+      "hit": 4,
+      "miss": 2,
+      "cancelled": 0,
+      "censored": 0,
+      "initial_pops": 0,
+      "observed_pops": 5,
+      "active_target_pops": 4,
+      "incidental_pops": 1,
+      "unassigned_pops": 0
+    },
+    "wall_seconds": 270.48399999993853,
+    "source_manifest": {
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\BalloonPoppingGymEnv\\evaluation\\configs\\submission_scenario4_guarded_innovation_launch42.yaml": "6264f724d321cb1b61a6e3e497c3d7430979940efbf30723e079198839675ec9",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\BalloonPoppingGymEnv\\agents\\submission_scenario4_guarded_innovation_v1.py": "dab27623c797c70c6fc5c13b48e4faa2e146a694c7de737f6cae8138485fb333",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\scripts\\collect_guarded_route_shadow.py": "25ef2a9404602c5f09276c5b0aea94af9ba2245a5a520147277819a59fbe66e0",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\BalloonPoppingGymEnv\\training\\route_shadow.py": "b8c4954bb1ca249bfde08e9ce1d20f66fe6d97e3a5565fdab31eb3c3b122fe4c",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\BalloonPoppingGymEnv\\agents\\route_attention_features.py": "b075b3fd3dc8b760e6139e0b9fc25308d0eafe48923b0cf9a00aae03e6c2925f",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\scripts\\collect_route_shadow.py": "11277242799285a229efea3e3fe5426bad4bafc282e52151c512582432341633",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\scripts\\audit_route_shadow.py": "13e7862519c124ef6f2ab67d9dbf1b64fd71dbbe0726836096a4de20ab0b50f2",
+      "C:\\Users\\thits\\Documents\\Balloon Challenge\\scripts\\diagnose_route_capture_ml.py": "fc89b5a0ffb5068052e8f855c9dbc7dd3618419052f5c2993bf5c49304739ed5"
+    }
+  }
+}
