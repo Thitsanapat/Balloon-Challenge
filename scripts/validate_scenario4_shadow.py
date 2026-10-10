@@ -218,7 +218,9 @@ def _update_truth_interval(pending, observation, info):
     return True
 
 
-def run_episode(env, agent, given, seed, anchor_offsets, horizons, uncertainty):
+def run_episode(env, agent, given, seed, anchor_offsets, horizons, uncertainty,
+                arrival_period=None, arrival_window=1.5,
+                arrival_max_anchors=120):
     """Run one full official episode when explicitly invoked by the CLI.
 
     ``info`` is never passed to ``agent.get_action`` or ``predict_first_leg``.
@@ -230,6 +232,8 @@ def run_episode(env, agent, given, seed, anchor_offsets, horizons, uncertainty):
     anchors = []
     pending = []
     sampled = set()
+    next_arrival_anchor = float("-inf")
+    arrival_count = 0
     while not (terminated or truncated):
         previous_outputs = (
             np.asarray(getattr(agent, "previous_tvc", np.zeros(2)),
@@ -252,6 +256,22 @@ def run_episode(env, agent, given, seed, anchor_offsets, horizons, uncertainty):
                     previous_outputs, uncertainty)
                 anchors.append(record)
                 pending.extend(new_pending)
+            if (arrival_period is not None and
+                    arrival_count < arrival_max_anchors and
+                    now + 1e-9 >= next_arrival_anchor):
+                plan = getattr(agent, "plan", None)
+                remaining = (float(agent.plan_start + agent.plan_duration - now)
+                             if plan is not None else float("inf"))
+                if 0.1 <= remaining <= arrival_window:
+                    record, new_pending = _prediction_at_anchor(
+                        agent, observation, info, given,
+                        now - actual_launch_time, horizons,
+                        previous_outputs, uncertainty)
+                    record["anchor_kind"] = "arrival"
+                    anchors.append(record)
+                    pending.extend(new_pending)
+                    arrival_count += 1
+                    next_arrival_anchor = now + arrival_period
         was_launched = bool(env.rocket_launched)
         observation, reward, terminated, truncated, info = env.step(action)
         if not was_launched and env.rocket_launched:
@@ -278,6 +298,9 @@ def run_episode(env, agent, given, seed, anchor_offsets, horizons, uncertainty):
         "terminated": bool(terminated),
         "truncated": bool(truncated),
         "anchor_offsets": list(anchor_offsets),
+        "arrival_period": arrival_period,
+        "arrival_window": arrival_window if arrival_period is not None else None,
+        "arrival_anchors": arrival_count,
         "horizons": list(horizons),
         "uncertainty_inputs": dict(uncertainty),
         "limitations": ("The shadow model omits aerodynamic forces/moments and "
@@ -297,6 +320,10 @@ def main():
                         default=[0.5, 2.0, 5.0, 8.0])
     parser.add_argument("--horizons", nargs="+", type=float,
                         default=[0.25, 1.0, 2.0, 3.0])
+    parser.add_argument("--arrival-period", type=float,
+                        help="Also sample active plans near intercept at this interval")
+    parser.add_argument("--arrival-window", type=float, default=1.5)
+    parser.add_argument("--arrival-max-anchors", type=int, default=120)
     parser.add_argument("--state-sigma", type=float, default=0.0)
     parser.add_argument("--target-position-sigma", type=float, default=0.0)
     parser.add_argument("--target-velocity-sigma", type=float, default=0.0)
@@ -308,6 +335,11 @@ def main():
             len(set(args.anchor_offsets)) != len(args.anchor_offsets) or
             len(set(args.horizons)) != len(args.horizons)):
         parser.error("anchors must be unique and nonnegative; horizons positive")
+    if (args.arrival_period is not None and
+            (not np.isfinite(args.arrival_period) or args.arrival_period <= 0 or
+             not np.isfinite(args.arrival_window) or
+             args.arrival_window <= 0.1 or args.arrival_max_anchors < 1)):
+        parser.error("arrival sampling needs positive period/window/max anchors")
     uncertainty = dict(
         initial_position_sigma=args.state_sigma,
         target_position_sigma=args.target_position_sigma,
@@ -346,7 +378,8 @@ def main():
     try:
         report = run_episode(env, agent, given, args.seed,
                              sorted(args.anchor_offsets), sorted(args.horizons),
-                             uncertainty)
+                             uncertainty, args.arrival_period,
+                             args.arrival_window, args.arrival_max_anchors)
     finally:
         env.close()
     report["agent_class_name"] = config["agent_class_name"]

@@ -1,0 +1,103 @@
+{
+  "schema": "shadow_distance_calibration_diagnostic_v1",
+  "training_seeds": [
+    1,
+    2
+  ],
+  "test_seeds": [
+    0
+  ],
+  "calibration": {
+    "0.25": {
+      "bias_m": -0.16978708627482497,
+      "upper_residual_m": 0.1268731898357273,
+      "training_rows": 92,
+      "training_target_fields": 11
+    },
+    "0.5": {
+      "bias_m": -0.1685108987721602,
+      "upper_residual_m": 0.12444272410104044,
+      "training_rows": 77,
+      "training_target_fields": 11
+    },
+    "1.0": {
+      "bias_m": -0.06293882496684922,
+      "upper_residual_m": 0.24809238408210219,
+      "training_rows": 43,
+      "training_target_fields": 11
+    }
+  },
+  "test_metrics": {
+    "0.25": {
+      "rows": 57,
+      "raw_mae_m": 0.1758654914553932,
+      "corrected_mae_m": 0.22998287645252022,
+      "raw_false_capture_count": 1,
+      "raw_capture_predictions": 2,
+      "corrected_false_capture_count": 2,
+      "corrected_capture_predictions": 3,
+      "upper_bound_false_capture_count": 1,
+      "upper_bound_capture_predictions": 1,
+      "upper_envelope_exceedance_fraction": 0.2982456140350877,
+      "actual_hit_target_fields": 1,
+      "actual_miss_target_fields": 7
+    },
+    "0.5": {
+      "rows": 43,
+      "raw_mae_m": 0.1800162414468603,
+      "corrected_mae_m": 0.2546056895695277,
+      "raw_false_capture_count": 0,
+      "raw_capture_predictions": 0,
+      "corrected_false_capture_count": 1,
+      "corrected_capture_predictions": 1,
+      "upper_bound_false_capture_count": 0,
+      "upper_bound_capture_predictions": 0,
+      "upper_envelope_exceedance_fraction": 0.3023255813953488,
+      "actual_hit_target_fields": 0,
+      "actual_miss_target_fields": 7
+    },
+    "1.0": {
+      "rows": 22,
+      "raw_mae_m": 0.3031396284867871,
+      "corrected_mae_m": 0.3317481852899004,
+      "raw_false_capture_count": 0,
+      "raw_capture_predictions": 1,
+      "corrected_false_capture_count": 1,
+      "corrected_capture_predictions": 2,
+      "upper_bound_false_capture_count": 0,
+      "upper_bound_capture_predictions": 0,
+      "upper_envelope_exceedance_fraction": 0.2727272727272727,
+      "actual_hit_target_fields": 1,
+      "actual_miss_target_fields": 6
+    }
+  },
+  "test_coverage": {
+    "0.25": {
+      "all_completed_rows": 68,
+      "fixed_plan_rows": 57,
+      "all_actual_capture_rows": 7,
+      "fixed_plan_actual_capture_rows": 1
+    },
+    "0.5": {
+      "all_completed_rows": 53,
+      "fixed_plan_rows": 43,
+      "all_actual_capture_rows": 3,
+      "fixed_plan_actual_capture_rows": 0
+    },
+    "1.0": {
+      "all_completed_rows": 32,
+      "fixed_plan_rows": 22,
+      "all_actual_capture_rows": 7,
+      "fixed_plan_actual_capture_rows": 1
+    }
+  },
+  "capture_radius_m": 1.5,
+  "controller_experiment_gate_passed": false,
+  "live_agent_changed": false,
+  "limitations": "Correlated anchors; fixed-plan filtering can exclude successful captures because a pop/replan changes the reference. Check coverage. Empirical distances, not certified capture probabilities.",
+  "input_sha256": {
+    "BalloonPoppingGymEnv\\evaluation\\results\\s4_guarded_shadow_dense_seed1_20261007.json": "7a29c4dff9b0521b5626b84ca05131dff3172cbb11ba7de266b23fdbf49742d0",
+    "BalloonPoppingGymEnv\\evaluation\\results\\s4_guarded_shadow_arrival_seed2_20261007.json": "a7b82a0fc96a2d80b9b2a817814641f6a45a6dce6d1cc1fabb9077d5a5e50777",
+    "BalloonPoppingGymEnv\\evaluation\\results\\crossdepth_shadow_dev_20261010\\0_shadow.json": "01b123bad615b5bf11cc52e66a2bcfdeaa78703e8d440bdf22cc58584e1005be"
+  }
+}

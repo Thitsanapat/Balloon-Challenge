@@ -1,0 +1,14 @@
+{
+  "scenario": 4,
+  "stage": "development on already-used seeds",
+  "seeds": [2, 0],
+  "incumbent_scores": [4, 6],
+  "candidate": "Scenario4TerminalCadenceAgent, pure joint planner with 0.2-second reference refresh only 0.6-3.0 seconds before a live committed deadline",
+  "candidate_source_sha256": "45da16e558fb061153ac4340af24be5eb5937c5be1e24897b093cc3691ca371c",
+  "gpu_visible": false,
+  "cpu_workers": 1,
+  "pilot_gate": "run seed 2 first only if horizon-profile experiment does not pass; stop if score below 5, source changes, or post-reset runtime exceeds 420 seconds",
+  "development_gate": "only consider holdout if seed-2/0 total improves by at least 2 pops and neither seed loses more than 1",
+  "promotion_gate": "fresh paired multi-seed validation, standalone build and parity, source review, unchanged live preflight",
+  "auto_promote": false
+}

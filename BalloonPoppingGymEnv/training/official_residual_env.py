@@ -16,6 +16,9 @@ from rocketpy.exceptions import InvalidParameterError
 from BalloonPoppingGymEnv.envs.balloon_world import BalloonPoppingEnv
 from BalloonPoppingGymEnv.evaluation.evaluate import load_scenario_parameters
 from BalloonPoppingGymEnv.agents.residual_ppo_agent import ResidualPPOController, residual_features
+from BalloonPoppingGymEnv.agents.scenario4_residual_agent import (
+    Scenario4ResidualController, scenario4_residual_features,
+)
 
 
 class OfficialResidualEnv(gym.Env):
@@ -32,10 +35,29 @@ class OfficialResidualEnv(gym.Env):
         self.env = None
         self.episode_index = 0
         self.reset_log = None if reset_log is None else Path(reset_log)
+        self.feature_encoder = (scenario4_residual_features if scenario == 4
+                                else residual_features)
+        self.active_target_shaping = scenario == 4
+
+    def _draw_episode_seed(self):
+        return int(self.np_random.integers(100_000, 2**31-1))
+
+    def _make_controller(self):
+        controller = (Scenario4ResidualController if
+                      self.parameters['scenario']['number'] == 4 else ResidualPPOController)
+        return controller(copy.deepcopy(self.given), residual_accel=self.residual_accel)
 
     def _potential(self):
         obs = self.observation
         position = np.asarray(obs['rocket_sensors'])[6:9]
+        if self.active_target_shaping:
+            index = getattr(self.agent, 'target_index', None)
+            status = np.asarray(obs['balloon_status']).reshape(-1)
+            if (index is None or not 0 <= index < len(status) or
+                    status[index] != 1 or not np.all(np.isfinite(position))):
+                return 0.
+            target = np.asarray(obs['balloon_states'])[index, :3]
+            return -min(float(np.linalg.norm(target-position))/100., 2.)
         ids = np.flatnonzero(np.asarray(obs['balloon_status']).reshape(-1) == 1)
         if not len(ids) or not np.all(np.isfinite(position)):
             return -2.
@@ -50,7 +72,7 @@ class OfficialResidualEnv(gym.Env):
         # Retry only this specific RESET failure; never mask flight failures or
         # alter any sampled physical value. Record every rejected seed externally.
         for attempt in range(8):
-            episode_seed = int(self.np_random.integers(100_000, 2**31-1))
+            episode_seed = self._draw_episode_seed()
             parameters = copy.deepcopy(self.parameters)
             parameters['scenario']['random_seed'] = episode_seed
             self.env = BalloonPoppingEnv(render_mode=None, parameters=parameters)
@@ -68,7 +90,7 @@ class OfficialResidualEnv(gym.Env):
                 self.close()
                 if attempt == 7:
                     raise
-        self.agent = ResidualPPOController(copy.deepcopy(self.given), residual_accel=self.residual_accel)
+        self.agent = self._make_controller()
         self.warmup_steps = 0
         # Same launch/planner sequence as deployment. Warmup has zero residual.
         while not (self.agent.launched and np.all(np.isfinite(self.observation['rocket_sensors']))):
@@ -79,10 +101,11 @@ class OfficialResidualEnv(gym.Env):
                 raise RuntimeError('Official episode ended during launch warmup')
         self.potential = self._potential()
         self.episode_index += 1
-        return residual_features(self.agent, self.observation), {'warmup_steps': self.warmup_steps}
+        return self.feature_encoder(self.agent, self.observation), {'warmup_steps': self.warmup_steps}
 
     def step(self, action):
         self.agent.set_residual(action)
+        previous_target = getattr(self.agent, 'target_index', None)
         official_reward = 0.
         steps = 0
         for _ in range(self.decision_steps):
@@ -93,14 +116,17 @@ class OfficialResidualEnv(gym.Env):
             if terminated or truncated:
                 break
         potential = 0. if terminated else self._potential()
-        shaped = 10.*official_reward + self.gamma*potential-self.potential
+        stable_target = (not self.active_target_shaping or
+                         previous_target == getattr(self.agent, 'target_index', None))
+        shaping = (self.gamma*potential-self.potential) if stable_target else 0.
+        shaped = 10.*official_reward + shaping
         shaped -= .002*float(self.agent.residual_action@self.agent.residual_action)
         self.potential = potential
         safe_info = {'popped_count': int(info['popped_count']), 'physics_steps': steps,
                      'official_reward': official_reward, 'official_truncated': bool(truncated),
                      'episode_wall_seconds': time.monotonic()-self.episode_wall_started,
                      'simulation_time': float(self.observation['simulation_time'])}
-        return residual_features(self.agent, self.observation), float(shaped), bool(terminated), bool(truncated), safe_info
+        return self.feature_encoder(self.agent, self.observation), float(shaped), bool(terminated), bool(truncated), safe_info
 
     def close(self):
         if self.env is not None:

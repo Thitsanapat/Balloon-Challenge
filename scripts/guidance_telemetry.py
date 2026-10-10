@@ -20,6 +20,7 @@ class GuidanceTelemetry:
         self.forecasts = []
         self.finished_forecasts = []
         self.command = None
+        self.previous_saturation_count = 0
 
     def before_step(self, agent, observation, action):
         target = getattr(agent, 'target_index', None)
@@ -47,11 +48,15 @@ class GuidanceTelemetry:
                                   deadline=deadline)
             self.forecasts.append(dict(target=target, origin_time=now, deadline=deadline,
                                        endpoint=endpoint.copy(), balloon=state.copy()))
+        saturation_count = int(getattr(agent, 'diagnostics', {}).get('saturated_steps', 0))
         self.command = dict(throttle=float(action['throttle']),
                             tvc=np.asarray(action['tvc'], dtype=float).tolist(),
-                            available_acceleration=float(agent.available_acceleration(now)))
+                            available_acceleration=float(agent.available_acceleration(now)),
+                            allocator_saturated=saturation_count > self.previous_saturation_count)
+        self.previous_saturation_count = saturation_count
 
-    def after_step(self, observation):
+    def after_step(self, observation, true_position=None):
+        """The optional simulator truth is for offline diagnosis, never agents."""
         now = float(observation['simulation_time'])
         states = np.asarray(observation['balloon_states'], dtype=float)
         status = np.asarray(observation['balloon_status']).reshape(-1)
@@ -99,6 +104,23 @@ class GuidanceTelemetry:
                 tracking_error=float(np.linalg.norm(tracking)),
                 alignment_error=float(np.linalg.norm(alignment)),
                 prediction_error=float(np.linalg.norm(prediction_error)), command=self.command)
+        if true_position is not None:
+            truth = np.asarray(true_position, dtype=float)
+            if truth.shape == (3,) and np.all(np.isfinite(truth)):
+                true_tracking = truth-reference
+                true_distance = float(np.linalg.norm(truth-states[target, :3]))
+                if (self.current.get('true_closest') is None or
+                        true_distance < self.current['true_closest']['distance']):
+                    self.current['true_closest'] = dict(
+                        time=now, distance=true_distance,
+                        time_to_deadline=ref['deadline']-now,
+                        tracking_vector=true_tracking.tolist(),
+                        alignment_vector=alignment.tolist(),
+                        prediction_error_vector=prediction_error.tolist(),
+                        tracking_error=float(np.linalg.norm(true_tracking)),
+                        alignment_error=float(np.linalg.norm(alignment)),
+                        prediction_error=float(np.linalg.norm(prediction_error)),
+                        command=self.command)
         if status[target] == 2:
             self.current['end_time'], self.current['end_reason'] = now, 'popped'
             self.current = None
@@ -107,5 +129,5 @@ class GuidanceTelemetry:
     def finish(self, now):
         if self.current is not None:
             self.current['end_time'], self.current['end_reason'] = float(now), 'episode_ended'
-        return dict(scope='Observation/reference-only diagnostics, never provided to the agent; distances are sampled, not official collision checks.',
+        return dict(scope='Offline post-action diagnostics, never provided to the agent; optional true_closest uses simulator info only after env.step. Distances are sampled, not official collision checks.',
                     target_episodes=self.episodes, unpopped_forecast_checks=self.finished_forecasts)

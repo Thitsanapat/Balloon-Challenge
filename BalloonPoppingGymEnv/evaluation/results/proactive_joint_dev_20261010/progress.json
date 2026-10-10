@@ -1,0 +1,80 @@
+{
+  "2": {
+    "reference": {
+      "score": 4,
+      "navigation": {
+        "samples": 3465,
+        "mean": 0.4392285012893954,
+        "rms": 0.47287664181467565,
+        "max": 0.9816998349015419
+      },
+      "mean_tracking_error": 0.5189468185445189,
+      "saturation_steps": 1177,
+      "missed_targets_within_3m": 2,
+      "angular_response_gain": null,
+      "angular_response_samples": 0,
+      "adaptive_control_steps": 0,
+      "post_reset_wall_seconds": 136.625
+    },
+    "candidate": {
+      "score": 2,
+      "navigation": {
+        "samples": 3799,
+        "mean": 0.3960857303193976,
+        "rms": 0.4360410898749399,
+        "max": 1.0064579915753813
+      },
+      "mean_tracking_error": 0.6144719349005496,
+      "saturation_steps": 1457,
+      "missed_targets_within_3m": 2,
+      "angular_response_gain": null,
+      "angular_response_samples": 0,
+      "adaptive_control_steps": 0,
+      "post_reset_wall_seconds": 184.7029999999795
+    },
+    "proactive": {
+      "proactive_requests": 8,
+      "proactive_accepted": 1,
+      "proactive_fallbacks": 7
+    }
+  },
+  "0": {
+    "reference": {
+      "score": 6,
+      "navigation": {
+        "samples": 3403,
+        "mean": 0.4157426467320446,
+        "rms": 0.44295185165735784,
+        "max": 0.9442927761999091
+      },
+      "mean_tracking_error": 0.5044278346564127,
+      "saturation_steps": 674,
+      "missed_targets_within_3m": 0,
+      "angular_response_gain": null,
+      "angular_response_samples": 0,
+      "adaptive_control_steps": 0,
+      "post_reset_wall_seconds": 128.6720000000205
+    },
+    "candidate": {
+      "score": 5,
+      "navigation": {
+        "samples": 3348,
+        "mean": 0.45128796797411397,
+        "rms": 0.48713569695659237,
+        "max": 1.1098989352636888
+      },
+      "mean_tracking_error": 1.2282858822578866,
+      "saturation_steps": 1013,
+      "missed_targets_within_3m": 0,
+      "angular_response_gain": null,
+      "angular_response_samples": 0,
+      "adaptive_control_steps": 0,
+      "post_reset_wall_seconds": 178.09400000004098
+    },
+    "proactive": {
+      "proactive_requests": 11,
+      "proactive_accepted": 1,
+      "proactive_fallbacks": 10
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "seeds": [
+    0,
+    2
+  ],
+  "stage": "development, not held-out",
+  "reference_files": [
+    "C:\\Users\\thits\\Documents\\Balloon Challenge\\BalloonPoppingGymEnv\\evaluation\\results\\sensor_coupled_gnc_dev_20261009\\0_joint.json",
+    "C:\\Users\\thits\\Documents\\Balloon Challenge\\BalloonPoppingGymEnv\\evaluation\\results\\sensor_coupled_gnc_dev_20261009\\2_joint.json"
+  ],
+  "source_sha256": "21de6c9d9fc052c99b5870523391bd8ca067af5ccd52df60ca187414bb9e21de",
+  "cpu_workers": 2,
+  "gpu_visible": false,
+  "gate": "total gain >=2, no seed loss >1, accepted proactive repair >0",
+  "auto_promote": false
+}

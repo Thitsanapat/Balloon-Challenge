@@ -115,6 +115,23 @@ class ShadowValidationTests(unittest.TestCase):
             self.assertEqual(result["target_changes"], 0)
         self.assertGreater(predictions[2]["plan_changes"], 0)
 
+    def test_arrival_sampling_is_bounded_and_does_not_leak_truth(self):
+        env = FakeEnvironment()
+        agent = FakeAgent()
+        uncertainty = dict(initial_position_sigma=0.0,
+                           target_position_sigma=0.0,
+                           target_velocity_sigma=0.0,
+                           model_acceleration_sigma=0.0)
+        report = run_episode(env, agent, public_hover_parameters(), 123,
+                             [], [0.25], uncertainty,
+                             arrival_period=0.25, arrival_window=4.0,
+                             arrival_max_anchors=3)
+        self.assertFalse(agent.received_info)
+        self.assertEqual(report["arrival_anchors"], 3)
+        self.assertEqual(len(report["anchors"]), 3)
+        self.assertTrue(all(anchor["anchor_kind"] == "arrival"
+                            for anchor in report["anchors"]))
+
 
 if __name__ == "__main__":
     unittest.main()

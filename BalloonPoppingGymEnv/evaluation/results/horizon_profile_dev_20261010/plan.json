@@ -1,0 +1,19 @@
+{
+  "scenario": 4,
+  "stage": "development on already-used seeds",
+  "seeds": [0, 2],
+  "incumbent_scores": [6, 4],
+  "candidate": "Scenario4HorizonProfileAgent, same config as pure joint except arrival-time-specific observed wind correction",
+  "candidate_source_sha256": "0753b3fd3d81d921338d25ef7969ee8499d380d405d406e070b57cf6d424ed1b",
+  "modified_shared_source_sha256": {
+    "chain_beam_agent.py": "9957240c194bd18f7c8c457b7c85e1dc97f5a374db51308eaa6b48e103237b46",
+    "time_allocation_agent.py": "877c1bf8849530026284e1037c3074bb673726c263496c24e8ed623f4ef6df5b",
+    "scenario4_pure_joint_refresh_agent.py": "004946b2a1ceebeb4942140342e95294db5323dc8a0c38ffecbfe9e593b6bc8f"
+  },
+  "gpu_visible": false,
+  "cpu_workers": 1,
+  "pilot_gate": "run seed 0 first; stop if score below 5, source changes, or post-reset runtime exceeds 420 seconds",
+  "development_gate": "only consider holdout if seed-0/2 total improves by at least 2 pops, neither seed loses more than 1, and runtime is operationally acceptable",
+  "promotion_gate": "fresh paired multi-seed validation, standalone build and parity, source review, unchanged live preflight",
+  "auto_promote": false
+}

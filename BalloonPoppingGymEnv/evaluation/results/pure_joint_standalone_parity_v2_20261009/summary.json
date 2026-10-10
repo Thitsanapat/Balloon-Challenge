@@ -1,0 +1,22 @@
+{
+  "seed": 2,
+  "score": 4,
+  "checks": {
+    "score": true,
+    "final_time": true,
+    "terminated": true,
+    "truncated": true,
+    "pop_events": true,
+    "target_events": true,
+    "route_events": true,
+    "diagnostics": true,
+    "navigation_error": true,
+    "closest_true_distances": true,
+    "guidance_telemetry": true,
+    "source_unchanged": true,
+    "dependencies_unchanged": true
+  },
+  "passed": true,
+  "live_agent_changed": false,
+  "scope": "One-seed behavior parity, not new generalization evidence or lockfile-environment parity"
+}

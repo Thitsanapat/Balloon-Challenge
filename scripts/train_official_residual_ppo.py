@@ -32,7 +32,20 @@ SOURCES = ['scripts/train_official_residual_ppo.py',
 
 def hashes(scenario=1):
     parameter_dir = 'BalloonPoppingGymEnv/envs/scenario_parameters'
-    paths = SOURCES + [f'{parameter_dir}/scenario_{scenario}_{suffix}.yaml'
+    paths = SOURCES + ([
+        'BalloonPoppingGymEnv/agents/base_agent.py',
+        'BalloonPoppingGymEnv/agents/submission_sqp_v2.py',
+        'BalloonPoppingGymEnv/agents/momentum_beam_agent.py',
+        'BalloonPoppingGymEnv/agents/chain_beam_agent.py',
+        'BalloonPoppingGymEnv/agents/chain_launch_agent.py',
+        'BalloonPoppingGymEnv/agents/final_approach_agent.py',
+        'BalloonPoppingGymEnv/agents/time_allocation_agent.py',
+        'BalloonPoppingGymEnv/agents/constrained_chain_agent.py',
+        'BalloonPoppingGymEnv/agents/opportunistic_chain_agent.py',
+        'BalloonPoppingGymEnv/agents/capture_chain_agent.py',
+        'BalloonPoppingGymEnv/agents/scenario4_residual_agent.py',
+        'BalloonPoppingGymEnv/agents/scenario4_wind_profile_agent.py',
+    ] if scenario == 4 else []) + [f'{parameter_dir}/scenario_{scenario}_{suffix}.yaml'
                        for suffix in ('parameters', 'given_parameters')]
     return {name: hashlib.sha256((ROOT/name).read_bytes()).hexdigest() for name in paths}
 
@@ -49,7 +62,7 @@ def write_json(path, value):
 
 class RunControl(BaseCallback):
     def __init__(self, directory, started, max_hours, checkpoint_every, source_hashes,
-                 truncation_limit=3, scenario=1):
+                 truncation_limit=3, scenario=1, source_hash_provider=None):
         super().__init__()
         self.directory, self.started = directory, started
         self.max_seconds = max_hours*3600.
@@ -62,6 +75,7 @@ class RunControl(BaseCallback):
         self.stop_reason = None
         self.source_hashes = source_hashes
         self.scenario = scenario
+        self.source_hash_provider = source_hash_provider or (lambda: hashes(self.scenario))
         self.initial_steps = 0
         self.truncation_guard = TruncationGuard(truncation_limit)
 
@@ -79,7 +93,7 @@ class RunControl(BaseCallback):
             completed_episodes=len(self.completed), recent_episode_scores=completed,
             truncated_episodes=self.truncation_guard.total,
             mean_recent_score=float(np.mean([r['score'] for r in completed])) if completed else None,
-            stop_reason=self.stop_reason, source_unchanged=hashes(self.scenario)==self.source_hashes,
+            stop_reason=self.stop_reason, source_unchanged=self.source_hash_provider()==self.source_hashes,
             uploaded=False)
 
     def _on_step(self):
@@ -88,6 +102,7 @@ class RunControl(BaseCallback):
             self.physics_steps += int(info.get('physics_steps', 0))
             if done:
                 row = dict(score=int(info['popped_count']), truncated=bool(info['official_truncated']),
+                           scenario=info.get('scenario', self.scenario),
                            ppo_decisions=int(self.num_timesteps),
                            episode_wall_seconds=info.get('episode_wall_seconds'),
                            simulation_time=info.get('simulation_time'))
@@ -108,7 +123,7 @@ class RunControl(BaseCallback):
             self.stop_reason = 'consecutive_official_truncations'
         elif elapsed >= self.max_seconds:
             self.stop_reason = 'wall_time_budget'
-        elif hashes(self.scenario) != self.source_hashes:
+        elif self.source_hash_provider() != self.source_hashes:
             self.stop_reason = 'source_changed'
         return self.stop_reason is None
 

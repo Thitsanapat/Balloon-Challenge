@@ -34,6 +34,8 @@ class OfficialPPOScenarioTests(unittest.TestCase):
             self.assertEqual(scenario_hashes[relative], expected)
         self.assertNotIn('BalloonPoppingGymEnv/envs/scenario_parameters/scenario_1_parameters.yaml',
                          scenario_hashes)
+        self.assertIn('BalloonPoppingGymEnv/agents/scenario4_residual_agent.py',
+                      scenario_hashes)
 
 
 if __name__ == '__main__':

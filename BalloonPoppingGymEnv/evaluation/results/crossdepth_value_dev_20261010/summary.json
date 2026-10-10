@@ -1,0 +1,39 @@
+{
+  "scope": "Development screen, not a qualification submission",
+  "pairs": [
+    {
+      "seed": 0,
+      "incumbent": 6,
+      "candidate": 6,
+      "delta": 0,
+      "wall_seconds": 250.56300000008196,
+      "post_reset_wall_seconds": 123.18800000008196,
+      "value_routes_adopted": 0,
+      "value_shorter_adopted": 0,
+      "value_pool_peak": 24
+    },
+    {
+      "seed": 2,
+      "incumbent": 4,
+      "candidate": 4,
+      "delta": 0,
+      "wall_seconds": 247.875,
+      "post_reset_wall_seconds": 120.96899999980815,
+      "value_routes_adopted": 0,
+      "value_shorter_adopted": 0,
+      "value_pool_peak": 23
+    }
+  ],
+  "incumbent_total": 10,
+  "candidate_total": 10,
+  "fresh_holdout_eligible": false,
+  "live_agent_changed": false,
+  "mpcc_enabled": false,
+  "note": "No automatic promotion; calibrated shadow capture gate failed.",
+  "sha256": {
+    "incumbent": "9ff7f93d21a945d0479289be57bd893d8f33ab169fb1a6bfeb153ea442b6efb9",
+    "candidate": "11c18ecf7e26250e201cae72e6bf899d0d3bab63d37329c5e563410cd5a92aef",
+    "frozen_capture_model": "cb2a039f0763032c0699714c4fe52ee0b99062e2367a0c97e9467af767afd506",
+    "raw_report": "dd6fc626388927fff702aae704a466c150099d935f9a6691f836e48d7d4e6769"
+  }
+}

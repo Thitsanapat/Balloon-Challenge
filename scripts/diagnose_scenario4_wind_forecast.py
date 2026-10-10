@@ -17,6 +17,10 @@ import numpy as np
 
 from BalloonPoppingGymEnv.agents import scenario4_regularized_wind_agent
 from BalloonPoppingGymEnv.agents import scenario4_wind_profile_agent
+from BalloonPoppingGymEnv.agents import scenario4_acceleration_forecast
+from BalloonPoppingGymEnv.agents.scenario4_acceleration_forecast import (
+    ObservedAccelerationForecast,
+)
 from BalloonPoppingGymEnv.agents.scenario4_regularized_wind_agent import (
     RegularizedObservedWindProfile,
 )
@@ -42,7 +46,8 @@ def summarize(errors, corrected):
 
 
 def evaluate_seed(seed, start=24.0, until=60.0, sample_interval=2.0,
-                  horizons=(2.0, 4.0, 6.0, 8.0), blend=.75):
+                  horizons=(2.0, 4.0, 6.0, 8.0), blend=.75,
+                  include_acceleration=False):
     """Compare constant velocity, incumbent and candidate on identical targets."""
     parameters, _ = load_scenario_parameters(4)
     parameters = copy.deepcopy(parameters)
@@ -61,6 +66,8 @@ def evaluate_seed(seed, start=24.0, until=60.0, sample_interval=2.0,
 
     incumbent = ObservedWindProfile()
     candidate = RegularizedObservedWindProfile()
+    acceleration = ObservedAccelerationForecast(
+        int(parameters['balloon']['num'])) if include_acceleration else None
     due = defaultdict(list)
     errors = defaultdict(lambda: defaultdict(list))
     corrected = defaultdict(lambda: defaultdict(int))
@@ -72,6 +79,9 @@ def evaluate_seed(seed, start=24.0, until=60.0, sample_interval=2.0,
         obs, _ = env.reset(seed=int(seed))
         end_step = until_step + max(steps for _, steps in horizon_steps)
         for step in range(end_step + 1):
+            if acceleration is not None:
+                acceleration.observe(step * dt, obs['balloon_states'],
+                                     obs['balloon_status'])
             if step in due:
                 states = np.asarray(obs["balloon_states"], dtype=float)
                 status = np.asarray(obs["balloon_status"]).reshape(-1)
@@ -106,6 +116,12 @@ def evaluate_seed(seed, start=24.0, until=60.0, sample_interval=2.0,
                             "incumbent": bool(np.any(old)),
                             "regularized": bool(np.any(new)),
                         }
+                        if acceleration is not None:
+                            extra = acceleration.correction(
+                                states, status, int(index), horizon, incumbent)
+                            predictions['acceleration_residual'] = (
+                                base + blend * old + extra)
+                            nonzero['acceleration_residual'] = bool(np.any(extra))
                         due[step + steps].append((int(index), horizon,
                                                    predictions, nonzero))
             if step == end_step:
@@ -122,11 +138,14 @@ def evaluate_seed(seed, start=24.0, until=60.0, sample_interval=2.0,
             str(Path(module.__file__).as_posix()): hashlib.sha256(
                 Path(module.__file__).read_bytes(),
             ).hexdigest()
-            for module in (scenario4_wind_profile_agent,
-                           scenario4_regularized_wind_agent, balloon_world)
+            for module in ((scenario4_wind_profile_agent,
+                            scenario4_regularized_wind_agent, balloon_world) +
+                           ((scenario4_acceleration_forecast,)
+                            if include_acceleration else ()))
         },
         "sampling": {"start_s": start, "until_s": until,
                      "interval_s": sample_interval,
+                     "include_acceleration": include_acceleration,
                      "horizons_s": list(horizons), "blend": blend},
         "by_horizon": {
             str(h): {
@@ -138,6 +157,10 @@ def evaluate_seed(seed, start=24.0, until=60.0, sample_interval=2.0,
                     np.asarray(errors[h]["regularized"]) ** 2 -
                     np.asarray(errors[h]["incumbent"]) ** 2,
                 )) if errors[h]["incumbent"] else None,
+                "acceleration_minus_incumbent_mse_m2": float(np.mean(
+                    np.asarray(errors[h]['acceleration_residual']) ** 2 -
+                    np.asarray(errors[h]['incumbent']) ** 2,
+                )) if include_acceleration and errors[h]['incumbent'] else None,
                 "newly_supported_count": len(changed_only[h]["regularized"]),
                 "newly_supported": {
                     name: summarize(values, len(values) if name == "regularized" else 0)
@@ -155,13 +178,19 @@ def main():
     parser.add_argument("--start", type=float, default=24.0)
     parser.add_argument("--until", type=float, default=60.0)
     parser.add_argument("--interval", type=float, default=2.0)
+    parser.add_argument("--horizons", nargs="+", type=float,
+                        default=[2.0, 4.0, 6.0, 8.0])
+    parser.add_argument("--acceleration", action="store_true",
+                        help="Compare a causal acceleration residual to the incumbent")
     args = parser.parse_args()
     result = []
     for seed in args.seeds:
         print(f"Forecast validation on fresh official Scenario 4 seed {seed}",
               flush=True)
         result.append(evaluate_seed(seed, start=args.start, until=args.until,
-                                    sample_interval=args.interval))
+                                    sample_interval=args.interval,
+                                    horizons=tuple(args.horizons),
+                                    include_acceleration=args.acceleration))
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(json.dumps(result, indent=2, allow_nan=False),
                                encoding="utf-8")

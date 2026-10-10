@@ -1,0 +1,45 @@
+{
+  "parity_verified": true,
+  "dataset_sha256": "4fca08eb2c24280d7eab2a6851c0024291ff792561c391e2ad47acf6d7deee65",
+  "decisions": 30,
+  "executed_attempts": 6,
+  "event_schema": "route_shadow_events_v2",
+  "all_pop_events_complete": true,
+  "pop_counts": {
+    "initial_pops": 0,
+    "observed_pops": 3,
+    "active_target_pops": 3,
+    "incidental_pops": 0,
+    "unassigned_pops": 0
+  },
+  "outcomes": {
+    "hit": 3,
+    "miss": 3
+  },
+  "prefix_length_histogram": {
+    "1": 30,
+    "2": 24,
+    "3": 24,
+    "4": 24,
+    "5": 21,
+    "6": 21,
+    "7": 15
+  },
+  "imitation_decision_ids": [
+    0,
+    15,
+    20,
+    21,
+    23,
+    24
+  ],
+  "deadline_outcome_attempt_ids": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "unresolved_counterfactuals": "all route prefixes remain unlabelled"
+}

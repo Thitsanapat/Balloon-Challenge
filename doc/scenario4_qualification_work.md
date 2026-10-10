@@ -316,9 +316,22 @@ new paired validation on seeds 300–303:
 | **Four-flight total** | **16** | **20** | **+4** |
 
 All eight flights finished without truncation or source changes. The strong
-seed-303 gain motivates a second untouched paired validation on 304–307, still
-with the same frozen source/config. The four-flight total of 20 is **not** a
-20-pop qualification score, which sums only two live flights.
+seed-303 gain motivated a second untouched paired validation on 304–307 with
+the same frozen source/config:
+
+| Seed | Selected baseline | Adaptive feedback | Difference |
+| --- | ---: | ---: | ---: |
+| 304 | 6 | 4 | -2 |
+| 305 | 3 | 2 | -1 |
+| 306 | 4 | 2 | -2 |
+| 307 | 4 | 2 | -2 |
+| **Eight-flight total (300–307)** | **33** | **30** | **-3** |
+
+The candidate wins only 2 of 8 paired seeds, ties 1, and loses 5. All 16
+flights terminate normally with unchanged source. **Reject adaptive feedback;
+keep the existing reviewed wind-profile agent as the selected policy.** The
+earlier four-flight total of 20 was **not** a 20-pop qualification score, which
+sums only two live flights, nor evidence of a general improvement.
 
 A separate short-horizon shadow predictor and an evaluator-only validation
 harness were added for future model-based route screening. The predictor uses
@@ -328,3 +341,48 @@ Its point-mass dynamics omit aerodynamic moments, evolving wind, and online
 replanning, so it is **not** connected to the submitted agent until 1–3 s
 prediction error is checked on fresh flights. Unit tests alone do not
 establish collision-prediction accuracy.
+
+The first evaluator-only shadow check completed on fresh Scenario 4 seed 0,
+with seven post-launch anchors (0.5–15 s after launch). The mean absolute
+rocket-position prediction errors at 0.25/1/2/3 s horizons were
+**0.36/0.31/0.76/2.05 m**, respectively (7/7/4/4 valid predictions). Every
+2–3 s comparison included one or more real plan changes, so those longer
+horizon discrepancies do not isolate physics-model error. This is useful as a
+short-horizon diagnostic, not yet a validated collision screen or evidence of
+more pops; no agent used the offline official truth. The credential-free report
+is `s4_shadow_validation_seed0_20261003.json` in ignored results.
+
+A bounded relative-state zero-effort-miss (ZEM) terminal controller was then
+tested on complete fresh official flights. It scored **4/2** on development
+seeds 0/1, compared with **5/2** for the selected wind-profile policy. The
+source stayed unchanged during both runs, which ended without truncation.
+It was active for 1,109/1,198 steps and the extra axis-slew limit engaged for
+357/378 steps, so this was a meaningful test rather than a disabled feature.
+**Reject this ZEM variant and retain the selected agent.** The full ZEM
+intercept acceleration can oppose an otherwise correct quintic spline, and it
+removes the spline's attitude-rate feedforward throughout the correction
+window. A follow-up should correct only the *forecast innovation at the
+planned endpoint* and preserve the baseline attitude command when that
+innovation is zero. These mechanisms are hypotheses, not established causes
+of the one-pop loss.
+
+An observation-only hopeless-leg escape experiment completed development
+seed 0 with **5 pops**, exactly the selected policy's pop count and times.
+The proposed conservative reachable-gap test was evaluated after 37 failed
+active-leg refreshes but triggered **zero** alternate searches on this seed;
+therefore this flight establishes no benefit from the feature. Its source
+remained stable, and the official episode completed without truncation.
+Do not promote it from a zero-intervention test. The receipt is
+`s4_dev_hopeless_leg_seed0_20261003.json` in ignored results.
+
+A second controller instead corrects only the difference between the active
+spline endpoint and a fresh target endpoint forecast from current observations.
+It retains the baseline attitude-rate feedforward and exactly preserves the
+baseline command when there is no forecast innovation. Frozen-source official
+development flights scored **5/4 on seeds 0/1**, versus **5/2** for the
+selected policy. Both flights finished without truncation and used the same
+source hashes. This +2 is exploratory: seed 2 and new paired holdouts are
+required before replacing the reviewed agent. The seed-0 route changed and
+its final pop occurred later (67.93 s versus 64.20 s), despite tying the
+five-pop count. Reports are `s4_dev_forecast_innovation_seed0_20261003.json`
+and `s4_dev_forecast_innovation_seed1_20261003.json` in ignored results.

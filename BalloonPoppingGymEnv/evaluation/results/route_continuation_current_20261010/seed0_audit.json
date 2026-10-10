@@ -1,0 +1,101 @@
+{
+  "scope": "Factual executed attempts only; censored legs are not negatives",
+  "summary": {
+    "fields": 1,
+    "planned_two_leg_attempts": 6,
+    "first_hits": 5,
+    "observed_second_legs": 4,
+    "second_hits": 3,
+    "second_censored": 2,
+    "censor_reasons": {
+      "first_leg_missed": 1,
+      "next_target_changed": 1
+    }
+  },
+  "rows": [
+    {
+      "seed": 0,
+      "attempt_id": 0,
+      "time": 42.02,
+      "first_target": 44,
+      "second_target": 76,
+      "planned_route_length": 8,
+      "planned_first_seconds": 9.0,
+      "planned_second_seconds": 2.0,
+      "planned_departure_cosine": 0.9471090171643877,
+      "first_hit": true,
+      "second_hit": null,
+      "second_censor_reason": "next_target_changed"
+    },
+    {
+      "seed": 0,
+      "attempt_id": 1,
+      "time": 50.94,
+      "first_target": 74,
+      "second_target": 1,
+      "planned_route_length": 7,
+      "planned_first_seconds": 4.5,
+      "planned_second_seconds": 2.0,
+      "planned_departure_cosine": 0.9560249247438094,
+      "first_hit": true,
+      "second_hit": true,
+      "second_censor_reason": null
+    },
+    {
+      "seed": 0,
+      "attempt_id": 2,
+      "time": 55.29,
+      "first_target": 1,
+      "second_target": 32,
+      "planned_route_length": 6,
+      "planned_first_seconds": 3.0,
+      "planned_second_seconds": 3.0,
+      "planned_departure_cosine": 0.5648465866185725,
+      "first_hit": true,
+      "second_hit": true,
+      "second_censor_reason": null
+    },
+    {
+      "seed": 0,
+      "attempt_id": 3,
+      "time": 58.13,
+      "first_target": 32,
+      "second_target": 77,
+      "planned_route_length": 3,
+      "planned_first_seconds": 4.0,
+      "planned_second_seconds": 1.999999999999993,
+      "planned_departure_cosine": 0.44580094239422746,
+      "first_hit": true,
+      "second_hit": false,
+      "second_censor_reason": null
+    },
+    {
+      "seed": 0,
+      "attempt_id": 4,
+      "time": 62.01,
+      "first_target": 77,
+      "second_target": 11,
+      "planned_route_length": 3,
+      "planned_first_seconds": 2.999999999999993,
+      "planned_second_seconds": 3.5,
+      "planned_departure_cosine": -0.6875820486736891,
+      "first_hit": false,
+      "second_hit": null,
+      "second_censor_reason": "first_leg_missed"
+    },
+    {
+      "seed": 0,
+      "attempt_id": 5,
+      "time": 65.01,
+      "first_target": 11,
+      "second_target": 70,
+      "planned_route_length": 2,
+      "planned_first_seconds": 3.0,
+      "planned_second_seconds": 1.5,
+      "planned_departure_cosine": 0.6876017135169289,
+      "first_hit": true,
+      "second_hit": true,
+      "second_censor_reason": null
+    }
+  ]
+}

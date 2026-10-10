@@ -1,0 +1,30 @@
+{
+  "seeds": [
+    605131410,
+    435857031,
+    927297526,
+    298628555
+  ],
+  "selected": [
+    4,
+    1,
+    4,
+    3
+  ],
+  "candidate": [
+    4,
+    5,
+    6,
+    4
+  ],
+  "differences": [
+    0,
+    4,
+    2,
+    1
+  ],
+  "selected_total": 12,
+  "candidate_total": 19,
+  "gate_passed": true,
+  "live_agent_changed": false
+}

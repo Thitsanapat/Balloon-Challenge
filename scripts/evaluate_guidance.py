@@ -38,7 +38,11 @@ def agent_source_fingerprints(main_path):
             for path in sorted(paths)}
 
 
-def evaluate(config, seed):
+def evaluate(config, seed, route_shadow_path=None):
+    if route_shadow_path is not None:
+        route_shadow_path = Path(route_shadow_path)
+        if route_shadow_path.exists():
+            raise FileExistsError(f"Refusing to overwrite route shadow: {route_shadow_path}")
     agent_sha256 = hashlib.sha256(Path(config['agent_module_path']).read_bytes()).hexdigest()
     parameters, given = load_scenario_parameters(config["scenario_number"])
     parameters = copy.deepcopy(parameters)
@@ -49,6 +53,12 @@ def evaluate(config, seed):
     agent = cls(given, **config.get("agent_kwargs", {}))
     start = time.monotonic()
     observation, info = env.reset(seed=seed)
+    shadow_events = []
+    shadow = None
+    if route_shadow_path is not None:
+        from BalloonPoppingGymEnv.training.route_shadow import RouteShadowCollector
+        shadow = RouteShadowCollector(shadow_events.append)
+        shadow.observe(observation)
     reset_finished = time.monotonic()
     popped = set()
     events = []
@@ -66,11 +76,15 @@ def evaluate(config, seed):
         telemetry = GuidanceTelemetry()
     while not (terminated or truncated):
         action = agent.get_action(observation)
+        if shadow is not None:
+            shadow.after_action(agent, observation, action)
         if telemetry is not None:
             telemetry.before_step(agent, observation, action)
         observation, reward, terminated, truncated, info = env.step(action)
+        if shadow is not None:
+            shadow.observe(observation)
         if telemetry is not None:
-            telemetry.after_step(observation)
+            telemetry.after_step(observation, info.get('rocket_states', [])[:3])
         sensors = np.asarray(observation['rocket_sensors'], dtype=float)
         if np.all(np.isfinite(sensors[6:9])):
             maximum_altitude = max(maximum_altitude, float(sensors[8]))
@@ -99,6 +113,12 @@ def evaluate(config, seed):
                     events.append([index, float(observation["simulation_time"])])
             print(f"seed={seed} score={info['popped_count']} time={observation['simulation_time']:.2f}", flush=True)
     episode_finished = time.monotonic()
+    shadow_counts = shadow.finish(observation) if shadow is not None else None
+    if route_shadow_path is not None:
+        route_shadow_path.parent.mkdir(parents=True, exist_ok=True)
+        with route_shadow_path.open("x", encoding="utf-8") as stream:
+            for event in shadow_events:
+                stream.write(json.dumps(event, allow_nan=False, separators=(",", ":")) + "\n")
     result = {
         "evaluation": "fresh official BalloonPoppingEnv; no cached field substitution",
         "scenario": config["scenario_number"], "seed": seed, "config": config,
@@ -129,6 +149,7 @@ def evaluate(config, seed):
         "coverage_events": getattr(agent, "coverage_events", []),
         "launch_comparisons": getattr(agent, "launch_comparisons", []),
         "guidance_telemetry": telemetry.finish(observation['simulation_time']) if telemetry else None,
+        "route_shadow_counts": shadow_counts,
     }
     env.close()
     return result
@@ -148,6 +169,8 @@ def main():
                         help="Override an agent argument, recorded in the report")
     parser.add_argument("--report", type=Path, required=True)
     parser.add_argument("--telemetry", action="store_true", help="Record observation/reference error decomposition; never fed back to the agent")
+    parser.add_argument("--route-shadow-dir", type=Path,
+                        help="Write observation-only decision events to new per-seed JSONL files")
     args = parser.parse_args()
     config = yaml.safe_load(args.config.read_text(encoding="utf-8-sig"))
     if args.telemetry:
@@ -160,7 +183,9 @@ def main():
     results = []
     for seed in args.seeds:
         print(f"Starting fresh evaluation: {config['agent_name']}, seed={seed}", flush=True)
-        result = evaluate(config, seed)
+        shadow_path = (args.route_shadow_dir / str(seed) / "decisions.jsonl"
+                       if args.route_shadow_dir is not None else None)
+        result = evaluate(config, seed, route_shadow_path=shadow_path)
         results.append(result)
         args.report.parent.mkdir(parents=True, exist_ok=True)
         args.report.write_text(json.dumps(results, indent=2, allow_nan=False), encoding="utf-8")

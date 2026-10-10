@@ -2,7 +2,7 @@ scenario_number: 4
 render_mode: null
 agent_module_path: './BalloonPoppingGymEnv/agents/scenario4_zem_terminal_agent.py'
 agent_class_name: 'Scenario4ZemTerminalAgent'
-agent_name: 'Experimental observation-only ZEM correction with 42-second launch'
+agent_name: 'Observed-wind route with bounded relative-state terminal guidance'
 agent_kwargs:
   launch_time: 42.0
   launch_candidates: 3
@@ -32,5 +32,4 @@ agent_kwargs:
   zem_max_lateral_delta: 5.0
   zem_max_target_range: 150.0
   zem_vertical_weight: 0.0
-  zem_axis_slew_rate: 1.2
 leaderboard_submission: false

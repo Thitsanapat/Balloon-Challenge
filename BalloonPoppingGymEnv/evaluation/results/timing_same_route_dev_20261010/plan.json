@@ -1,0 +1,13 @@
+{
+  "scenario": 4,
+  "stage": "development on already-used seeds, not independent validation",
+  "seeds": [0, 2],
+  "current_scores": [6, 4],
+  "candidate_change": {"timing_only_more_hits": false},
+  "other_agent_parameters": "unchanged from scenario4_pure_joint_refresh_launch42.yaml",
+  "pure_joint_source_sha256": "45f02197657857f6db2985e5318cb7f4194dbd102f49185dd4c96292eabc6495",
+  "cpu_workers": 2,
+  "gpu_visible": false,
+  "auto_promote": false,
+  "gate": "candidate total at least 2 pops higher, neither seed more than 1 pop lower, timing_adopted positive; then fresh paired validation before live switch"
+}
